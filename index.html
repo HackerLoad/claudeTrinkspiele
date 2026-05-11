@@ -331,6 +331,15 @@ body{
   display:flex;align-items:center;justify-content:space-between;
 }
 
+/* ── WATERMARK ── */
+#wm{
+  position:fixed;bottom:calc(var(--nav-h) + 4px);
+  left:50%;transform:translateX(-50%);
+  font-size:10px;color:var(--border);font-weight:600;
+  letter-spacing:.4px;pointer-events:none;z-index:99;
+  white-space:nowrap;
+}
+
 /* ── INFO BUTTON (global, fixed in header area) ── */
 #gib{
   position:fixed;top:0;
@@ -429,6 +438,9 @@ body{
     <div class="rules-body" id="rules-body"></div>
   </div>
 </div>
+
+<!-- Watermark -->
+<div id="wm">© Maxim Andris</div>
 
 <!-- Toast -->
 <div id="toast"></div>
