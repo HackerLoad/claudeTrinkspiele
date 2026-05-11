@@ -331,6 +331,56 @@ body{
   display:flex;align-items:center;justify-content:space-between;
 }
 
+/* ── CATEGORY TABS ── */
+.cat-tabs{display:flex;gap:6px;overflow-x:auto;padding:8px 14px 4px;scrollbar-width:none;flex-shrink:0}
+.cat-tabs::-webkit-scrollbar{display:none}
+.cat-tab{padding:7px 14px;border-radius:20px;border:1.5px solid var(--border);background:var(--surface);color:var(--muted);font-size:12px;font-weight:700;white-space:nowrap;cursor:pointer;font-family:inherit;transition:all .14s;flex-shrink:0}
+.cat-tab.on{background:var(--accent);border-color:var(--accent);color:#fff}
+/* ── QUIZ ── */
+.quiz-opts{display:flex;flex-direction:column;gap:8px}
+.qopt{padding:16px 14px;border-radius:var(--r);border:2px solid var(--border);background:var(--surface2);cursor:pointer;font-size:14px;font-weight:700;transition:all .14s;font-family:inherit;color:var(--text);text-align:left;width:100%}
+.qopt:active{transform:scale(.97)}
+.qopt.correct{border-color:var(--success);background:var(--success)22;color:var(--success)}
+.qopt.wrong{border-color:var(--danger);background:var(--danger)22;color:var(--danger)}
+.qcat-tag{display:inline-block;padding:3px 10px;border-radius:12px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;background:var(--accent)22;color:var(--accent);margin-bottom:6px}
+/* ── MEMORY GRID ── */
+.mgrid{display:grid;gap:7px;padding:4px}
+.mcard{border-radius:10px;aspect-ratio:1;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;background:var(--surface2);border:2px solid var(--border);transition:all .2s;user-select:none;-webkit-user-select:none}
+.mcard.flipped{background:var(--surface);border-color:var(--accent)}
+.mcard.matched{background:var(--success)22;border-color:var(--success);opacity:.65;cursor:default}
+/* ── SIMON ── */
+.simon-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px}
+.simon-btn{border-radius:var(--r);min-height:120px;border:none;cursor:pointer;transition:all .12s;opacity:.5;font-family:inherit}
+.simon-btn.lit{opacity:1;transform:scale(1.04)}
+/* ── MINESWEEPER ── */
+.msgrid{display:grid;gap:4px}
+.mstile{border-radius:8px;aspect-ratio:1;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;background:var(--surface2);border:1.5px solid var(--border);transition:background .1s;min-height:36px;min-width:36px}
+.mstile.revealed{background:var(--surface);border-color:transparent;cursor:default}
+.mstile.mine-hit{background:var(--danger)44;border-color:var(--danger)}
+/* ── DRAWING ── */
+#draw-canvas{border-radius:var(--r);background:#fff;touch-action:none;cursor:crosshair;display:block;width:100%;aspect-ratio:3/2}
+/* ── BIERPONG ── */
+.bp-cups{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:8px}
+.bp-cup{font-size:26px;cursor:pointer;transition:all .15s;line-height:1}
+.bp-cup.gone{opacity:.12;filter:grayscale(1)}
+/* ── WATERFALL ── */
+.wf-item{display:flex;align-items:center;gap:12px;padding:14px;border-radius:var(--r);border:1.5px solid var(--border);background:var(--surface);transition:all .2s;margin-bottom:7px}
+.wf-item.drinking{border-color:var(--success);background:var(--success)15}
+.wf-item.stopped{opacity:.38;text-decoration:line-through}
+/* ── TRUTH/DARE CARD ── */
+.td-card{background:linear-gradient(145deg,var(--surface2),var(--surface));border-radius:20px;padding:28px 20px;text-align:center;border:2px solid var(--accent);min-height:160px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px}
+.td-type{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--accent)}
+.td-text{font-size:16px;font-weight:700;line-height:1.5;color:var(--text)}
+/* ── BUZZ/FIZZBUZZ ── */
+.buzz-num{font-size:68px;font-weight:900;text-align:center;padding:16px;color:var(--accent);line-height:1}
+/* ── REACTION ── */
+.react-zone{min-height:180px;display:flex;align-items:center;justify-content:center;border-radius:var(--r);cursor:pointer;transition:all .2s;user-select:none;-webkit-user-select:none;font-size:28px;font-weight:900}
+.react-zone.wait{background:var(--surface2);border:2px dashed var(--border)}
+.react-zone.set{background:#FF440022;border:2px solid var(--danger);color:var(--danger)}
+.react-zone.go{background:var(--success);border:2px solid var(--success);color:#000}
+/* ── LIAR'S DICE ── */
+.ldplayer{background:var(--surface2);border-radius:var(--r);padding:10px 12px;border:1px solid var(--border);margin-bottom:6px}
+
 /* ── NSFW TOGGLE ── */
 .nsfw-toggle{position:relative;display:inline-block;width:52px;height:28px;flex-shrink:0}
 .nsfw-toggle input{opacity:0;width:0;height:0}
@@ -434,6 +484,39 @@ body{
 <div id="screen-wyr" class="screen"></div>
 <div id="screen-wheel" class="screen"></div>
 <div id="screen-kategorien" class="screen"></div>
+<div id="screen-zehntausend" class="screen"></div>
+<div id="screen-pig" class="screen"></div>
+<div id="screen-maexchen" class="screen"></div>
+<div id="screen-liarsdice" class="screen"></div>
+<div id="screen-busfahrer" class="screen"></div>
+<div id="screen-higherower" class="screen"></div>
+<div id="screen-werbinici" class="screen"></div>
+<div id="screen-zweiwahrheiten" class="screen"></div>
+<div id="screen-countdown" class="screen"></div>
+<div id="screen-heissekartoffel" class="screen"></div>
+<div id="screen-taprace" class="screen"></div>
+<div id="screen-schnellsterfinger" class="screen"></div>
+<div id="screen-waterfall" class="screen"></div>
+<div id="screen-gestaendnis" class="screen"></div>
+<div id="screen-truthbomb" class="screen"></div>
+<div id="screen-hottakes" class="screen"></div>
+<div id="screen-wahrheitpflicht" class="screen"></div>
+<div id="screen-flaschendrehen" class="screen"></div>
+<div id="screen-buzz" class="screen"></div>
+<div id="screen-fizzbuzz" class="screen"></div>
+<div id="screen-alphabetspiel" class="screen"></div>
+<div id="screen-trinkquiz" class="screen"></div>
+<div id="screen-geografie" class="screen"></div>
+<div id="screen-promisraten" class="screen"></div>
+<div id="screen-storykette" class="screen"></div>
+<div id="screen-zeichnenraten" class="screen"></div>
+<div id="screen-singodertrink" class="screen"></div>
+<div id="screen-darewheel" class="screen"></div>
+<div id="screen-wachstumsgebot" class="screen"></div>
+<div id="screen-memoryspiel" class="screen"></div>
+<div id="screen-simonsays" class="screen"></div>
+<div id="screen-minesweeper" class="screen"></div>
+<div id="screen-bierpong" class="screen"></div>
 
 <!-- Bottom Nav -->
 <nav id="bnav"></nav>
@@ -503,7 +586,67 @@ const App={
   players:['Alex','Bea','Chris'],
   current:'home',
   nsfw:false,
+  catFilter:'all',
 };
+
+// ── GAME CATALOGUE ──────────────────────────
+const GAME_META=[
+  {id:'meyer',ic:'🎲',n:'Meyer',d:'Würfel-Bluff',cat:'wuerfel'},
+  {id:'schocken',ic:'🥃',n:'Schocken',d:'Würfel-Wertung',cat:'wuerfel'},
+  {id:'kniffel',ic:'🎰',n:'Kniffel',d:'Trink-Yahtzee',cat:'wuerfel'},
+  {id:'farkle',ic:'⚡',n:'Farkle',d:'Risiko-Würfel',cat:'wuerfel'},
+  {id:'zehntausend',ic:'💯',n:'10.000',d:'Würfel-Punkte',cat:'wuerfel'},
+  {id:'pig',ic:'🐷',n:'Pig',d:'Bank oder Risiko',cat:'wuerfel'},
+  {id:'maexchen',ic:'🎭',n:'Mäxchen',d:'Bluff-Variante',cat:'wuerfel'},
+  {id:'liarsdice',ic:'🎯',n:"Liar's Dice",d:'Bid & Bluff',cat:'wuerfel'},
+  {id:'kings',ic:'🃏',n:'Kings',d:'Karten-Regeln',cat:'karten'},
+  {id:'busfahrer',ic:'🚌',n:'Busfahrer',d:'Karten erraten',cat:'karten'},
+  {id:'higherower',ic:'📈',n:'Higher/Lower',d:'Höher oder niedriger',cat:'karten'},
+  {id:'flaschendrehen',ic:'🍾',n:'Flaschendrehen',d:'Dreh & Pflicht',cat:'karten'},
+  {id:'nochnie',ic:'🖐',n:'Ich hab nie…',d:'Finger-Spiel',cat:'raten',nsfw:true},
+  {id:'mostlikely',ic:'👆',n:'Most Likely',d:'Zeige drauf',cat:'raten',nsfw:true},
+  {id:'wyr',ic:'🤔',n:'Would U Rather',d:'Abstimmung',cat:'raten',nsfw:true},
+  {id:'werbinici',ic:'🎭',n:'Wer bin ich?',d:'Promis erraten',cat:'raten'},
+  {id:'zweiwahrheiten',ic:'🤥',n:'2W1L',d:'Lüge erkennen',cat:'raten'},
+  {id:'promisraten',ic:'⭐',n:'Promis raten',d:'Promi-Quiz',cat:'raten'},
+  {id:'countdown',ic:'⏱',n:'Countdown',d:'Letzter tippt',cat:'reaktion'},
+  {id:'heissekartoffel',ic:'🥔',n:'Heiße Kartoffel',d:'Pass the phone',cat:'reaktion'},
+  {id:'taprace',ic:'👇',n:'Tap Race',d:'Schnellstes Tippen',cat:'reaktion'},
+  {id:'schnellsterfinger',ic:'⚡',n:'Schnellster Finger',d:'Reaktions-Test',cat:'reaktion'},
+  {id:'waterfall',ic:'🌊',n:'Waterfall',d:'Alle trinken',cat:'sozial'},
+  {id:'gestaendnis',ic:'🤫',n:'Geständnisrunde',d:'Anonym beichten',cat:'sozial'},
+  {id:'truthbomb',ic:'💣',n:'Truth Bomb',d:'Anon. Fragen',cat:'sozial'},
+  {id:'hottakes',ic:'🌶',n:'Hot Takes',d:'Einig oder nicht',cat:'sozial'},
+  {id:'wahrheitpflicht',ic:'😈',n:'Wahr. od. Pflicht',d:'Klassiker',cat:'sozial'},
+  {id:'storykette',ic:'📖',n:'Story-Kette',d:'Satz für Satz',cat:'sozial'},
+  {id:'singodertrink',ic:'🎤',n:'Sing od. Trink',d:'Singen oder saufen',cat:'sozial'},
+  {id:'wachstumsgebot',ic:'🔗',n:'Wachstumsgebot',d:'Regelkette',cat:'sozial'},
+  {id:'buzz',ic:'🔢',n:'Buzz',d:'Sieben-Spiel',cat:'zahlen'},
+  {id:'fizzbuzz',ic:'🔣',n:'Fizz Buzz',d:'3er/5er-Spiel',cat:'zahlen'},
+  {id:'alphabetspiel',ic:'🔤',n:'Alphabet-Spiel',d:'Von A bis Z',cat:'zahlen'},
+  {id:'kategorien',ic:'💬',n:'Kategorien',d:'Timer-Spiel',cat:'zahlen',nsfw:true},
+  {id:'trinkquiz',ic:'❓',n:'Trink-Quiz',d:'100+ Fragen',cat:'quiz'},
+  {id:'geografie',ic:'🌍',n:'Geografie',d:'Länder & Hauptst.',cat:'quiz'},
+  {id:'zeichnenraten',ic:'🎨',n:'Zeichnen & Raten',d:'Zeichne & rate',cat:'kreativ'},
+  {id:'darewheel',ic:'🎡',n:'Dare Wheel',d:'Aufgaben-Rad',cat:'kreativ'},
+  {id:'memoryspiel',ic:'🧠',n:'Memory',d:'Paare finden',cat:'minigames'},
+  {id:'simonsays',ic:'🟩',n:'Simon Says',d:'Farb-Sequenz',cat:'minigames'},
+  {id:'minesweeper',ic:'💥',n:'Minesweeper',d:'Minen meiden',cat:'minigames'},
+  {id:'bierpong',ic:'🏓',n:'Bierpong',d:'Scoreboard',cat:'minigames'},
+  {id:'wheel',ic:'🌀',n:'Spin the Wheel',d:'Zufalls-Rad',cat:'minigames'},
+];
+const CATS_DEF=[
+  {id:'all',label:'Alle'},
+  {id:'wuerfel',label:'🎲 Würfel'},
+  {id:'karten',label:'🃏 Karten'},
+  {id:'raten',label:'🤔 Raten'},
+  {id:'reaktion',label:'⚡ Reaktion'},
+  {id:'sozial',label:'👥 Sozial'},
+  {id:'zahlen',label:'🔢 Zahlen'},
+  {id:'quiz',label:'❓ Quiz'},
+  {id:'kreativ',label:'🎨 Kreativ'},
+  {id:'minigames',label:'🎮 Mini'},
+];
 
 function savePlayers(){localStorage.setItem('ts_players',JSON.stringify(App.players))}
 function loadPlayers(){
@@ -753,6 +896,39 @@ const RULES_DATA={
       </ul>
     `
   },
+  zehntausend:{title:'💯 10.000 – Anleitung',html:`<h3>Ziel</h3><p>Sammle als Erster 10.000 Punkte. Wer am Ende die wenigsten hat, trinkt.</p><h3>Punkte</h3><table><tr><td>1️⃣</td><td>100 Punkte</td></tr><tr><td>5️⃣</td><td>50 Punkte</td></tr><tr><td>3× Einser</td><td>1000 Punkte</td></tr><tr><td>3× gleich (2-6)</td><td>Zahl × 100</td></tr><tr><td>4/5/6× gleich</td><td>Dreierpasch × 2/3/4</td></tr><tr><td>Straight (1-6)</td><td>2000 Punkte</td></tr><tr><td>3 Paare</td><td>1500 Punkte</td></tr></table><h3>Öffnen</h3><p>Erste Runde mind. 1000 Punkte nötig um zu "öffnen".</p><h3>💀 Farkle</h3><p>Kein Punkte-Würfel = alle gesammelten Punkte dieser Runde weg!</p>`},
+  pig:{title:'🐷 Pig – Anleitung',html:`<h3>Ziel</h3><p>Ersten 100 Punkte erreichen. Wer bei Spielende die wenigsten Punkte hat, trinkt.</p><h3>Ablauf</h3><ol><li>Würfle einen Würfel</li><li>Ergebnis zum Runden-Topf addieren</li><li>Würfle erneut oder banke (Punkte sichern)</li></ol><h3>Achtung</h3><p>Eine 1 würfeln = Runden-Topf verloren, nächster Spieler!</p>`},
+  maexchen:{title:'🎭 Mäxchen – Anleitung',html:`<h3>Unterschied zu Meyer</h3><p>Vereinfachte Bluff-Version: Kein "blind Weitergeben". Immer würfeln.</p><h3>Ablauf</h3><ol><li>Würfle (nur du siehst das Ergebnis)</li><li>Sage einen Wert an – muss höher als die vorherige Ansage sein</li><li>Nächster Spieler: Glauben oder Anzweifeln?</li></ol><h3>Auflösung</h3><table><tr><td>Angezweifelt + gelogen</td><td>Ansager trinkt 2×</td></tr><tr><td>Angezweifelt + Wahrheit</td><td>Anzweifler trinkt 2×</td></tr><tr><td>Mäxchen (21) angezweifelt + wahr</td><td>Alle anderen trinken!</td></tr></table>`},
+  liarsdice:{title:"🎯 Liar's Dice – Anleitung",html:`<h3>Ziel</h3><p>Biete auf die Würfel aller Spieler – oder bluff dich durch!</p><h3>Ablauf</h3><ol><li>Jeder würfelt 5 Würfel verdeckt (nur er sieht sie)</li><li>Reihum wird geboten: "Mindestens X Würfel zeigen Zahl Y"</li><li>Jedes Gebot muss höher sein (mehr Würfel oder höhere Zahl)</li><li>Jeder kann "Lüge!" rufen</li></ol><h3>Auflösung nach "Lüge!"</h3><table><tr><td>Gebot war richtig</td><td>Rufer trinkt</td></tr><tr><td>Gebot war falsch</td><td>Bieter trinkt</td></tr></table>`},
+  busfahrer:{title:'🚌 Busfahrer – Anleitung',html:`<h3>Ziel</h3><p>Beantworte 4 Fragen über die nächste Karte korrekt – trinke so wenig wie möglich.</p><h3>Fragen</h3><table><tr><td>1. Karte</td><td>Rot oder Schwarz?</td></tr><tr><td>2. Karte</td><td>Höher oder Tiefer?</td></tr><tr><td>3. Karte</td><td>Innen oder Außen? (Bereich der bisher gesehenen)</td></tr><tr><td>4. Karte</td><td>Welche Farbe? (Herz/Karo/Pik/Kreuz)</td></tr></table><h3>Trinken</h3><p>Jede falsche Antwort = 1 Schluck. Alle 4 richtig = 2 Schlucke verteilen!</p>`},
+  higherower:{title:'📈 Higher or Lower – Anleitung',html:`<h3>Ablauf</h3><ol><li>Karte wird aufgedeckt</li><li>Tippe Höher oder Tiefer für die nächste Karte</li><li>Richtig = Streak erhöht sich</li><li>Falsch = so viele Schlucke wie dein aktueller Streak</li></ol><h3>Sonderfälle</h3><p>Gleiche Zahl = gilt als falsch. Ass zählt sowohl als 1 als auch als 14.</p>`},
+  werbinici:{title:'🎭 Wer bin ich? – Anleitung',html:`<h3>Ablauf</h3><ol><li>Jeder Spieler bekommt heimlich einen Promi/Charakter zugewiesen</li><li>Drehe das Handy damit dein Name auf deiner Stirn erscheint (für andere sichtbar)</li><li>Stelle Ja/Nein-Fragen um herauszufinden wer du bist</li><li>Du hast 10 Fragen pro Runde</li></ol><h3>Trinken</h3><p>Nicht erraten in 10 Fragen = trinken. Erraten = Promi nennen und Drinks verteilen!</p>`},
+  zweiwahrheiten:{title:'🤥 2 Wahrheiten 1 Lüge – Anleitung',html:`<h3>Ablauf</h3><ol><li>Aktueller Spieler gibt 3 Aussagen ein (2 wahr, 1 gelogen)</li><li>Alle anderen stimmen ab: Welche ist die Lüge?</li><li>Auflösung: wer falsch lag trinkt</li></ol><h3>Bonus</h3><p>Wenn alle falsch lagen – der aktuelle Spieler verteilt 2 Schlucke!</p>`},
+  countdown:{title:'⏱ Countdown – Anleitung',html:`<h3>Ablauf</h3><ol><li>Alle Spieler sind bereit</li><li>Ein versteckter Countdown startet (zwischen 5 und 15 Sekunden)</li><li>Wenn der Alarm ertönt: alle tippen sofort auf ihr Feld</li><li>Wer zuletzt tippt, trinkt!</li></ol><p>Sequentiell: Jeder Spieler tippt einzeln – langsamste Reaktionszeit trinkt.</p>`},
+  heissekartoffel:{title:'🥔 Heiße Kartoffel – Anleitung',html:`<h3>Ablauf</h3><ol><li>Timer startet – zufällige Zeit zwischen 5 und 20 Sekunden</li><li>Spieler tippen "Weitergeben" wenn sie das Handy weiterreichen</li><li>Wer das Handy hält wenn der Alarm ertönt, trinkt!</li></ol>`},
+  taprace:{title:'👇 Tap Race – Anleitung',html:`<h3>Ablauf</h3><ol><li>Jeder Spieler tippt 5 Sekunden lang so oft wie möglich auf den Bildschirm</li><li>Reihenfolge: Spieler nach Spieler</li><li>Ergebnis wird gespeichert</li><li>Letzter Platz trinkt!</li></ol>`},
+  schnellsterfinger:{title:'⚡ Schnellster Finger – Anleitung',html:`<h3>Ablauf</h3><ol><li>Jeder Spieler bekommt 3 Reaktions-Tests</li><li>Wenn "JETZT!" erscheint: so schnell wie möglich tippen</li><li>Durchschnittliche Reaktionszeit wird gemessen</li><li>Langsamster Spieler trinkt!</li></ol>`},
+  waterfall:{title:'🌊 Waterfall – Anleitung',html:`<h3>Ablauf</h3><ol><li>Alle Spieler trinken gleichzeitig</li><li>Spieler 1 hört auf wann er will</li><li>Spieler 2 darf erst aufhören wenn Spieler 1 aufgehört hat</li><li>usw. – niemand darf aufhören bevor der Vorgänger aufgehört hat</li></ol>`},
+  gestaendnis:{title:'🤫 Geständnisrunde – Anleitung',html:`<h3>Ablauf</h3><ol><li>Jeder Spieler tippt anonym ein Geständnis</li><li>Geständnisse werden gemischt und vorgelesen</li><li>Alle stimmen ab: von wem ist dieses Geständnis?</li><li>Falsch geraten = trinken</li></ol>`},
+  truthbomb:{title:'💣 Truth Bomb – Anleitung',html:`<h3>Ablauf</h3><ol><li>Eine anonyme Frage über die Gruppe erscheint</li><li>Alle stimmen ab: Wer trifft das zu?</li><li>Meistgenannte Person trinkt</li></ol>`},
+  hottakes:{title:'🌶 Hot Takes – Anleitung',html:`<h3>Ablauf</h3><ol><li>Eine provokante Aussage erscheint</li><li>Jeder stimmt ab: Zustimmen oder Ablehnen</li><li>Die Minderheit trinkt!</li><li>Gleichstand = alle kommen davon</li></ol>`},
+  wahrheitpflicht:{title:'😈 Wahrheit oder Pflicht – Anleitung',html:`<h3>Ablauf</h3><ol><li>Spieler wählt Wahrheit oder Pflicht</li><li>Eine Frage/Aufgabe erscheint</li><li>Verweigern = doppelt trinken</li><li>1× pro Spiel überspringen erlaubt</li></ol>`},
+  flaschendrehen:{title:'🍾 Flaschendrehen – Anleitung',html:`<h3>Ablauf</h3><ol><li>Das Rad dreht sich und zeigt auf einen Spieler</li><li>Dieser Spieler zieht eine Pflicht-Karte</li><li>Pflicht verweigern = trinken</li></ol>`},
+  buzz:{title:'🔢 Buzz – Anleitung',html:`<h3>Ablauf</h3><p>Zählt reihum von 1 aufwärts. Multiples von 7 und Zahlen mit 7 werden mit "BUZZ" ersetzt.</p><h3>Buzz-Zahlen</h3><p>7, 14, 17, 21, 27, 28, 35, 42, 47, 49, 56, 63, 67, 70, 71... → BUZZ!</p><h3>Trinken</h3><p>Falsche Antwort = trinken + Zählung beginnt von vorne.</p>`},
+  fizzbuzz:{title:'🔣 Fizz Buzz – Anleitung',html:`<h3>Regeln</h3><table><tr><td>Vielfaches von 3</td><td>→ "Fizz"</td></tr><tr><td>Vielfaches von 5</td><td>→ "Buzz"</td></tr><tr><td>Vielfaches von 15</td><td>→ "FizzBuzz"</td></tr></table><h3>Trinken</h3><p>Falsche Antwort = trinken + Neustart.</p>`},
+  alphabetspiel:{title:'🔤 Alphabet-Spiel – Anleitung',html:`<h3>Ablauf</h3><ol><li>Kategorie erscheint</li><li>Spieler 1 nennt ein Beispiel mit A, Spieler 2 mit B, usw.</li><li>Timer läuft – wer zu lange zögert oder sich wiederholt, trinkt</li><li>Z: neuer Buchstabe, neue Kategorie</li></ol>`},
+  trinkquiz:{title:'❓ Trink-Quiz – Anleitung',html:`<h3>Ablauf</h3><ol><li>Frage mit 4 Antwortmöglichkeiten erscheint</li><li>Jeder Spieler tippt nacheinander auf seine Antwort</li><li>Falsch = trinken</li><li>Richtig = 1 Schluck verteilen</li></ol><h3>Kategorien</h3><p>Allgemeinwissen, Popkultur, Sport, Geschichte</p>`},
+  geografie:{title:'🌍 Geografie-Runde – Anleitung',html:`<h3>Ablauf</h3><p>Hauptstädte, Länder, Geographie-Fragen.</p><ol><li>Frage erscheint</li><li>Spieler tippen nacheinander</li><li>Falsch = trinken</li></ol>`},
+  promisraten:{title:'⭐ Promis raten – Anleitung',html:`<h3>Ablauf</h3><ol><li>Beschreibung eines Promis erscheint</li><li>Wer den Promi zuerst nennt kann Schlucke verteilen</li><li>Niemand weiß es = alle trinken</li></ol>`},
+  storykette:{title:'📖 Story-Kette – Anleitung',html:`<h3>Ablauf</h3><ol><li>Ein Story-Starter erscheint</li><li>Jeder Spieler fügt einen Satz hinzu</li><li>Wer nichts einfallen lässt oder die Logik bricht, trinkt</li></ol>`},
+  zeichnenraten:{title:'🎨 Zeichnen & Raten – Anleitung',html:`<h3>Ablauf</h3><ol><li>Aktueller Spieler sieht ein Wort</li><li>Er/sie zeichnet es auf dem Bildschirm (andere schauen weg)</li><li>Handy weitergeben: alle raten gleichzeitig</li><li>Wer am längsten braucht/nicht errät, trinkt</li></ol>`},
+  singodertrink:{title:'🎤 Sing oder Trink – Anleitung',html:`<h3>Ablauf</h3><ol><li>Genre/Künstler erscheint</li><li>Aktueller Spieler muss 5 Sekunden lang aus einem passenden Song singen</li><li>Gruppe stimmt ab: OK oder Trinken?</li></ol>`},
+  darewheel:{title:'🎡 Dare Wheel – Anleitung',html:`<h3>Ablauf</h3><ol><li>Rad drehen = zufällige Pflicht erscheint</li><li>Pflicht ausführen oder doppelt trinken</li></ol>`},
+  wachstumsgebot:{title:'🔗 Wachstumsgebot – Anleitung',html:`<h3>Ablauf</h3><ol><li>Spieler 1 nennt eine Aktion: "Alle müssen X"</li><li>Spieler 2 wiederholt alles und fügt hinzu: "…und Y"</li><li>Wer eine Aktion vergisst oder falsch wiederholt, trinkt</li><li>Die Kette wird in der App angezeigt – aber aus dem Gedächtnis aufsagen!</li></ol>`},
+  memoryspiel:{title:'🧠 Memory – Anleitung',html:`<h3>Ablauf</h3><ol><li>16 verdeckte Karten (8 Paare)</li><li>Tippe zwei auf – passen sie? Gewonnen!</li><li>Passen sie nicht? Trinken und Karten umdrehen</li><li>Wer beim Spielende die wenigsten Paare hat, trinkt extra</li></ol>`},
+  simonsays:{title:'🟩 Simon Says – Anleitung',html:`<h3>Ablauf</h3><ol><li>4 farbige Felder leuchten in einer Reihenfolge auf</li><li>Wiederhole die Reihenfolge durch Antippen</li><li>Jede Runde kommt eine Farbe hinzu</li><li>Falsch = trinken und Neustart ab Runde 1</li></ol>`},
+  minesweeper:{title:'💥 Minesweeper – Anleitung',html:`<h3>Ablauf</h3><ol><li>5×5 Gitter, 6 versteckte Minen</li><li>Reihum deckt jeder eine Kachel auf</li><li>Mine getroffen = trinken + Kachel bleibt aufgedeckt</li><li>Alle anderen Kacheln aufdecken = Drinks verteilen!</li></ol>`},
+  bierpong:{title:'🏓 Bierpong Scoreboard – Anleitung',html:`<h3>Ablauf</h3><ol><li>Zwei Teams (A vs B)</li><li>Tippe auf einen Becher wenn er getroffen wurde</li><li>Wer zuerst alle Becher des Gegners versenkt, gewinnt</li><li>Verlierer muss alle verbleibenden Becher trinken</li></ol>`},
   kategorien:{
     title:'💬 Kategorien – Anleitung',
     html:`
@@ -789,26 +965,20 @@ function hideRules(){$('rules-modal').classList.remove('open')}
 //  HOME
 // ═══════════════════════════════════════════
 function renderHome(){
+  const visible=App.catFilter==='all'
+    ?GAME_META
+    :GAME_META.filter(g=>g.cat===App.catFilter);
   $('screen-home').innerHTML=`
     <div class="hdr"><span class="hdr-emoji">🍺</span><span class="hdr-title">Trinkspiele</span></div>
-    <div class="home-hero">
+    <div class="home-hero" style="padding:16px 16px 4px">
       <div class="home-title">Trinkspiele</div>
-      <div class="home-sub">Wähle ein Spiel</div>
     </div>
     <div class="pdisp" id="home-players"></div>
+    <div class="cat-tabs">
+      ${CATS_DEF.map(c=>`<button class="cat-tab${App.catFilter===c.id?' on':''}" onclick="setCat('${c.id}')">${c.label}</button>`).join('')}
+    </div>
     <div class="ggrid">
-      ${[
-        {id:'meyer',ic:'🎲',n:'Meyer',d:'Würfel-Bluff'},
-        {id:'schocken',ic:'🥃',n:'Schocken',d:'Würfel-Wertung'},
-        {id:'kniffel',ic:'🎰',n:'Kniffel',d:'Trink-Yahtzee'},
-        {id:'farkle',ic:'⚡',n:'Farkle',d:'Risiko-Würfel'},
-        {id:'kings',ic:'🃏',n:'Kings',d:'Karten-Regeln'},
-        {id:'nochnie',ic:'🖐',n:'Ich hab nie…',d:'Finger-Spiel',nsfw:true},
-        {id:'mostlikely',ic:'👆',n:'Most Likely',d:'Zeige drauf',nsfw:true},
-        {id:'wyr',ic:'🤔',n:'Would U Rather',d:'Abstimmung',nsfw:true},
-        {id:'wheel',ic:'🌀',n:'Spin the Wheel',d:'Zufalls-Rad'},
-        {id:'kategorien',ic:'💬',n:'Kategorien',d:'Timer-Spiel',nsfw:true},
-      ].map(g=>`<div class="gtile" onclick="go('${g.id}')">
+      ${visible.map(g=>`<div class="gtile" onclick="go('${g.id}')">
         <div class="gi">${g.ic}</div>
         <div class="gn">${g.n}${g.nsfw&&App.nsfw?'<span class="nsfw-badge">18+</span>':''}</div>
         <div class="gd">${g.d}</div>
@@ -817,6 +987,7 @@ function renderHome(){
   `;
   document.getElementById('home-players').innerHTML=App.players.map(p=>`<div class="pchip">${p}</div>`).join('');
 }
+function setCat(id){App.catFilter=id;renderHome()}
 
 // ═══════════════════════════════════════════
 //  SETUP
@@ -2074,6 +2245,1685 @@ GAMES.kategorien=(function(){
 })();
 
 // ═══════════════════════════════════════════
+//  10.000
+// ═══════════════════════════════════════════
+GAMES.zehntausend=(function(){
+  function scoreSet(d){
+    const c={};d.forEach(v=>c[v]=(c[v]||0)+1);
+    if(d.length===6&&[1,2,3,4,5,6].every(v=>c[v]>=1))return{pts:2000,label:'Straight! 2000'};
+    if(d.length===6&&Object.values(c).every(n=>n===2))return{pts:1500,label:'3 Paare! 1500'};
+    let pts=0;
+    Object.keys(c).forEach(v=>{
+      const n=c[v];const num=+v;
+      if(n>=3){const base=num===1?1000:num*100;pts+=base*(n===3?1:n===4?2:n===5?3:4);c[v]=0;}
+    });
+    if(c[1])pts+=c[1]*100;
+    if(c[5])pts+=c[5]*50;
+    return{pts,label:`${pts} Punkte`};
+  }
+  function canScore(d){return scoreSet(d).pts>0}
+  let S={};
+  function render(){
+    const sc=$('screen-zehntausend');let body='';
+    if(S.phase==='start'){
+      body=`<div class="msgbox"><div class="big">💯 10.000</div><div class="sm" style="margin-top:8px">Erste zu 10.000! Mindestens 1000 zum Öffnen nötig.</div></div>
+      <button class="btn btn-p" onclick="GAMES.zehntausend.startRound()">Runde starten ▶</button>`;
+    } else if(S.phase==='roll'){
+      const p=App.players[S.pIdx];const hs=scoreSet(S.heldIdx.map(i=>S.active[i])).pts;
+      body=`<div class="cpb"><div class="cpl">Dran</div><div class="cpn">${p}</div></div>
+      <div class="prow-scroll">${App.players.map((pl,i)=>`<div class="ptag${i===S.pIdx?' on':''}">${pl}: ${S.totals[pl]||0}</div>`).join('')}</div>
+      <div class="bank-strip"><span class="sm">Gehalten: ${hs}</span><span style="font-size:13px;font-weight:800;color:var(--success)">Runde: ${S.roundPts+hs}</span></div>
+      <div class="sm">Tippe zum Festhalten</div>
+      <div class="dice-area" id="zt-dice">${S.active.map((v,i)=>dieSvg(v,S.heldIdx.includes(i),true)).join('')}</div>
+      <div class="ar2">
+        <button class="btn btn-g" onclick="GAMES.zehntausend.bank()" ${S.heldIdx.length===0?'disabled':''}>💰 Kassieren (${S.roundPts+hs})</button>
+        <button class="btn btn-p" onclick="GAMES.zehntausend.reroll()" ${S.heldIdx.length===0?'disabled':''}>🎲 Weiter</button>
+      </div>`;
+    } else if(S.phase==='farkle'){
+      body=`<div class="msgbox"><div style="font-size:48px">💀</div><div class="big dc">FARKLE!</div><div class="mid">${App.players[S.pIdx]} verliert alle Punkte dieser Runde!</div></div>
+      <div class="dice-area">${S.active.map(v=>dieSvg(v,false,true)).join('')}</div>
+      <button class="btn btn-p" onclick="GAMES.zehntausend.nextPlayer()">Weiter ▶</button>`;
+    } else if(S.phase==='roundend'){
+      const sorted=[...App.players].map(p=>({p,t:S.totals[p]||0})).sort((a,b)=>a.t-b.t);
+      const winner=sorted[sorted.length-1];const loser=sorted[0];
+      body=`<div class="big">Runde ${S.round} beendet!</div>
+      <div class="slist">${sorted.reverse().map((e,i)=>`<div class="sitem${i===sorted.length-1?' loser':''}"><div class="sname">${e.p}</div><div class="spts">${e.t}</div></div>`).join('')}</div>
+      <div class="msgbox"><div style="font-size:36px">🍺</div><div class="mid">${winner.t>=10000?`${winner.p} hat 10.000 erreicht! ${loser.p} trinkt!`:`${loser.p} hat am wenigsten – trinkt!`}</div></div>
+      <div class="ar2"><button class="btn btn-s" onclick="GAMES.zehntausend.init()">Neues Spiel</button><button class="btn btn-p" onclick="GAMES.zehntausend.startRound()">Neue Runde ▶</button></div>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">💯</span><span class="hdr-title">10.000</span></div><div class="cnt">${body}</div>`;
+    if(S.phase==='roll'){
+      document.querySelectorAll('#zt-dice .sdie').forEach((el,i)=>{
+        el.addEventListener('click',()=>{const ix=S.heldIdx.indexOf(i);ix>=0?S.heldIdx.splice(ix,1):S.heldIdx.push(i);render();});
+      });
+    }
+  }
+  return{
+    init(){const t={};App.players.forEach(p=>t[p]=0);S={phase:'start',pIdx:0,totals:t,round:0,active:[],heldIdx:[],roundPts:0};render()},
+    startRound(){S.round=(S.round||0)+1;S.pIdx=0;S.roundPts=0;S.active=rollN(6);S.heldIdx=[];S.phase='roll';render();setTimeout(()=>animDice('#zt-dice .sdie'),40)},
+    reroll(){
+      const hd=S.heldIdx.map(i=>S.active[i]);const hs=scoreSet(hd).pts;
+      if(hs===0){toast('Mindestens einen Punkte-Würfel festhalten!');return}
+      S.roundPts+=hs;const rem=S.active.filter((_,i)=>!S.heldIdx.includes(i));
+      S.active=rem.length===0?(toast('🔥 Hot Dice!'),rollN(6)):rollN(rem.length);S.heldIdx=[];
+      if(!canScore(S.active)){S.phase='farkle';S.roundPts=0;}
+      render();setTimeout(()=>animDice('#zt-dice .sdie'),40);
+    },
+    bank(){
+      const p=App.players[S.pIdx];const hd=S.heldIdx.map(i=>S.active[i]);const hs=scoreSet(hd).pts;
+      const total=S.roundPts+hs;
+      if((S.totals[p]||0)===0&&total<1000){toast('Erste Runde: mind. 1000 zum Öffnen!');return}
+      S.totals[p]=(S.totals[p]||0)+total;this.nextPlayer();
+    },
+    nextPlayer(){
+      S.pIdx=(S.pIdx+1)%App.players.length;
+      if(S.pIdx===0){S.phase='roundend';render();return}
+      S.roundPts=0;S.active=rollN(6);S.heldIdx=[];S.phase='roll';render();setTimeout(()=>animDice('#zt-dice .sdie'),40);
+    }
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  PIG
+// ═══════════════════════════════════════════
+GAMES.pig=(function(){
+  let S={};
+  function render(){
+    const sc=$('screen-pig');let body='';
+    const p=App.players[S.pIdx];
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🐷 Pig</div><div class="sm" style="margin-top:8px">Würfle und sammle Punkte.<br>Eine 1 = Runden-Topf verloren!<br>Wer als erstes 100 erreicht gewinnt – letzter trinkt!</div></div>
+      <button class="btn btn-p" onclick="GAMES.pig.start()">Spiel starten ▶</button>`;
+    } else if(S.phase==='roll'){
+      const last=S.lastRoll;
+      body=`<div class="cpb"><div class="cpl">Dran</div><div class="cpn">${p}</div></div>
+      <div class="prow-scroll">${App.players.map((pl,i)=>`<div class="ptag${i===S.pIdx?' on':''}">${pl}: ${S.banked[pl]||0}${i===S.pIdx?` (+${S.pot})`:''}</div>`).join('')}</div>
+      ${last!==null?`<div class="dice-area" id="pig-die">${dieSvg(last)}</div>`:''}
+      <div class="card" style="text-align:center"><span class="sec">Runden-Topf</span><div class="big ac">${S.pot}</div></div>
+      <div class="ar2">
+        <button class="btn btn-g" onclick="GAMES.pig.bank()" ${S.pot===0?'disabled':''}>💰 Banken (${S.pot})</button>
+        <button class="btn btn-p" onclick="GAMES.pig.doRoll()">🎲 Würfeln</button>
+      </div>`;
+    } else if(S.phase==='pig'){
+      body=`<div class="msgbox"><div style="font-size:48px">🐷</div><div class="big dc">EINE 1!</div><div class="mid">${p} verliert ${S.lost} Punkte!</div></div>
+      <div class="dice-area">${dieSvg(1)}</div>
+      <button class="btn btn-p" onclick="GAMES.pig.nextPlayer()">Weiter ▶</button>`;
+    } else if(S.phase==='over'){
+      const sorted=[...App.players].map(pl=>({pl,pts:S.banked[pl]||0})).sort((a,b)=>b.pts-a.pts);
+      body=`<div class="big" style="margin:12px 0">🏁 Spielende!</div>
+      <div class="slist">${sorted.map((e,i)=>`<div class="sitem${i===sorted.length-1?' loser':''}"><div class="sname">${e.pl}</div><div class="spts">${e.pts}</div></div>`).join('')}</div>
+      <div class="msgbox"><div style="font-size:36px">🍺</div><div class="mid">${sorted[sorted.length-1].pl} trinkt!</div></div>
+      <button class="btn btn-p" onclick="GAMES.pig.init()">Neues Spiel ▶</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🐷</span><span class="hdr-title">Pig</span></div><div class="cnt">${body}</div>`;
+    if(S.phase==='roll'&&S.lastRoll!==null)setTimeout(()=>animDice('#pig-die .die'),40);
+  }
+  return{
+    init(){const b={};App.players.forEach(p=>b[p]=0);S={phase:'intro',pIdx:0,banked:b,pot:0,lastRoll:null,lost:0};render()},
+    start(){S.phase='roll';render()},
+    doRoll(){
+      const v=roll();S.lastRoll=v;
+      if(v===1){S.lost=S.pot;S.pot=0;S.phase='pig';}
+      else{S.pot+=v;}
+      render();if(S.phase==='roll')setTimeout(()=>animDice('#pig-die .die'),40);
+    },
+    bank(){
+      const p=App.players[S.pIdx];S.banked[p]=(S.banked[p]||0)+S.pot;
+      if(S.banked[p]>=100){S.phase='over';render();return}
+      this.nextPlayer();
+    },
+    nextPlayer(){
+      S.pot=0;S.lastRoll=null;S.pIdx=(S.pIdx+1)%App.players.length;S.phase='roll';render();
+    }
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  MÄXCHEN
+// ═══════════════════════════════════════════
+GAMES.maexchen=(function(){
+  const RANKS=['31','32','41','42','43','51','52','53','54','61','62','63','64','65','11','22','33','44','55','66','21'];
+  let S={};
+  function dv(d1,d2){const hi=Math.max(d1,d2),lo=Math.min(d1,d2);return hi===2&&lo===1?'21':`${hi}${lo}`}
+  function rk(v){return RANKS.indexOf(v)}
+  function cp(){return App.players[S.idx%App.players.length]}
+  function np(){return App.players[(S.idx+1)%App.players.length]}
+  function render(){
+    const sc=$('screen-maexchen');let body='';
+    if(S.phase==='roll'){
+      const prev=S.lastAnn?`<div class="card"><div class="sec">Vorherige Ansage</div><div class="big ac">${S.lastAnn==='21'?'🏆 Mäxchen':S.lastAnn}</div></div>`:
+        `<div class="msgbox sm">Erste Runde – noch keine Ansage</div>`;
+      body=`${prev}<div class="cpb"><div class="cpl">Jetzt dran</div><div class="cpn">${cp()}</div></div>
+      <button class="btn btn-p" onclick="GAMES.maexchen.doRoll()">🎲 Würfeln & ansehen</button>`;
+    } else if(S.phase==='see'){
+      const real=dv(S.dice[0],S.dice[1]);const minRk=S.lastAnn?rk(S.lastAnn)+1:0;
+      body=`<div class="cpb"><div class="cpl">Dein Ergebnis – nur für dich!</div><div class="cpn">${cp()}</div></div>
+      <div class="dice-area" id="mx-dice">${dieSvg(S.dice[0])} ${dieSvg(S.dice[1])}</div>
+      <div class="sm">Echt: <strong class="ac">${real==='21'?'MÄXCHEN!':real}</strong></div>
+      <div class="sec">Was sagst du an?</div>
+      <div class="agrid">${RANKS.map(v=>{const inv=rk(v)<minRk;const mx=v==='21';
+        return`<button class="abtn${inv?' na':''}${mx?' mxr':''}" onclick="GAMES.maexchen.announce('${v}')" ${inv?'disabled':''}>${mx?'🏆':v}</button>`}).join('')}</div>`;
+    } else if(S.phase==='pass'){
+      body=`<div class="msgbox"><div style="font-size:46px">📱</div><div class="big" style="margin:12px 0">${cp()} sagt: <span class="ac">${S.ann==='21'?'MÄXCHEN!':S.ann}</span></div>
+      <div class="sm">Gib das Handy an <strong>${np()}</strong> weiter</div></div>
+      <button class="btn btn-p" onclick="GAMES.maexchen.ready()">${np()} ist bereit ✓</button>`;
+    } else if(S.phase==='decide'){
+      body=`<div class="cpb"><div class="cpl">Dein Zug</div><div class="cpn">${np()}</div></div>
+      <div class="msgbox"><div class="sm">${cp()} behauptet:</div><div style="font-size:54px;font-weight:900;color:var(--accent)">${S.ann==='21'?'🏆 Mäxchen!':S.ann}</div></div>
+      <div class="ar2"><button class="btn btn-g" onclick="GAMES.maexchen.believe()">✓ Glauben</button><button class="btn btn-d" onclick="GAMES.maexchen.doubt()">✗ Anzweifeln</button></div>`;
+    } else if(S.phase==='reveal'){
+      body=`<div class="msgbox"><div class="big">🎭 Aufdecken!</div></div>
+      <div class="dice-area">${dieSvg(S.dice[0])} ${dieSvg(S.dice[1])}</div>
+      <div class="sm">Echt: <strong class="ac">${dv(S.dice[0],S.dice[1])}</strong></div>
+      <button class="btn btn-d" onclick="GAMES.maexchen.resolve()">Auflösen 🍺</button>`;
+    } else if(S.phase==='result'){
+      body=`<div class="msgbox"><div style="font-size:48px">🍺</div><div class="mid" style="margin:12px 0">${S.msg}</div></div>
+      <button class="btn btn-p" onclick="GAMES.maexchen.next()">Neue Runde ▶</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🎭</span><span class="hdr-title">Mäxchen</span></div><div class="cnt">${body}</div>`;
+    if(S.phase==='see')setTimeout(()=>animDice('#mx-dice .die'),60);
+  }
+  return{
+    init(){S={phase:'roll',idx:0,dice:[1,1],ann:null,lastAnn:null,lastIdx:null};render()},
+    doRoll(){S.dice=rollN(2);S.phase='see';render()},
+    announce(v){if(S.lastAnn&&rk(v)<=rk(S.lastAnn)){toast('Muss höher als '+S.lastAnn+' sein!');return}S.ann=v;S.phase='pass';render()},
+    ready(){S.phase='decide';render()},
+    believe(){S.lastAnn=S.ann;S.lastIdx=S.idx;S.idx=(S.idx+1)%App.players.length;S.phase='roll';render()},
+    doubt(){S.phase='reveal';render()},
+    resolve(){
+      const actual=dv(S.dice[0],S.dice[1]);
+      const ann=App.players[S.lastIdx!==null?S.lastIdx:S.idx];
+      const chal=App.players[(S.lastIdx!==null?S.lastIdx+1:S.idx+1)%App.players.length];
+      const truthful=rk(actual)>=rk(S.ann);
+      const isMx=S.ann==='21'&&truthful;
+      if(isMx){S.msg=`${ann} sagte wirklich Mäxchen! Alle anderen trinken 2×!`;}
+      else if(truthful){S.msg=`${ann} hat die Wahrheit gesagt! ${chal} trinkt 2×!`;}
+      else{S.msg=`${ann} hat gelogen! ${ann} trinkt 2×!`;}
+      S.phase='result';render();
+    },
+    next(){const li=App.players.indexOf(S.loser||null);S={phase:'roll',idx:li>=0?li:0,dice:[1,1],ann:null,lastAnn:null,lastIdx:null};render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  LIAR'S DICE
+// ═══════════════════════════════════════════
+GAMES.liarsdice=(function(){
+  let S={};
+  function totalOf(face,allDice){return allDice.flat().filter(v=>v===face).length}
+  function render(){
+    const sc=$('screen-liarsdice');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🎯 Liar's Dice</div><div class="sm" style="margin-top:8px">Jeder würfelt 5 Würfel verdeckt.<br>Biete auf die Gesamtzahl einer Augenzahl über alle Spieler.<br>Jedes Gebot muss höher sein – oder ruf "Lüge!"</div></div>
+      <button class="btn btn-p" onclick="GAMES.liarsdice.startRoll()">Spiel starten ▶</button>`;
+    } else if(S.phase==='rolling'){
+      const cur=App.players[S.rollIdx];
+      body=`<div class="cpb"><div class="cpl">Jetzt würfelt (verdeckt)</div><div class="cpn">${cur}</div></div>
+      <div class="prow-scroll">${App.players.map((p,i)=>`<div class="ptag${i<S.rollIdx?' on':''}">${i<S.rollIdx?'✓ ':''} ${p}</div>`).join('')}</div>
+      <div class="msgbox sm" style="padding:30px">🎲 Nur ${cur} darf schauen!</div>
+      <button class="btn btn-p" onclick="GAMES.liarsdice.doRoll()">🎲 ${cur} würfeln</button>`;
+    } else if(S.phase==='see'){
+      const dice=S.playerDice[S.rollIdx];
+      body=`<div class="cpb"><div class="cpl">Deine Würfel (nur für dich!)</div><div class="cpn">${App.players[S.rollIdx]}</div></div>
+      <div class="dice-area" id="ld-dice">${dice.map(v=>dieSvg(v,false,true)).join('')}</div>
+      <button class="btn btn-p" onclick="GAMES.liarsdice.confirmRoll()">Gesehen – Handy weitergeben ▶</button>`;
+    } else if(S.phase==='bid'){
+      const cur=App.players[S.bidIdx%App.players.length];const prev=S.bids[S.bids.length-1];
+      const minQ=prev?prev.q:1;const minF=prev?prev.f:1;
+      body=`<div class="cpb"><div class="cpl">Aktuelles Gebot</div><div class="cpn">${prev?`Mind. ${prev.q}× Zahl ${prev.f}`:'Noch kein Gebot'}</div></div>
+      <div class="cpb"><div class="cpl">Jetzt dran</div><div class="cpn">${cur}</div></div>
+      <div class="sec">Neues Gebot:</div>
+      <div class="ar2"><div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+        <div class="sec">Anzahl (mind. ${minQ})</div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button class="btn btn-s" style="width:44px;min-height:44px" onclick="GAMES.liarsdice.adjQ(-1)">−</button>
+          <span style="font-size:24px;font-weight:900;min-width:36px;text-align:center">${S.newQ}</span>
+          <button class="btn btn-s" style="width:44px;min-height:44px" onclick="GAMES.liarsdice.adjQ(1)">+</button>
+        </div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+        <div class="sec">Augenzahl</div>
+        <div class="ar3">${[1,2,3,4,5,6].map(f=>`<button class="btn${f===S.newF?' btn-p':' btn-s'}" style="min-height:44px;padding:8px" onclick="GAMES.liarsdice.setF(${f})">${f}</button>`).join('')}</div>
+        </div></div>
+      <div class="ar2">
+        <button class="btn btn-d" onclick="GAMES.liarsdice.callLie()" ${!prev?'disabled':''}>🚨 Lüge!</button>
+        <button class="btn btn-p" onclick="GAMES.liarsdice.placeBid()">Bieten ▶</button>
+      </div>`;
+    } else if(S.phase==='reveal'){
+      const prev=S.bids[S.bids.length-1];const caller=App.players[(S.bidIdx-1+App.players.length)%App.players.length];
+      const actual=totalOf(prev.f,Object.values(S.playerDice));const correct=actual>=prev.q;
+      body=`<div class="big">🎭 Aufdecken!</div>
+      <div class="ldplayer">${Object.entries(S.playerDice).map(([p,d])=>`<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span style="font-weight:700;min-width:80px">${p}</span><div class="dice-area" style="padding:0;gap:6px">${d.map(v=>dieSvg(v,false,true)).join('')}</div></div>`).join('')}</div>
+      <div class="msgbox"><div class="sm">Gebot: mind. ${prev.q}× Zahl ${prev.f}</div><div class="big">Tatsächlich: <span class="ac">${actual}× ${prev.f}</span></div></div>
+      <div class="msgbox"><div style="font-size:36px">🍺</div><div class="mid">${correct?`Gebot stimmte! ${caller} trinkt!`:`Gebot falsch! ${App.players[(S.bidIdx)%App.players.length]} trinkt!`}</div></div>
+      <button class="btn btn-p" onclick="GAMES.liarsdice.init()">Neues Spiel ▶</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🎯</span><span class="hdr-title">Liar's Dice</span></div><div class="cnt">${body}</div>`;
+    if(S.phase==='see')setTimeout(()=>animDice('#ld-dice .sdie'),60);
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    startRoll(){S={phase:'rolling',rollIdx:0,playerDice:{},bids:[],bidIdx:0,newQ:1,newF:1};render()},
+    doRoll(){S.phase='see';S.playerDice[App.players[S.rollIdx]]=rollN(5);render();setTimeout(()=>animDice('#ld-dice .sdie'),40)},
+    confirmRoll(){
+      S.rollIdx++;
+      if(S.rollIdx>=App.players.length){S.phase='bid';S.bidIdx=0;S.newQ=1;S.newF=1;}
+      else S.phase='rolling';
+      render();
+    },
+    adjQ(d){S.newQ=Math.max(1,S.newQ+d);render()},
+    setF(f){S.newF=f;render()},
+    placeBid(){
+      const prev=S.bids[S.bids.length-1];
+      if(prev){
+        if(S.newQ<prev.q||(S.newQ===prev.q&&S.newF<=prev.f)){toast('Gebot muss höher sein!');return}
+      }
+      S.bids.push({q:S.newQ,f:S.newF,by:App.players[S.bidIdx%App.players.length]});
+      S.bidIdx++;S.newQ=S.bids[S.bids.length-1].q;S.newF=S.bids[S.bids.length-1].f;
+      render();
+    },
+    callLie(){S.phase='reveal';render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  BUSFAHRER
+// ═══════════════════════════════════════════
+GAMES.busfahrer=(function(){
+  const SUITS=['♠','♥','♦','♣'];const VALS=['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
+  const RED=['♥','♦'];
+  function buildDeck(){const d=[];SUITS.forEach(s=>VALS.forEach(v=>d.push({v,s})));return shuffle(d)}
+  function numVal(v){const m={A:1,J:11,Q:12,K:13};return m[v]!==undefined?m[v]:+v}
+  let S={};
+  function qForIdx(i){return['Rot oder Schwarz?','Höher oder Tiefer?','Innen oder Außen?','Welche Farbe?'][i%4]}
+  function render(){
+    const sc=$('screen-busfahrer');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🚌 Busfahrer</div><div class="sm" style="margin-top:8px">Beantworte 4 Fragen – jede falsche Antwort = 1 Schluck.<br>Alle 4 richtig = 2 Schlucke verteilen!</div></div>
+      <button class="btn btn-p" onclick="GAMES.busfahrer.start()">Los geht's ▶</button>`;
+    } else if(S.phase==='question'){
+      const p=App.players[S.pIdx];const q=qForIdx(S.qNum);const shown=S.cards.map((c,i)=>`<div style="display:inline-flex;flex-direction:column;align-items:center;margin:4px"><span style="font-size:28px;font-weight:900;color:${RED.includes(c.s)?'#c00':'#000'}">${c.v}</span><span style="font-size:18px;color:${RED.includes(c.s)?'#c00':'#000'}">${c.s}</span></div>`).join('');
+      let opts=[];
+      if(q==='Rot oder Schwarz?')opts=['🔴 Rot','⚫ Schwarz'];
+      else if(q==='Höher oder Tiefer?')opts=['📈 Höher','📉 Tiefer'];
+      else if(q==='Innen oder Außen?')opts=['↔️ Innen','↕️ Außen'];
+      else opts=['♠ Pik','♥ Herz','♦ Karo','♣ Kreuz'];
+      body=`<div class="cpb"><div class="cpl">Spieler ${S.pIdx+1} von ${App.players.length}</div><div class="cpn">${p}</div></div>
+      <div class="sm" style="margin-bottom:4px">Frage ${(S.qNum%4)+1}/4: <strong>${q}</strong></div>
+      <div class="card" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">${shown||'<span class="muted">Noch keine Karten</span>'}</div>
+      <div class="ar2" style="${opts.length===4?'grid-template-columns:1fr 1fr':''}">${opts.map(o=>`<button class="btn btn-s" onclick="GAMES.busfahrer.answer('${o}')">${o}</button>`).join('')}</div>`;
+    } else if(S.phase==='result'){
+      body=`<div class="msgbox"><div style="font-size:48px">${S.correct?'🎉':'🍺'}</div><div class="big ${S.correct?'gc':'dc'}">${S.correct?'Richtig!':'Falsch!'}</div>
+      <div class="mid" style="margin:10px 0">${S.correct?`Weiter zur nächsten Frage!`:`${App.players[S.pIdx]} trinkt 1 Schluck!`}</div></div>
+      <div class="card" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">${S.cards.map(c=>`<div style="display:inline-flex;flex-direction:column;align-items:center;margin:4px"><span style="font-size:28px;font-weight:900;color:${RED.includes(c.s)?'#c00':'#000'}">${c.v}</span><span style="font-size:18px;color:${RED.includes(c.s)?'#c00':'#000'}">${c.s}</span></div>`).join('')}</div>
+      <button class="btn btn-p" onclick="GAMES.busfahrer.next()">Weiter ▶</button>`;
+    } else if(S.phase==='survived'){
+      body=`<div class="msgbox"><div style="font-size:48px">🎉</div><div class="big gc">${App.players[S.pIdx]} hat überlebt!</div><div class="sm" style="margin-top:8px">2 Schlucke verteilen!</div></div>
+      <button class="btn btn-p" onclick="GAMES.busfahrer.nextPlayer()">Nächster Spieler ▶</button>`;
+    } else if(S.phase==='done'){
+      body=`<div class="msgbox"><div class="big">🚌 Alle durch!</div></div>
+      <button class="btn btn-p" onclick="GAMES.busfahrer.init()">Neues Spiel ▶</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🚌</span><span class="hdr-title">Busfahrer</span></div><div class="cnt">${body}</div>`;
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){S={phase:'question',pIdx:0,qNum:0,cards:[],deck:buildDeck(),mistakes:0,correct:false};render()},
+    answer(opt){
+      const card=S.deck.pop();S.cards.push(card);
+      const nv=numVal(card.v);const isRed=RED.includes(card.s);
+      const prev=S.cards.length>1?numVal(S.cards[S.cards.length-2].v):null;
+      const lo=S.cards.length>1?Math.min(...S.cards.slice(0,-1).map(c=>numVal(c.v))):nv;
+      const hi=S.cards.length>1?Math.max(...S.cards.slice(0,-1).map(c=>numVal(c.v))):nv;
+      let correct=false;
+      const q=qForIdx(S.qNum);
+      if(q==='Rot oder Schwarz?')correct=(opt.includes('Rot')&&isRed)||(opt.includes('Schwarz')&&!isRed);
+      else if(q==='Höher oder Tiefer?')correct=prev===null||(opt.includes('Höher')&&nv>prev)||(opt.includes('Tiefer')&&nv<prev);
+      else if(q==='Innen oder Außen?'){const inside=nv>lo&&nv<hi;correct=(opt.includes('Innen')&&inside)||(opt.includes('Außen')&&!inside);}
+      else correct=card.s===({'♠ Pik':'♠','♥ Herz':'♥','♦ Karo':'♦','♣ Kreuz':'♣'}[opt]||opt.slice(-1));
+      S.correct=correct;if(!correct)S.mistakes++;S.phase='result';render();
+    },
+    next(){
+      S.qNum++;
+      if(S.qNum%4===0){S.phase='survived';}
+      else{S.phase='question';}
+      render();
+    },
+    nextPlayer(){
+      S.pIdx++;
+      if(S.pIdx>=App.players.length){S.phase='done';}
+      else{S.qNum=0;S.cards=[];S.mistakes=0;S.phase='question';}
+      render();
+    }
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  HIGHER OR LOWER
+// ═══════════════════════════════════════════
+GAMES.higherower=(function(){
+  const SUITS=['♠','♥','♦','♣'];const VALS=['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
+  const RED=['♥','♦'];
+  function buildDeck(){const d=[];SUITS.forEach(s=>VALS.forEach(v=>d.push({v,s})));return shuffle(d)}
+  function nv(v){const m={A:1,J:11,Q:12,K:13};return m[v]!==undefined?m[v]:+v}
+  let S={};
+  function render(){
+    const sc=$('screen-higherower');let body='';
+    const c=S.current;const isRed=c&&RED.includes(c.s);
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">📈 Higher or Lower</div><div class="sm" style="margin-top:8px">Richtig = Streak wächst!<br>Falsch = so viele Schlucke wie dein Streak!</div></div>
+      <button class="btn btn-p" onclick="GAMES.higherower.start()">Los geht's ▶</button>`;
+    } else if(S.phase==='play'){
+      body=`<div class="cpb"><div class="cpl">Streak</div><div class="cpn">${S.streak} 🔥</div></div>
+      <div class="pcwrap" style="margin:8px auto">
+        <div class="pcinner flipped"><div class="pcface pcfront"><div class="pcfront-pat">🃏</div></div>
+        <div class="pcface pcback"><div class="cv${isRed?' cr':''}">${c.v}</div><div class="cs${isRed?' cr':''}">${c.s}</div></div></div>
+      </div>
+      <div class="sm">Ist die nächste Karte höher oder niedriger?</div>
+      <div class="ar2">
+        <button class="btn btn-g" onclick="GAMES.higherower.guess('higher')">📈 Höher</button>
+        <button class="btn btn-d" onclick="GAMES.higherower.guess('lower')">📉 Tiefer</button>
+      </div>`;
+    } else if(S.phase==='result'){
+      const nc=S.next;const isRedN=RED.includes(nc.s);
+      body=`<div class="msgbox"><div style="font-size:36px">${S.correct?'✅':'❌'}</div>
+      <div class="big ${S.correct?'gc':'dc'}">${S.correct?'Richtig!':'Falsch!'}</div></div>
+      <div style="display:flex;gap:20px;justify-content:center;align-items:center;padding:16px">
+        <div style="text-align:center"><div class="cv${isRed?' cr':''}" style="font-size:36px;font-weight:900">${c.v}</div><div class="cs${isRed?' cr':''}" style="font-size:24px">${c.s}</div></div>
+        <span style="font-size:24px">→</span>
+        <div style="text-align:center"><div class="cv${isRedN?' cr':''}" style="font-size:36px;font-weight:900">${nc.v}</div><div class="cs${isRedN?' cr':''}" style="font-size:24px">${nc.s}</div></div>
+      </div>
+      ${!S.correct?`<div class="msgbox dc"><div class="mid">😬 ${App.players[S.pIdx]} trinkt ${S.streak} Schluck${S.streak!==1?'e':''}!</div></div>`:''}
+      <button class="btn btn-p" onclick="GAMES.higherower.next()">Weiter ▶</button>`;
+    } else if(S.phase==='done'){
+      body=`<div class="msgbox"><div class="big">🎉 Alle Karten!</div></div><button class="btn btn-p" onclick="GAMES.higherower.init()">Neues Spiel ▶</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">📈</span><span class="hdr-title">Higher or Lower</span></div><div class="cnt">${body}</div>`;
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){S.deck=buildDeck();S.current=S.deck.pop();S.streak=0;S.pIdx=0;S.phase='play';render()},
+    guess(dir){
+      if(!S.deck.length){S.phase='done';render();return}
+      const nc=S.deck.pop();const cv=nv(S.current.v);const nval=nv(nc.v);
+      const correct=(dir==='higher'&&nval>cv)||(dir==='lower'&&nval<cv);
+      S.correct=correct;S.next=nc;
+      if(!correct){S.phase='result';}else{S.streak++;S.phase='result';}
+      render();
+    },
+    next(){
+      if(S.correct){S.current=S.next;S.phase='play';}
+      else{S.streak=0;S.pIdx=(S.pIdx+1)%App.players.length;S.current=S.next;S.phase='play';}
+      render();
+    }
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  WER BIN ICH?
+// ═══════════════════════════════════════════
+GAMES.werbinici=(function(){
+  const CELEBS=shuffle(['Albert Einstein','Marilyn Monroe','Barack Obama','Taylor Swift',
+    'Leonardo da Vinci','Cristiano Ronaldo','Beyoncé','Nelson Mandela','Elon Musk','Steve Jobs',
+    'Lady Gaga','Michael Jordan','Oprah Winfrey','Bill Gates','Rihanna','Angela Merkel',
+    'Harry Potter','Sherlock Holmes','James Bond','Hermione Granger','Batman','Superman',
+    'Elvis Presley','Michael Jackson','Madonna','David Beckham','Lionel Messi','Roger Federer',
+    'Usain Bolt','Serena Williams','Stephen Hawking','Marie Curie','Cleopatra','Napoleon Bonaparte',
+    'Julius Caesar','William Shakespeare','Wolfgang Amadeus Mozart','Ludwig van Beethoven',
+    'Pablo Picasso','Vincent van Gogh','Walt Disney','Sigmund Freud','Charles Darwin','Isaac Newton',
+    'Karl Marx','Frida Kahlo','Mark Zuckerberg','Jeff Bezos','LeBron James','Adele',
+    'Ed Sheeran','Drake','Eminem','Ariana Grande','Justin Bieber','Bruno Mars',
+  ]);
+  let S={};
+  function render(){
+    const sc=$('screen-werbinici');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🎭 Wer bin ich?</div><div class="sm" style="margin-top:8px">Jeder bekommt einen Promi zugewiesen.<br>Stelle Ja/Nein-Fragen um herauszufinden wer du bist.<br>10 Fragen – Nicht erraten = trinken!</div></div>
+      <button class="btn btn-p" onclick="GAMES.werbinici.start()">Spiel starten ▶</button>`;
+    } else if(S.phase==='assign'){
+      const p=App.players[S.pIdx];
+      body=`<div class="msgbox"><div style="font-size:48px">🎭</div><div class="big">${p}</div><div class="sm" style="margin-top:8px">Du bist jetzt eine berühmte Person – <strong>nur du darfst es sehen!</strong></div></div>
+      <button class="btn btn-p" onclick="GAMES.werbinici.reveal()">${p}: Wer bin ich? Zeigen</button>`;
+    } else if(S.phase==='showAssign'){
+      const celeb=S.assignments[App.players[S.pIdx]];
+      body=`<div class="msgbox"><div class="sec">Du bist...</div><div style="font-size:24px;font-weight:900;color:var(--accent);margin:12px 0">${celeb}</div><div class="sm">Merke dir das! Handy mit der Rückseite zur Stirn halten – andere sehen wer du bist.</div></div>
+      <button class="btn btn-p" onclick="GAMES.werbinici.startGuessing()">Fragen starten ▶</button>`;
+    } else if(S.phase==='guess'){
+      const p=App.players[S.pIdx];
+      body=`<div class="cpb"><div class="cpl">Stellt Fragen über</div><div class="cpn">${p}</div></div>
+      <div class="card" style="text-align:center"><div class="sec">Noch ${10-S.qCount} Fragen</div></div>
+      <div class="msgbox sm">Gruppe beantwortet Ja/Nein – ${p} stellt Fragen</div>
+      <div class="ar2" style="grid-template-columns:1fr 1fr 1fr">
+        <button class="btn btn-g" style="font-size:13px" onclick="GAMES.werbinici.useQ()">Frage gestellt</button>
+        <button class="btn btn-p" style="font-size:13px" onclick="GAMES.werbinici.correct()">✓ Erraten!</button>
+        <button class="btn btn-d" style="font-size:13px" onclick="GAMES.werbinici.giveUp()">Aufgeben</button>
+      </div>`;
+    } else if(S.phase==='result'){
+      const p=App.players[S.pIdx];const celeb=S.assignments[p];
+      body=`<div class="msgbox"><div style="font-size:48px">${S.won?'🎉':'🍺'}</div>
+      <div class="big" style="margin:12px 0">${p} war: <span class="ac">${celeb}</span></div>
+      <div class="mid">${S.won?`Richtig erraten! ${p} darf Schlucke verteilen!`:`Nicht erraten – ${p} trinkt!`}</div></div>
+      <button class="btn btn-p" onclick="GAMES.werbinici.nextPlayer()">${S.pIdx<App.players.length-1?'Nächster Spieler ▶':'Spielende 🎉'}</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🎭</span><span class="hdr-title">Wer bin ich?</span></div><div class="cnt">${body}</div>`;
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){
+      const a={};App.players.forEach((p,i)=>a[p]=CELEBS[i%CELEBS.length]);
+      S={phase:'assign',pIdx:0,assignments:a,qCount:0,won:false};render();
+    },
+    reveal(){S.phase='showAssign';render()},
+    startGuessing(){S.phase='guess';S.qCount=0;render()},
+    useQ(){S.qCount++;if(S.qCount>=10){S.won=false;S.phase='result';}render()},
+    correct(){S.won=true;S.phase='result';render()},
+    giveUp(){S.won=false;S.phase='result';render()},
+    nextPlayer(){
+      S.pIdx++;if(S.pIdx>=App.players.length){go('home');return}
+      S.phase='assign';S.qCount=0;render();
+    }
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  2 WAHRHEITEN 1 LÜGE
+// ═══════════════════════════════════════════
+GAMES.zweiwahrheiten=(function(){
+  let S={};
+  function render(){
+    const sc=$('screen-zweiwahrheiten');let body='';
+    const p=App.players[S.pIdx%App.players.length];
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🤥 2 Wahrheiten, 1 Lüge</div><div class="sm" style="margin-top:8px">Jeder gibt 3 Aussagen ein – 2 wahr, 1 gelogen.<br>Alle stimmen ab welche die Lüge ist.<br>Falsch geraten = trinken!</div></div>
+      <button class="btn btn-p" onclick="GAMES.zweiwahrheiten.start()">Spiel starten ▶</button>`;
+    } else if(S.phase==='input'){
+      body=`<div class="cpb"><div class="cpl">Jetzt dran</div><div class="cpn">${p}</div></div>
+      <div class="sm">Gib 3 Aussagen ein – 2 wahr, 1 gelogen. Andere schauen weg!</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        ${[0,1,2].map(i=>`<input class="inp" id="stmt${i}" placeholder="Aussage ${i+1}" oninput="GAMES.zweiwahrheiten.upd()">
+        <div class="ar2">${['Wahr','Lüge'].map(t=>`<button class="pbtn${S.types[i]===t?' sel':''}" onclick="GAMES.zweiwahrheiten.setType(${i},'${t}')">${t}</button>`).join('')}</div>`).join('')}
+      </div>
+      <button class="btn btn-p" id="zwt-confirm" onclick="GAMES.zweiwahrheiten.confirm()" disabled>Weiter ▶</button>`;
+    } else if(S.phase==='vote'){
+      body=`<div class="cpb"><div class="cpl">Welches ist die Lüge von</div><div class="cpn">${p}</div></div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        ${S.stmts.map((st,i)=>`<button class="pbtn${S.votes&&Object.values(S.votes).filter(v=>v===i).length>0?' sel':''}" onclick="GAMES.zweiwahrheiten.vote(${i})" style="text-align:left;padding:14px 12px;font-size:14px;min-height:52px">${i+1}. ${st}</button>`).join('')}
+      </div>
+      <div class="sm">Aktuell: ${App.players.filter(pl=>pl!==p).map(pl=>`${pl}: ${S.votes[pl]!==undefined?'Gestimmt':'…'}`).join(' · ')}</div>
+      <button class="btn btn-p" onclick="GAMES.zweiwahrheiten.reveal()" ${App.players.filter(pl=>pl!==p).every(pl=>S.votes[pl]!==undefined)?'':'disabled'}>Auflösen ▶</button>`;
+    } else if(S.phase==='result'){
+      const lieIdx=S.types.indexOf('Lüge');const correct=App.players.filter(pl=>pl!==p&&S.votes[pl]===lieIdx);const wrong=App.players.filter(pl=>pl!==p&&S.votes[pl]!==lieIdx);
+      body=`<div class="msgbox"><div class="sec">Die Lüge war...</div><div style="font-size:18px;font-weight:800;color:var(--danger);margin:8px 0">${S.stmts[lieIdx]}</div></div>
+      ${correct.length>0?`<div class="msgbox gc">✅ Richtig geraten: <strong>${correct.join(', ')}</strong></div>`:''}
+      ${wrong.length>0?`<div class="msgbox dc">🍺 Falsch geraten – trinken: <strong>${wrong.join(', ')}</strong></div>`:''}
+      ${correct.length===0?`<div class="msgbox"><div class="mid">🎉 Alle falsch – ${p} verteilt 2 Schlucke!</div></div>`:''}
+      <button class="btn btn-p" onclick="GAMES.zweiwahrheiten.next()">${S.pIdx<App.players.length-1?'Nächster Spieler ▶':'Spielende 🎉'}</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🤥</span><span class="hdr-title">2 Wahrheiten, 1 Lüge</span></div><div class="cnt">${body}</div>`;
+    if(S.phase==='input')S.stmts&&S.stmts.forEach((s,i)=>{const el=$(`stmt${i}`);if(el)el.value=s||''});
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){S={phase:'input',pIdx:0,stmts:['','',''],types:[null,null,null],votes:{}};render()},
+    upd(){[0,1,2].forEach(i=>{const el=$(`stmt${i}`);if(el)S.stmts[i]=el.value});const ok=S.stmts.every(s=>s.trim())&&S.types.filter(t=>t==='Lüge').length===1;const btn=$('zwt-confirm');if(btn)btn.disabled=!ok},
+    setType(i,t){
+      if(t==='Lüge')S.types=S.types.map((_,j)=>j===i?'Lüge':(S.types[j]==='Lüge'?null:S.types[j]));
+      else S.types[i]=t;
+      this.upd();render();setTimeout(()=>{[0,1,2].forEach(j=>{const el=$(`stmt${j}`);if(el)el.value=S.stmts[j]||''})},10);
+    },
+    confirm(){[0,1,2].forEach(i=>{const el=$(`stmt${i}`);if(el)S.stmts[i]=el.value});S.phase='vote';S.votes={};render()},
+    vote(i){const voters=App.players.filter(pl=>pl!==App.players[S.pIdx%App.players.length]);const next=voters.find(pl=>S.votes[pl]===undefined);if(next)S.votes[next]=i;render()},
+    reveal(){S.phase='result';render()},
+    next(){S.pIdx++;if(S.pIdx>=App.players.length){go('home');return}S.phase='input';S.stmts=['','',''];S.types=[null,null,null];S.votes={};render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  COUNTDOWN
+// ═══════════════════════════════════════════
+GAMES.countdown=(function(){
+  let S={};let _t=null;
+  function render(){
+    const sc=$('screen-countdown');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">⏱ Countdown</div><div class="sm" style="margin-top:8px">Versteckter Timer startet. Wenn der Alarm ertönt: so schnell wie möglich tippen!<br>Jeder Spieler wird einzeln getestet – Langsamster trinkt!</div></div>
+      <button class="btn btn-p" onclick="GAMES.countdown.startTest()">Test starten ▶</button>`;
+    } else if(S.phase==='waiting'){
+      body=`<div class="cpb"><div class="cpl">Jetzt dran</div><div class="cpn">${App.players[S.pIdx]}</div></div>
+      <div class="react-zone wait" id="react-zone" onclick="GAMES.countdown.tap()"><div style="font-size:48px">👁</div><div class="sm">Warte auf Signal…</div></div>
+      <div class="sm">Tippe so schnell du kannst wenn das Grün erscheint!</div>`;
+    } else if(S.phase==='early'){
+      body=`<div class="react-zone set"><div style="font-size:48px">⛔</div><div class="big dc" style="font-size:22px">Zu früh!</div></div>
+      <div class="msgbox dc mid">${App.players[S.pIdx]} hat zu früh getippt – trinkt 1 Schluck!</div>
+      <button class="btn btn-p" onclick="GAMES.countdown.retry()">Nochmal ▶</button>`;
+    } else if(S.phase==='go'){
+      body=`<div class="react-zone go" id="react-zone" onclick="GAMES.countdown.tap()"><div style="font-size:48px">👇</div><div class="big">JETZT!</div></div>`;
+    } else if(S.phase==='result'){
+      body=`<div class="msgbox"><div class="big">${App.players[S.pIdx]}: <span class="ac">${S.times[App.players[S.pIdx]]}ms</span></div></div>
+      <button class="btn btn-p" onclick="GAMES.countdown.nextPlayer()">${S.pIdx<App.players.length-1?'Nächster Spieler ▶':'Ergebnis ▶'}</button>`;
+    } else if(S.phase==='scores'){
+      const sorted=[...App.players].map(p=>({p,t:S.times[p]||99999})).sort((a,b)=>a.t-b.t);
+      const loser=sorted[sorted.length-1];
+      body=`<div class="slist">${sorted.map((e,i)=>`<div class="sitem${i===sorted.length-1?' loser':''}"><div class="sname">${e.p}</div><div class="spts">${e.t}ms</div></div>`).join('')}</div>
+      <div class="msgbox"><div style="font-size:36px">🍺</div><div class="mid">${loser.p} war am langsamsten – trinkt!</div></div>
+      <button class="btn btn-p" onclick="GAMES.countdown.init()">Neues Spiel ▶</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="()=>{clearTimeout(_t);go('home')}">←</button><span class="hdr-emoji">⏱</span><span class="hdr-title">Countdown</span></div><div class="cnt">${body}</div>`;
+    document.querySelector('#screen-countdown .back-btn').onclick=()=>{clearTimeout(_t);go('home')};
+  }
+  return{
+    init(){clearTimeout(_t);S={phase:'intro',pIdx:0,times:{}};render()},
+    startTest(){S.phase='waiting';S.goTime=null;S.tooEarly=false;render();_t=setTimeout(()=>{S.phase='go';S.goTime=Date.now();render();},2500+Math.random()*9000)},
+    retry(){S.phase='waiting';S.goTime=null;render();_t=setTimeout(()=>{S.phase='go';S.goTime=Date.now();render();},2500+Math.random()*9000)},
+    tap(){
+      clearTimeout(_t);
+      if(S.phase==='waiting'){S.phase='early';render();}
+      else if(S.phase==='go'){const ms=Date.now()-S.goTime;S.times[App.players[S.pIdx]]=ms;S.phase='result';render();}
+    },
+    nextPlayer(){
+      S.pIdx++;
+      if(S.pIdx>=App.players.length){S.phase='scores';render();return}
+      S.phase='waiting';S.goTime=null;render();
+      _t=setTimeout(()=>{S.phase='go';S.goTime=Date.now();render();},2500+Math.random()*9000);
+    }
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  HEISSE KARTOFFEL
+// ═══════════════════════════════════════════
+GAMES.heissekartoffel=(function(){
+  let S={};let _t=null;
+  function render(){
+    const sc=$('screen-heissekartoffel');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🥔 Heiße Kartoffel</div><div class="sm" style="margin-top:8px">Das Handy ist die heiße Kartoffel!<br>Reiche es weiter – wer es hält wenn der Timer endet, trinkt!</div></div>
+      <button class="btn btn-p" onclick="GAMES.heissekartoffel.start()">Timer starten ▶</button>`;
+    } else if(S.phase==='hot'){
+      body=`<div style="text-align:center;padding:20px"><div style="font-size:80px">🥔</div><div class="big" style="margin:8px 0">HEISS!</div><div class="sm">Gib das Handy weiter!</div></div>
+      <button class="btn btn-d" style="font-size:20px;min-height:80px" onclick="GAMES.heissekartoffel.pass()">👋 Weitergeben</button>`;
+    } else if(S.phase==='boom'){
+      body=`<div class="msgbox"><div style="font-size:80px">💥</div><div class="big dc">BOOM!</div><div class="mid" style="margin:12px 0">Wer hält das Handy?<br>Diese Person trinkt!</div></div>
+      <button class="btn btn-p" onclick="GAMES.heissekartoffel.init()">Nochmal ▶</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="()=>{clearTimeout(_t);go('home')}">←</button><span class="hdr-emoji">🥔</span><span class="hdr-title">Heiße Kartoffel</span></div><div class="cnt">${body}</div>`;
+    document.querySelector('#screen-heissekartoffel .back-btn').onclick=()=>{clearTimeout(_t);go('home')};
+  }
+  return{
+    init(){clearTimeout(_t);S={phase:'intro',passes:0};render()},
+    start(){S.phase='hot';render();_t=setTimeout(()=>{clearTimeout(_t);S.phase='boom';render();},5000+Math.random()*15000)},
+    pass(){S.passes++;toast(`🥔 Pass ${S.passes}!`)}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  TAP RACE
+// ═══════════════════════════════════════════
+GAMES.taprace=(function(){
+  let S={};let _t=null;
+  function render(){
+    const sc=$('screen-taprace');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">👇 Tap Race</div><div class="sm" style="margin-top:8px">Jeder Spieler tippt 5 Sekunden so oft wie möglich!<br>Letzter Platz trinkt.</div></div>
+      <button class="btn btn-p" onclick="GAMES.taprace.startNext()">Los geht's ▶</button>`;
+    } else if(S.phase==='ready'){
+      body=`<div class="cpb"><div class="cpl">Bereit?</div><div class="cpn">${App.players[S.pIdx]}</div></div>
+      <button class="btn btn-p" style="min-height:80px;font-size:22px" onclick="GAMES.taprace.go()">🟢 START!</button>`;
+    } else if(S.phase==='tapping'){
+      body=`<div class="cpb"><div class="cpl">${S.timeLeft}s</div><div class="cpn">${App.players[S.pIdx]}</div></div>
+      <div style="font-size:72px;font-weight:900;text-align:center;color:var(--accent);padding:8px">${S.taps}</div>
+      <button class="btn btn-p" style="min-height:120px;font-size:28px" id="tap-btn" onclick="GAMES.taprace.addTap()">👇 TAP!</button>`;
+    } else if(S.phase==='done'){
+      const sorted=[...App.players].map(p=>({p,t:S.scores[p]||0})).sort((a,b)=>a.t-b.t);
+      body=`<div class="slist">${sorted.reverse().map((e,i)=>`<div class="sitem${i===sorted.length-1?' loser':''}"><div class="sname">${e.p}</div><div class="spts">${e.t} Taps</div></div>`).join('')}</div>
+      <div class="msgbox"><div style="font-size:36px">🍺</div><div class="mid">${sorted[sorted.length-1].p} hatte die wenigsten Taps – trinkt!</div></div>
+      <button class="btn btn-p" onclick="GAMES.taprace.init()">Neues Spiel ▶</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="()=>{clearTimeout(_t);go('home')}">←</button><span class="hdr-emoji">👇</span><span class="hdr-title">Tap Race</span></div><div class="cnt">${body}</div>`;
+    document.querySelector('#screen-taprace .back-btn').onclick=()=>{clearTimeout(_t);go('home')};
+  }
+  return{
+    init(){clearTimeout(_t);const sc={};App.players.forEach(p=>sc[p]=0);S={phase:'intro',pIdx:0,scores:sc,taps:0,timeLeft:5};render()},
+    startNext(){S.phase='ready';render()},
+    go(){
+      S.taps=0;S.timeLeft=5;S.phase='tapping';render();
+      _t=setInterval(()=>{S.timeLeft--;const n=$('tap-btn');if(S.timeLeft<=0){clearInterval(_t);S.scores[App.players[S.pIdx]]=S.taps;S.pIdx++;if(S.pIdx>=App.players.length){S.phase='done';}else S.phase='ready';render();}else{const td=document.querySelector('#screen-taprace .cpn');if(td)td.textContent=`${S.timeLeft}s`;}},1000);
+    },
+    addTap(){S.taps++;const el=document.querySelector('#screen-taprace .big');if(el)el.textContent=S.taps}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  SCHNELLSTER FINGER
+// ═══════════════════════════════════════════
+GAMES.schnellsterfinger=(function(){
+  let S={};let _t=null;
+  function render(){
+    const sc=$('screen-schnellsterfinger');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">⚡ Schnellster Finger</div><div class="sm" style="margin-top:8px">3 Runden Reaktionstest pro Spieler.<br>Durchschnittliche Reaktionszeit wird gemessen.<br>Langsamster trinkt!</div></div>
+      <button class="btn btn-p" onclick="GAMES.schnellsterfinger.startNext()">Los geht's ▶</button>`;
+    } else if(S.phase==='ready'){
+      body=`<div class="cpb"><div class="cpl">Runde ${S.round+1}/3</div><div class="cpn">${App.players[S.pIdx]}</div></div>
+      <div class="react-zone wait" onclick="GAMES.schnellsterfinger.tooEarly()"><div style="font-size:48px">👁</div><div class="sm">Warte…</div></div>`;
+    } else if(S.phase==='go'){
+      body=`<div class="cpb"><div class="cpl">Runde ${S.round+1}/3</div><div class="cpn">${App.players[S.pIdx]}</div></div>
+      <div class="react-zone go" onclick="GAMES.schnellsterfinger.tap()"><div style="font-size:48px">⚡</div><div class="big">JETZT!</div></div>`;
+    } else if(S.phase==='roundDone'){
+      const p=App.players[S.pIdx];const avg=Math.round(S.roundTimes.reduce((a,b)=>a+b,0)/S.roundTimes.length);
+      body=`<div class="msgbox"><div class="big">${p}</div><div class="mid">Durchschnitt: <span class="ac">${avg}ms</span></div><div class="sm">${S.roundTimes.map((t,i)=>`R${i+1}: ${t}ms`).join(' · ')}</div></div>
+      <button class="btn btn-p" onclick="GAMES.schnellsterfinger.nextPlayer()">${S.pIdx<App.players.length-1?'Nächster Spieler ▶':'Ergebnis ▶'}</button>`;
+    } else if(S.phase==='scores'){
+      const sorted=[...App.players].map(p=>({p,t:S.avgs[p]||0})).sort((a,b)=>b.t-a.t);
+      body=`<div class="slist">${sorted.map((e,i)=>`<div class="sitem${i===0?' loser':''}"><div class="sname">${e.p}</div><div class="spts">${e.t}ms</div></div>`).join('')}</div>
+      <div class="msgbox"><div style="font-size:36px">🍺</div><div class="mid">${sorted[0].p} war am langsamsten – trinkt!</div></div>
+      <button class="btn btn-p" onclick="GAMES.schnellsterfinger.init()">Neues Spiel ▶</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="()=>{clearTimeout(_t);go('home')}">←</button><span class="hdr-emoji">⚡</span><span class="hdr-title">Schnellster Finger</span></div><div class="cnt">${body}</div>`;
+    document.querySelector('#screen-schnellsterfinger .back-btn').onclick=()=>{clearTimeout(_t);go('home')};
+  }
+  return{
+    init(){clearTimeout(_t);S={phase:'intro',pIdx:0,round:0,roundTimes:[],avgs:{},goTime:null};render()},
+    startNext(){S.round=0;S.roundTimes=[];S.phase='ready';render();_t=setTimeout(()=>{S.phase='go';S.goTime=Date.now();render();},1500+Math.random()*3500)},
+    tooEarly(){if(S.phase!=='ready')return;clearTimeout(_t);toast('Zu früh! +200ms Strafe');S.roundTimes.push(200);if(S.roundTimes.length>=3){S.avgs[App.players[S.pIdx]]=Math.round(S.roundTimes.reduce((a,b)=>a+b,0)/3);S.phase='roundDone';}else{S.round++;S.phase='ready';_t=setTimeout(()=>{S.phase='go';S.goTime=Date.now();render();},1500+Math.random()*3500);}render()},
+    tap(){if(S.phase!=='go')return;clearTimeout(_t);const ms=Date.now()-S.goTime;S.roundTimes.push(ms);S.round++;if(S.roundTimes.length>=3){S.avgs[App.players[S.pIdx]]=Math.round(S.roundTimes.reduce((a,b)=>a+b,0)/3);S.phase='roundDone';}else{S.phase='ready';_t=setTimeout(()=>{S.phase='go';S.goTime=Date.now();render();},1500+Math.random()*3500);}render()},
+    nextPlayer(){S.pIdx++;if(S.pIdx>=App.players.length){S.phase='scores';render();return}S.round=0;S.roundTimes=[];S.phase='ready';render();_t=setTimeout(()=>{S.phase='go';S.goTime=Date.now();render();},1500+Math.random()*3500)}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  WATERFALL
+// ═══════════════════════════════════════════
+GAMES.waterfall=(function(){
+  let S={};
+  function render(){
+    const sc=$('screen-waterfall');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🌊 Waterfall</div><div class="sm" style="margin-top:8px">Alle trinken gleichzeitig!<br>Spieler 1 kann aufhören wann er will.<br>Spieler 2 erst nach Spieler 1 – und so weiter!</div></div>
+      <button class="btn btn-p" onclick="GAMES.waterfall.start()">🍺 LOS!</button>`;
+    } else if(S.phase==='drinking'){
+      body=`<div class="sm" style="margin-bottom:8px">Tippe "Stop" wenn du aufhörst – aber nur wenn der Vorgänger schon gestoppt hat!</div>
+      ${App.players.map((p,i)=>{
+        const stopped=S.stopped[i];const canStop=i===0||(i>0&&S.stopped[i-1]);
+        return`<div class="wf-item${stopped?' stopped':' drinking'}">
+          <div style="font-size:24px">${stopped?'✅':'🍺'}</div>
+          <div class="sname">${p}</div>
+          ${!stopped&&canStop?`<button class="btn btn-d" style="width:auto;min-height:40px;padding:8px 16px" onclick="GAMES.waterfall.stop(${i})">Stop</button>`:
+          (!stopped?'<span class="sm">wartet…</span>':'')}</div>`;
+      }).join('')}`;
+    } else if(S.phase==='done'){
+      body=`<div class="msgbox"><div style="font-size:48px">🎉</div><div class="big">Wasserfall beendet!</div><div class="sm" style="margin-top:8px">Alle haben getrunken!</div></div>
+      <button class="btn btn-p" onclick="GAMES.waterfall.init()">Nochmal ▶</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🌊</span><span class="hdr-title">Waterfall</span></div><div class="cnt">${body}</div>`;
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){S.phase='drinking';S.stopped=App.players.map(()=>false);render()},
+    stop(i){S.stopped[i]=true;if(S.stopped.every(Boolean)){S.phase='done';}render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  GESTÄNDNISRUNDE
+// ═══════════════════════════════════════════
+GAMES.gestaendnis=(function(){
+  const THEMES=['Was ich noch nie erzählt habe…','Das Peinlichste was ich je gemacht habe…','Eine Lüge die ich regelmäßig erzähle…','Ein Geheimnis über diese Runde…','Mein größter Fehler…'];
+  let S={};
+  function render(){
+    const sc=$('screen-gestaendnis');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🤫 Geständnisrunde</div><div class="sm" style="margin-top:8px">Jeder tippt anonym ein Geständnis.<br>Alle raten von wem es stammt.<br>Falsch geraten = trinken!</div></div>
+      <div class="sec">Thema: <span class="ac">${rnd(THEMES)}</span></div>
+      <button class="btn btn-p" onclick="GAMES.gestaendnis.start()">Geständnisse sammeln ▶</button>`;
+    } else if(S.phase==='collect'){
+      const p=App.players[S.cIdx];
+      body=`<div class="cpb"><div class="cpl">Jetzt dran (anonym!)</div><div class="cpn">${p}</div></div>
+      <div class="sm">Andere schauen weg! Tippe dein Geständnis:</div>
+      <textarea class="inp" id="conf-inp" rows="3" placeholder="Ich habe mal…" style="resize:none"></textarea>
+      <button class="btn btn-p" onclick="GAMES.gestaendnis.submitConf()">Einreichen ▶</button>`;
+    } else if(S.phase==='reveal'){
+      const conf=S.confs[S.revIdx];
+      body=`<div class="msgbox"><div class="sec">Geständnis ${S.revIdx+1} von ${S.confs.length}</div>
+      <div class="mid" style="font-size:16px;line-height:1.5">"${conf.text}"</div></div>
+      <div class="sec">Von wem ist dieses Geständnis?</div>
+      <div class="pbgrid">${App.players.map(p=>`<button class="pbtn${S.guess===p?' sel':''}" onclick="GAMES.gestaendnis.guess('${p}')">${p}</button>`).join('')}</div>
+      <button class="btn btn-p" onclick="GAMES.gestaendnis.showAnswer()" ${!S.guess?'disabled':''}>Auflösen ▶</button>`;
+    } else if(S.phase==='answer'){
+      const conf=S.confs[S.revIdx];
+      body=`<div class="msgbox"><div class="sec">Das war von…</div><div class="big ac">${conf.player}</div></div>
+      <div class="${S.guess===conf.player?'msgbox gc':'msgbox dc'}"><div class="mid">${S.guess===conf.player?'✅ Richtig geraten!':'🍺 Falsch! Trinken!'}</div></div>
+      <button class="btn btn-p" onclick="GAMES.gestaendnis.nextConf()">${S.revIdx<S.confs.length-1?'Nächstes Geständnis ▶':'Fertig 🎉'}</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🤫</span><span class="hdr-title">Geständnisrunde</span></div><div class="cnt">${body}</div>`;
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){S={phase:'collect',cIdx:0,confs:[]};render()},
+    submitConf(){const el=$('conf-inp');if(!el||!el.value.trim()){toast('Bitte etwas eingeben!');return}S.confs.push({player:App.players[S.cIdx],text:el.value.trim()});S.cIdx++;if(S.cIdx>=App.players.length){S.confs=shuffle(S.confs);S.revIdx=0;S.phase='reveal';S.guess=null;}render()},
+    guess(p){S.guess=p;render()},
+    showAnswer(){S.phase='answer';render()},
+    nextConf(){S.revIdx++;if(S.revIdx>=S.confs.length){go('home');return}S.phase='reveal';S.guess=null;render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  TRUTH BOMB
+// ═══════════════════════════════════════════
+GAMES.truthbomb=(function(){
+  const QS=['Wer würde bei einer Zombie-Apokalypse zuerst sterben?','Wer würde am ehesten viral auf TikTok gehen?','Wer ist der beste Lügner in der Gruppe?','Wer trinkt heute am meisten?','Wer ist heimlich am romantischsten?','Wer würde am ehesten einen Promi daten wollen?','Wer ist der Mama-Bär der Gruppe?','Wer hat das aufgeräumteste Zimmer?','Wer würde bei The Bachelor als erstes rausfliegen?','Wer ist am ehesten in einer geheimen Beziehung?','Wer gibt am meisten Geld für Unsinniges aus?','Wer kommt morgen früh trotzdem zur Arbeit?','Wer ist am häufigsten auf Social Media?','Wer macht die besten Selfies?','Wer würde im Dschungelcamp am längsten überleben?'];
+  let S={};
+  function render(){
+    const sc=$('screen-truthbomb');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">💣 Truth Bomb</div><div class="sm" style="margin-top:8px">Fragen über die Gruppe erscheinen.<br>Alle stimmen ab – Meistgenannte Person trinkt!</div></div>
+      <button class="btn btn-p" onclick="GAMES.truthbomb.start()">Spiel starten ▶</button>`;
+    } else if(S.phase==='vote'){
+      body=`<div class="msgbox"><div class="sec">Frage ${S.qIdx+1}</div><div class="mid" style="font-size:16px;line-height:1.4">${S.qs[S.qIdx]}</div></div>
+      <div class="sec">Wer trifft das zu?</div>
+      <div class="pbgrid">${App.players.map(p=>`<button class="pbtn${Object.values(S.votes).includes(p)&&Object.keys(S.votes).some(v=>S.votes[v]===p&&!App.players.includes(v))?' sel':''}" onclick="GAMES.truthbomb.vote('${p}')">${p}${Object.values(S.votes).filter(v=>v===p).length>0?` (${Object.values(S.votes).filter(v=>v===p).length})`:''}</button>`).join('')}</div>
+      <div class="sm">${App.players.map(p=>`${p}: ${S.votes[p]?'✓':'…'}`).join(' · ')}</div>
+      <button class="btn btn-p" onclick="GAMES.truthbomb.reveal()" ${App.players.every(p=>S.votes[p])?'':'disabled'}>Auswerten ▶</button>`;
+    } else if(S.phase==='result'){
+      const counts={};App.players.forEach(p=>counts[p]=0);Object.values(S.votes).forEach(p=>{if(counts[p]!==undefined)counts[p]++});
+      const sorted=[...App.players].sort((a,b)=>counts[b]-counts[a]);const winner=sorted[0];
+      body=`<div class="msgbox"><div class="sec">${S.qs[S.qIdx]}</div></div>
+      <div class="slist">${sorted.map((p,i)=>`<div class="sitem${i===0&&counts[p]>0?' winner':''}"><div class="sname">${p}</div><div class="spts">${counts[p]}×</div></div>`).join('')}</div>
+      ${counts[winner]>0?`<div class="msgbox"><div style="font-size:36px">🍺</div><div class="mid">${winner} trinkt ${counts[winner]} Schluck${counts[winner]!==1?'e':''}!</div></div>`:'<div class="msgbox mid">Niemand – alle kommen davon!</div>'}
+      <div class="ar2"><button class="btn btn-s" onclick="GAMES.truthbomb.init()">Ende</button><button class="btn btn-p" onclick="GAMES.truthbomb.next()">${S.qIdx<S.qs.length-1?'Nächste ▶':'Fertig 🎉'}</button></div>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">💣</span><span class="hdr-title">Truth Bomb</span></div><div class="cnt">${body}</div>`;
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){S={phase:'vote',qIdx:0,qs:shuffle([...QS]),votes:{}};render()},
+    vote(p){const voter=App.players.find(pl=>!S.votes[pl]);if(voter)S.votes[voter]=p;render()},
+    reveal(){S.phase='result';render()},
+    next(){S.qIdx++;if(S.qIdx>=S.qs.length){go('home');return}S.phase='vote';S.votes={};render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  HOT TAKES
+// ═══════════════════════════════════════════
+GAMES.hottakes=(function(){
+  const TAKES=shuffle(['Social Media macht uns einsamer als besser vernetzt','Tiere sind bessere Freunde als Menschen','Schule bereitet kaum auf das echte Leben vor','Reichtum macht glücklicher als man zugeben will','Home Office ist produktiver als Büro','Männer weinen zu selten','Hunde sind besser als Katzen','Manchmal ist Lügen besser als die Wahrheit','Alkohol ist gefährlicher als Cannabis','Geburtstage sind überschätzt','Eifersucht ist ein Zeichen von Liebe','Freundschaft zwischen Ex-Paaren ist möglich','Selfies sind eine Form von Narzissmus','Geld ist wichtiger als Liebe','Klimawandel ist wichtiger als Wirtschaftswachstum','Pizza mit Ananas ist akzeptabel','Frühaufsteher sind disziplinierter','Ghosting ist manchmal okay','Social-Media-Detox sollte Pflichtprogramm sein','Reality-TV ist schlechter als sein Ruf']);
+  let S={};
+  function render(){
+    const sc=$('screen-hottakes');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🌶 Hot Takes</div><div class="sm" style="margin-top:8px">Provokante Aussagen erscheinen.<br>Zustimmen oder Ablehnen – Minderheit trinkt!</div></div>
+      <button class="btn btn-p" onclick="GAMES.hottakes.start()">Spiel starten ▶</button>`;
+    } else if(S.phase==='vote'){
+      body=`<div class="msgbox"><div class="sec">Aussage ${S.qIdx+1} von ${TAKES.length}</div><div class="mid" style="font-size:16px;line-height:1.4">"${TAKES[S.qIdx]}"</div></div>
+      <div class="wyr-opts">
+        <div class="wopt wopt-a${S.pvotes&&Object.values(S.pvotes).includes('a')?' voted':''}" onclick="GAMES.hottakes.vote('a')">✅ Zustimmen</div>
+        <div class="wopt wopt-b${S.pvotes&&Object.values(S.pvotes).includes('b')?' voted':''}" onclick="GAMES.hottakes.vote('b')">❌ Ablehnen</div>
+      </div>
+      <div class="sm">${App.players.map(p=>S.pvotes[p]?`<strong>${p}→${S.pvotes[p]==='a'?'✅':'❌'}</strong>`:p).join(' · ')}</div>
+      <button class="btn btn-p" onclick="GAMES.hottakes.reveal()" ${Object.keys(S.pvotes).length>=App.players.length?'':'disabled'}>Auswerten ▶</button>`;
+    } else if(S.phase==='result'){
+      const ca=Object.values(S.pvotes).filter(v=>v==='a').length;const cb=Object.values(S.pvotes).filter(v=>v==='b').length;
+      const min=ca<cb?'a':'b';const minPlayers=Object.keys(S.pvotes).filter(p=>S.pvotes[p]===min);
+      body=`<div class="wyr-opts">
+        <div class="wopt wopt-a"><div>✅ Zustimmen</div><div style="font-size:24px;font-weight:900;margin-top:8px">${ca}×</div></div>
+        <div class="wopt wopt-b"><div>❌ Ablehnen</div><div style="font-size:24px;font-weight:900;margin-top:8px">${cb}×</div></div>
+      </div>
+      ${ca!==cb?`<div class="msgbox"><div style="font-size:36px">🍺</div><div class="mid">Minderheit trinkt: <strong>${minPlayers.join(', ')}</strong></div></div>`:'<div class="msgbox mid">Gleichstand – alle kommen davon!</div>'}
+      <div class="ar2"><button class="btn btn-s" onclick="GAMES.hottakes.back()">← Nochmal</button><button class="btn btn-p" onclick="GAMES.hottakes.next()">${S.qIdx<TAKES.length-1?'Nächste ▶':'Ende 🎉'}</button></div>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🌶</span><span class="hdr-title">Hot Takes</span></div><div class="cnt">${body}</div>`;
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){S={phase:'vote',qIdx:0,pvotes:{}};render()},
+    vote(side){const voter=App.players.find(p=>!S.pvotes[p]);if(!voter)return;S.pvotes[voter]=side;render()},
+    reveal(){S.phase='result';render()},
+    back(){S.phase='vote';S.pvotes={};render()},
+    next(){S.qIdx++;if(S.qIdx>=TAKES.length){go('home');return}S.phase='vote';S.pvotes={};render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  WAHRHEIT ODER PFLICHT
+// ═══════════════════════════════════════════
+GAMES.wahrheitpflicht=(function(){
+  const TRUTHS=['Was ist das Peinlichste das dir je passiert ist?','Wen in dieser Runde würdest du am ehesten daten?','Was ist dein größtes Geheimnis?','Was war dein peinlichster Moment in der Schule?','Welche schlechte Angewohnheit hast du die niemand kennt?','Was ist das Dümmste das du je getan hast?','Hast du je jemanden belogen den du liebst?','Was war dein größter Patzer bei einem Date?','Was ist die peinlichste Musik die du heimlich hörst?','Welche App löschst du wenn jemand auf dein Handy schaut?','Wann hast du zuletzt geweint und warum?','Was ist das Ekelhafteste das du je gegessen hast?','Was ist deine größte Schwäche in einer Beziehung?','Hast du je jemanden in dieser Gruppe hinterrücks schlecht geredet?','Was wäre das Erste was du tun würdest wenn du unsichtbar wärst?','Was ist das Dümmste das du betrunken getan hast?','Wer ist deine heimliche Celeb-Schwärmerei?','Welche Lüge hast du einem Chef oder Lehrer erzählt?','Was ist das Peinlichste auf deinem Handy?','Wenn du eine Person in dieser Runde heiraten müsstest – wen?','Was ist deine größte Fehlinvestition?','Hast du je jemandem den Freund oder die Freundin ausgespannt?','Was wäre das Erste was du tun würdest wenn du 1 Mio. € hättest?','Welche deiner Eigenschaften nervt dich selbst am meisten?','Was ist der gefährlichste Moment deines Lebens?','Welche Eigenschaft bewunderst du heimlich an jemandem in dieser Runde?','Was ist dein größter Irrtum in der Liebe?','Was ist das Teuerste das du je kaputt gemacht hast?','Wen in dieser Gruppe würdest du nicht mit deinen Eltern bekannt machen?','Was ist das Absurdeste worüber du dich je gestritten hast?','Welches Gesetz würdest du gerne brechen wenn es keine Konsequenzen gäbe?','Was ist das Romantischste das du je für jemanden getan hast?','Was ist deine heimlichste Leidenschaft die dich peinlich berührt?','Wen in dieser Runde würdest du aus einem Zombie-Team rauswerfen?','Was ist das Wildeste was du je bei einer Party erlebt hast?','Wie viel Geld hast du ungefähr auf deinem Konto?','Was ist das Uncoolste an dir?','Was hast du zuletzt jemandem gestohlen?','Welchen Rat bereust du am meisten gegeben oder befolgt zu haben?','Was würdest du anders machen wenn du dein Leben neu starten könntest?','Was ist das Peinlichste in deiner Browser-History?','Welches Geheimnis trägst du schon am längsten mit dir?','Was ist die krasseste Sache die du je für Aufmerksamkeit getan hast?','Wen in dieser Runde siehst du am häufigsten auf Social Media?','Was war deine teuerste Dummheit?','Was machst du wenn du allein bist was du niemals zugeben würdest?','Was ist das Mutigste was du je getan hast?','Welchen Film oder welche Serie hast du heimlich 3× gesehen?','Wofür schämst du dich am meisten in deiner Vergangenheit?','Was war die unangenehmste Situation in deinem Leben?'];
+  const DARES=['Mach 10 Liegestütze','Tanz 30 Sekunden zu einem Lied deiner Wahl','Imitiere eine Person im Raum – andere raten wer','Sing die ersten zwei Zeilen von "Bohemian Rhapsody"','Zeig dein Handyfoto von vor 2 Jahren','Trinke dein Glas auf ex','Mach einen Kopfstand (oder versuche es 20 Sek.)','Sag das Alphabet rückwärts so schnell du kannst','Halte 60 Sekunden einen Eiswürfel in der Hand (oder Glas)','Schreib mit deiner nicht-dominanten Hand deinen Namen','Mach 20 Sekunden lang das Geräusch eines Tieres','Erzähl einen schlechten Witz und lach dabei laut','Steh auf und verbeuge dich wie auf einer Bühne','Beschreibe dich selbst in 3 Worten – nur positive','Mach einen "Chicken Dance" für 15 Sekunden','Leg dich 10 Sekunden auf den Boden','Singe "Happy Birthday" für eine Person in der Runde','Mach Tai-Chi für 30 Sekunden (erfundene Bewegungen okay)','Mach 5 Minuten so als wärst du ein Butler','Mach die Geräusche von 5 verschiedenen Tieren in 10 Sekunden','Zeige deine letzten 5 gesendeten Fotos','Schreibe einer Person eine Voice-Message: "Ich denke an dich!"','Imitiere deinen Lieblingsfilm-Charakter für 30 Sekunden','Mach für 2 Minuten keine Vokale beim Sprechen','Stell dich vor einen Spiegel und sag dir selbst 3 echte Komplimente','Erkläre jemandem wie man ein Smartphone benutzt als wäre er aus dem 18. Jh.','Erzähle etwas Wahres über dich das niemand hier weiß','Mach ein Selfie mit der unvorteilhaftesten Grimasse','Mach 3 Minuten so als wärst du in einem Interview','Tausche für 1 Runde Plätze mit der Person die du am wenigsten kennst','Mach Liegestützen bis jemand in der Runde sagt "Stop"','Rate was die Person neben dir als letztes gegoogelt hat','Gib der Person zu deiner Rechten ein aufrichtiges Kompliment','Zeig die älteste Nachricht in deinem Handyspeicher','Sing die Nationalhymne so dramatisch wie möglich','Mach für 2 Minuten nichts – kein Reden, kein Bewegen','Beschreibe dein Leben als Film-Trailer in 30 Sek.','Tu so als würdest du eine Oscar-Rede halten','Zeige deine Google-Maps-Verlauf aus der letzten Woche','Mach einen Witz der mit "Kommt ein Mann in eine Bar…" beginnt','Imitiere eine bekannte Werbung','Singe die Titelmelodie deiner Lieblingsserie','Mach 3 Minuten eine Dokumentarfilm-Stimme über alles was du tust','Erfinde ein neues Wort und erkläre dessen Bedeutung','Tanze wie niemand zuschaut – alle schauen zu','Rate auf wessen Handy die meisten Nachrichten ungelesen sind','Mach 20 Hampelmänner','Erkläre Liebe in maximal 3 Sätzen','Sage jedem in der Runde eine ehrliche Kleinigkeit die dir an ihm auffällt','Mach für 5 Minuten so als hättest du Amnesie'];
+  let S={};
+  function render(){
+    const sc=$('screen-wahrheitpflicht');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">😈 Wahrheit oder Pflicht</div><div class="sm" style="margin-top:8px">Klassiker! Wähle Wahrheit oder Pflicht.<br>Verweigern = doppelt trinken. 1× überspringen erlaubt.</div></div>
+      <button class="btn btn-p" onclick="GAMES.wahrheitpflicht.start()">Spiel starten ▶</button>`;
+    } else if(S.phase==='choose'){
+      const p=App.players[S.pIdx%App.players.length];
+      body=`<div class="cpb"><div class="cpl">Jetzt dran</div><div class="cpn">${p}</div></div>
+      <div class="ar2">
+        <button class="btn btn-p" style="min-height:80px;font-size:20px" onclick="GAMES.wahrheitpflicht.pick('truth')">🗣 Wahrheit</button>
+        <button class="btn btn-d" style="min-height:80px;font-size:20px" onclick="GAMES.wahrheitpflicht.pick('dare')">😈 Pflicht</button>
+      </div>`;
+    } else if(S.phase==='show'){
+      const p=App.players[S.pIdx%App.players.length];
+      body=`<div class="cpb"><div class="cpl">${S.type==='truth'?'🗣 Wahrheit':'😈 Pflicht'}</div><div class="cpn">${p}</div></div>
+      <div class="td-card"><div class="td-type">${S.type==='truth'?'Wahrheit':'Pflicht'}</div><div class="td-text">${S.prompt}</div></div>
+      <div class="ar2">
+        ${!S.skipped?`<button class="btn btn-s" onclick="GAMES.wahrheitpflicht.skip()">⏭ Überspringen (${S.skips} übrig)</button>`:'<div></div>'}
+        <button class="btn btn-d" onclick="GAMES.wahrheitpflicht.refuse()">✗ Verweigern (2× trinken)</button>
+      </div>
+      <button class="btn btn-p" onclick="GAMES.wahrheitpflicht.done()">✓ Erledigt!</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">😈</span><span class="hdr-title">Wahrheit oder Pflicht</span></div><div class="cnt">${body}</div>`;
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){S={phase:'choose',pIdx:0,skips:1,skipped:false,tq:shuffle([...TRUTHS]),dq:shuffle([...DARES])};render()},
+    pick(type){
+      S.type=type;S.skipped=false;
+      S.prompt=type==='truth'?S.tq.pop()||rnd(TRUTHS):S.dq.pop()||rnd(DARES);
+      S.phase='show';render();
+    },
+    skip(){if(S.skips<=0){toast('Keine Übersprünge mehr!');return}S.skips--;S.skipped=true;S.prompt=S.type==='truth'?S.tq.pop()||rnd(TRUTHS):S.dq.pop()||rnd(DARES);render()},
+    refuse(){toast('😬 '+(App.players[S.pIdx%App.players.length])+' trinkt doppelt!');this.next()},
+    done(){this.next()},
+    next(){S.pIdx++;S.phase='choose';render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  FLASCHENDREHEN
+// ═══════════════════════════════════════════
+GAMES.flaschendrehen=(function(){
+  const DARE_LIST=['Trinke einen Schluck','Mache 5 Liegestütze','Erzähle einen Witz','Singe 10 Sekunden','Imitiere eine Person in der Runde','Zeige dein letztes Foto','Wahrheit: Welchen magst du am wenigsten?','Tanze für 15 Sekunden','Ruf jemanden an und sage "Ich liebe dich"','Trinke 2 Schlucke','Mach einen Handstand','Erzähle etwas Peinliches über dich','Spreche für 2 Minuten rückwärts (Sätze rückwärts)','Tausche Plätze mit der Person zu deiner Linken','Gib jemandem ein Kompliment','Alle trinken!','Du trinkst nicht diese Runde','Gib dein Handy für 1 Min. an jemanden weiter','Mach 10 Hampelmänner'];
+  const COLORS=['#6C63FF','#FF6584','#FFD700','#00C896','#FF7043','#29B6F6','#AB47BC','#66BB6A','#F06292','#4DB6AC'];
+  let S={};
+  function render(){
+    const sc=$('screen-flaschendrehen');
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🍾</span><span class="hdr-title">Flaschendrehen</span></div>
+    <div class="cnt">
+      <div class="sm">▼</div>
+      <canvas id="fd-canvas" width="310" height="310"></canvas>
+      <div id="fd-result" class="msgbox mid" style="min-height:56px">${S.result||'Rad drehen für eine Pflicht!'}</div>
+      <button class="btn btn-p" onclick="GAMES.flaschendrehen.spin()" ${S.spinning?'disabled':''}>🍾 Drehen!</button>
+    </div>`;
+    const canvas=$('fd-canvas');if(canvas)drawFD(canvas,S.rot||0);
+    canvas.addEventListener('click',()=>{if(!S.spinning)GAMES.flaschendrehen.spin()});
+  }
+  function drawFD(canvas,rot){
+    const ctx=canvas.getContext('2d');const segs=DARE_LIST.length;const cx=canvas.width/2,cy=canvas.height/2,r=cx-4;
+    const seg=(Math.PI*2)/segs;ctx.clearRect(0,0,canvas.width,canvas.height);
+    DARE_LIST.forEach((d,i)=>{
+      const a0=rot+i*seg,a1=a0+seg;ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,r,a0,a1);ctx.closePath();
+      ctx.fillStyle=COLORS[i%COLORS.length];ctx.fill();ctx.strokeStyle='#0d0d1a';ctx.lineWidth=1.5;ctx.stroke();
+      ctx.save();ctx.translate(cx,cy);ctx.rotate(a0+seg/2);ctx.textAlign='right';ctx.fillStyle='#fff';
+      ctx.font='bold 10px sans-serif';ctx.shadowColor='rgba(0,0,0,.5)';ctx.shadowBlur=2;
+      const lbl=d.length>14?d.slice(0,14)+'…':d;ctx.fillText(lbl,r-8,4);ctx.restore();
+    });
+    ctx.beginPath();ctx.arc(cx,cy,16,0,Math.PI*2);ctx.fillStyle='#0d0d1a';ctx.fill();ctx.strokeStyle='#6C63FF';ctx.lineWidth=3;ctx.stroke();
+  }
+  return{
+    init(){S={rot:0,speed:0,spinning:false,result:null};render()},
+    spin(){
+      if(S.spinning)return;S.spinning=true;S.result=null;S.speed=0.26+Math.random()*0.18;
+      const btn=document.querySelector('#screen-flaschendrehen .btn-p');if(btn){btn.disabled=true;btn.textContent='dreht…'}
+      const resEl=$('fd-result');if(resEl)resEl.textContent='';
+      const animate=()=>{
+        S.rot+=S.speed;S.speed*=0.987;const c=$('fd-canvas');if(c)drawFD(c,S.rot);
+        if(S.speed>0.004){requestAnimationFrame(animate);}
+        else{
+          S.spinning=false;const segs=DARE_LIST.length;const seg=(Math.PI*2)/segs;
+          const ptr=-Math.PI/2;const norm=((ptr-S.rot)%(Math.PI*2)+(Math.PI*2))%(Math.PI*2);
+          S.result=DARE_LIST[Math.floor(norm/seg)%segs];
+          render();
+        }
+      };requestAnimationFrame(animate);
+    }
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  BUZZ
+// ═══════════════════════════════════════════
+GAMES.buzz=(function(){
+  function isBuzz(n){return n%7===0||String(n).includes('7')}
+  let S={};
+  function render(){
+    const sc=$('screen-buzz');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🔢 Buzz</div><div class="sm" style="margin-top:8px">Zählt reihum von 1 aufwärts.<br>Zahlen die ein Vielfaches von 7 sind oder eine 7 enthalten → <strong>"BUZZ!"</strong><br>Falsch = trinken + Neustart!</div></div>
+      <button class="btn btn-p" onclick="GAMES.buzz.start()">Spiel starten ▶</button>`;
+    } else if(S.phase==='play'){
+      const p=App.players[S.pIdx%App.players.length];const next=S.count+1;const nextBuzz=isBuzz(next);
+      body=`<div class="cpb"><div class="cpl">Jetzt dran</div><div class="cpn">${p}</div></div>
+      <div class="buzz-num">${S.count===0?'—':S.count}</div>
+      <div class="card" style="text-align:center"><span class="sm">Nächste Zahl: ${next}</span><br><strong class="${nextBuzz?'dc':''}">${nextBuzz?'→ BUZZ!':'→ '+next}</strong></div>
+      <div class="ar2">
+        <button class="btn btn-g" onclick="GAMES.buzz.say('buzz')">🔔 BUZZ!</button>
+        <button class="btn btn-p" onclick="GAMES.buzz.say('number')">🔢 Zahl sagen</button>
+      </div>
+      <div class="sm">Rekord: ${S.best}</div>`;
+    } else if(S.phase==='wrong'){
+      body=`<div class="msgbox"><div style="font-size:48px">❌</div><div class="big dc">Falsch!</div><div class="mid" style="margin:10px 0">${App.players[(S.pIdx-1+App.players.length)%App.players.length]} trinkt!<br>Neustart bei 1!</div></div>
+      <button class="btn btn-p" onclick="GAMES.buzz.restart()">Weiter ▶</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🔢</span><span class="hdr-title">Buzz</span></div><div class="cnt">${body}</div>`;
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){S={phase:'play',count:0,pIdx:0,best:0};render()},
+    say(type){
+      const next=S.count+1;const shouldBuzz=isBuzz(next);const correct=(type==='buzz'&&shouldBuzz)||(type==='number'&&!shouldBuzz);
+      if(correct){S.count=next;if(S.count>S.best)S.best=S.count;S.pIdx++;S.phase='play';}
+      else{S.phase='wrong';}
+      render();
+    },
+    restart(){S.count=0;S.pIdx++;S.phase='play';render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  FIZZ BUZZ
+// ═══════════════════════════════════════════
+GAMES.fizzbuzz=(function(){
+  function classify(n){const f=n%3===0,b=n%5===0;return f&&b?'fizzbuzz':f?'fizz':b?'buzz':'number'}
+  let S={};
+  function render(){
+    const sc=$('screen-fizzbuzz');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🔣 Fizz Buzz</div><div class="sm" style="margin-top:8px">3 = Fizz · 5 = Buzz · 15 = FizzBuzz · sonst Zahl<br>Falsch = trinken + Neustart!</div></div>
+      <button class="btn btn-p" onclick="GAMES.fizzbuzz.start()">Spiel starten ▶</button>`;
+    } else if(S.phase==='play'){
+      const p=App.players[S.pIdx%App.players.length];const next=S.count+1;const cls=classify(next);
+      body=`<div class="cpb"><div class="cpl">Jetzt dran</div><div class="cpn">${p}</div></div>
+      <div class="buzz-num">${S.count===0?'—':S.count}</div>
+      <div class="card" style="text-align:center"><span class="sm">Nächste Zahl: ${next}</span><br><strong class="ac">→ ${cls==='fizz'?'FIZZ':cls==='buzz'?'BUZZ':cls==='fizzbuzz'?'FIZZBUZZ':next}</strong></div>
+      <div class="ar2" style="grid-template-columns:1fr 1fr">
+        <button class="btn btn-g" onclick="GAMES.fizzbuzz.say('fizz')">🟢 Fizz</button>
+        <button class="btn btn-p" onclick="GAMES.fizzbuzz.say('buzz')">🔵 Buzz</button>
+      </div>
+      <div class="ar2">
+        <button class="btn btn-s" onclick="GAMES.fizzbuzz.say('fizzbuzz')">🟡 FizzBuzz</button>
+        <button class="btn btn-s" onclick="GAMES.fizzbuzz.say('number')">🔢 Zahl</button>
+      </div>`;
+    } else if(S.phase==='wrong'){
+      body=`<div class="msgbox"><div style="font-size:48px">❌</div><div class="big dc">Falsch!</div><div class="mid" style="margin:10px 0">${App.players[(S.pIdx-1+App.players.length)%App.players.length]} trinkt!</div></div>
+      <button class="btn btn-p" onclick="GAMES.fizzbuzz.restart()">Neustart ▶</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🔣</span><span class="hdr-title">Fizz Buzz</span></div><div class="cnt">${body}</div>`;
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){S={phase:'play',count:0,pIdx:0};render()},
+    say(type){const next=S.count+1;const correct=classify(next)===type;if(correct){S.count=next;S.pIdx++;S.phase='play';}else S.phase='wrong';render()},
+    restart(){S.count=0;S.pIdx++;S.phase='play';render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  ALPHABET-SPIEL
+// ═══════════════════════════════════════════
+GAMES.alphabetspiel=(function(){
+  const CATS_A=['Automarken','Berufe','Früchte','Tiere','Länder','Städte','Sportarten','Filme','Vornamen','Lebensmittel','Superhelden','Musikgenres','Getränke'];
+  const ALPHA='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  const TIME_A=8;let S={};let _t=null;
+  function render(){
+    const sc=$('screen-alphabetspiel');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🔤 Alphabet-Spiel</div><div class="sm" style="margin-top:8px">Kategorie + Buchstabe erscheinen.<br>Nenne ein passendes Wort – 8 Sekunden!<br>Zu langsam oder Wiederholung = trinken!</div></div>
+      <button class="btn btn-p" onclick="GAMES.alphabetspiel.start()">Spiel starten ▶</button>`;
+    } else if(S.phase==='show'){
+      const p=App.players[S.pIdx];const pct=S.time/TIME_A;const circ=Math.PI*2*36;
+      body=`<div class="msgbox"><div class="sec">Kategorie</div><div class="big">${S.cats[S.catIdx]}</div><div style="font-size:56px;font-weight:900;color:var(--accent);margin:4px 0">${ALPHA[S.letterIdx]}</div></div>
+      <div class="prow-scroll">${App.players.map((pl,i)=>`<div class="ptag${i===S.pIdx?' on':''}">${pl}</div>`).join('')}</div>
+      <div class="cpb"><div class="cpl">Jetzt dran</div><div class="cpn">${p}</div></div>
+      <div class="tring-wrap"><svg class="tring-svg" width="90" height="90" viewBox="0 0 90 90">
+        <circle class="tring-bg" cx="45" cy="45" r="36"/>
+        <circle class="tring-fill" id="atring" cx="45" cy="45" r="36" stroke-dasharray="${circ}" stroke-dashoffset="${circ*(1-pct)}"/>
+      </svg><div class="tring-num" id="atnum">${S.time}</div></div>
+      <div class="ar2">
+        <button class="btn btn-d" onclick="GAMES.alphabetspiel.fail()">❌ Trinkt!</button>
+        <button class="btn btn-g" onclick="GAMES.alphabetspiel.ok()">✓ Genannt!</button>
+      </div>`;
+    } else if(S.phase==='result'){
+      body=`<div class="msgbox"><div style="font-size:48px">🍺</div><div class="mid" style="margin:12px 0">${S.loser} trinkt!<br>Buchstabe "${ALPHA[S.letterIdx]}" bei "${S.cats[S.catIdx]}"</div></div>
+      <div class="ar2"><button class="btn btn-s" onclick="GAMES.alphabetspiel.init()">Neues Spiel</button><button class="btn btn-p" onclick="GAMES.alphabetspiel.nextLetter()">Nächster Buchstabe ▶</button></div>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="()=>{clearInterval(_t);go('home')}">←</button><span class="hdr-emoji">🔤</span><span class="hdr-title">Alphabet-Spiel</span></div><div class="cnt">${body}</div>`;
+    document.querySelector('#screen-alphabetspiel .back-btn').onclick=()=>{clearInterval(_t);go('home')};
+  }
+  function startTimer(){clearInterval(_t);_t=setInterval(()=>{S.time--;const r=$('atring'),t=$('atnum');if(r)r.style.strokeDashoffset=(Math.PI*2*36)*(1-S.time/TIME_A);if(t)t.textContent=S.time;if(t&&S.time<=3)t.style.color='var(--danger)';if(S.time<=0){clearInterval(_t);S.loser=App.players[S.pIdx];S.phase='result';render();}},1000)}
+  return{
+    init(){clearInterval(_t);S={phase:'intro'};render()},
+    start(){S={phase:'show',pIdx:0,catIdx:0,cats:shuffle([...CATS_A]),letterIdx:0,time:TIME_A,loser:null};render();startTimer()},
+    ok(){clearInterval(_t);S.pIdx=(S.pIdx+1)%App.players.length;S.letterIdx=(S.letterIdx+1)%ALPHA.length;if(S.letterIdx===0)S.catIdx=(S.catIdx+1)%S.cats.length;S.time=TIME_A;render();startTimer()},
+    fail(){clearInterval(_t);S.loser=App.players[S.pIdx];S.phase='result';render()},
+    nextLetter(){S.letterIdx=(S.letterIdx+1)%ALPHA.length;S.pIdx=0;S.time=TIME_A;S.phase='show';render();startTimer()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  TRINK-QUIZ
+// ═══════════════════════════════════════════
+const QUIZ_DB=shuffle([
+  // Allgemeinwissen
+  {q:'Was ist die Hauptstadt von Australien?',o:['Sydney','Melbourne','Canberra','Perth'],a:2,cat:'Allgemeinwissen'},
+  {q:'Wie viele Planeten hat unser Sonnensystem?',o:['7','8','9','10'],a:1,cat:'Allgemeinwissen'},
+  {q:'Wie viele Herzkammern hat der Mensch?',o:['2','3','4','6'],a:2,cat:'Allgemeinwissen'},
+  {q:'Welcher Ozean ist der größte?',o:['Atlantik','Pazifik','Indik','Arktis'],a:1,cat:'Allgemeinwissen'},
+  {q:'Was ist die Hauptstadt von Kanada?',o:['Toronto','Vancouver','Montreal','Ottawa'],a:3,cat:'Allgemeinwissen'},
+  {q:'Wie viele Farben hat ein Regenbogen?',o:['5','6','7','8'],a:2,cat:'Allgemeinwissen'},
+  {q:'Was ist die Hauptstadt von Brasilien?',o:['Rio de Janeiro','São Paulo','Brasília','Salvador'],a:2,cat:'Allgemeinwissen'},
+  {q:'Welches Tier ist das größte der Welt?',o:['Elefant','Blauwal','Weißer Hai','Giraffe'],a:1,cat:'Allgemeinwissen'},
+  {q:'Wie viele Kontinente gibt es?',o:['5','6','7','8'],a:2,cat:'Allgemeinwissen'},
+  {q:'Was ist H₂O?',o:['Wasserstoff','Sauerstoff','Wasser','Salz'],a:2,cat:'Allgemeinwissen'},
+  {q:'Wie viele Sekunden hat eine Stunde?',o:['360','1200','3600','6000'],a:2,cat:'Allgemeinwissen'},
+  {q:'Welches ist das größte Land der Welt?',o:['Kanada','USA','China','Russland'],a:3,cat:'Allgemeinwissen'},
+  {q:'Wie viele Beine hat eine Spinne?',o:['6','8','10','12'],a:1,cat:'Allgemeinwissen'},
+  {q:'Was ist der höchste Berg Deutschlands?',o:['Brocken','Feldberg','Zugspitze','Watzmann'],a:2,cat:'Allgemeinwissen'},
+  {q:'Welche Sprache wird in Brasilien gesprochen?',o:['Spanisch','Portugiesisch','Brasilianisch','Englisch'],a:1,cat:'Allgemeinwissen'},
+  {q:'Was ist der größte Planet im Sonnensystem?',o:['Saturn','Neptun','Jupiter','Uranus'],a:2,cat:'Allgemeinwissen'},
+  {q:'Welche Farbe entsteht wenn man Blau und Gelb mischt?',o:['Orange','Lila','Grün','Braun'],a:2,cat:'Allgemeinwissen'},
+  {q:'Wie viele Zähne hat ein erwachsener Mensch (mit Weisheitszähnen)?',o:['28','30','32','34'],a:2,cat:'Allgemeinwissen'},
+  {q:'Was ist die kleinste Primzahl?',o:['0','1','2','3'],a:2,cat:'Allgemeinwissen'},
+  {q:'Wie viele Knochen hat der menschliche Körper (Erwachsener)?',o:['106','206','306','406'],a:1,cat:'Allgemeinwissen'},
+  {q:'Welches Element hat das chemische Symbol "Au"?',o:['Silber','Kupfer','Gold','Aluminium'],a:2,cat:'Allgemeinwissen'},
+  {q:'Was ist die längste Gebirgsgruppe der Welt?',o:['Himalaya','Rocky Mountains','Alpen','Anden'],a:3,cat:'Allgemeinwissen'},
+  {q:'Wie viele Minuten hat ein Tag?',o:['720','1440','2160','2880'],a:1,cat:'Allgemeinwissen'},
+  {q:'Was ist die Hauptstadt von Österreich?',o:['Salzburg','Graz','Wien','Innsbruck'],a:2,cat:'Allgemeinwissen'},
+  {q:'Welches Organ produziert Insulin?',o:['Leber','Niere','Bauchspeicheldrüse','Milz'],a:2,cat:'Allgemeinwissen'},
+  {q:'Wie viele Seiten hat ein Oktaeder?',o:['6','8','10','12'],a:1,cat:'Allgemeinwissen'},
+  {q:'Welche Stadt heißt auch "Stadt der Liebe"?',o:['Rom','Venedig','Paris','Wien'],a:2,cat:'Allgemeinwissen'},
+  {q:'Wie nennt man die Wissenschaft der Sterne?',o:['Astrologie','Geologie','Astronomie','Kosmologie'],a:2,cat:'Allgemeinwissen'},
+  // Popkultur
+  {q:'In welchem Jahr wurde Facebook gegründet?',o:['2002','2004','2006','2008'],a:1,cat:'Popkultur'},
+  {q:'Welche Band singt "Bohemian Rhapsody"?',o:['The Beatles','Rolling Stones','Queen','Led Zeppelin'],a:2,cat:'Popkultur'},
+  {q:'Welcher Sänger gilt als "King of Pop"?',o:['Elvis Presley','Prince','Michael Jackson','David Bowie'],a:2,cat:'Popkultur'},
+  {q:'In welchem Jahr wurde das iPhone erstmals vorgestellt?',o:['2005','2006','2007','2008'],a:2,cat:'Popkultur'},
+  {q:'Wie heißt die Hauptfigur in "Breaking Bad"?',o:['Jesse Pinkman','Hank Schrader','Walter White','Gus Fring'],a:2,cat:'Popkultur'},
+  {q:'Welche Netflix-Serie spielt in Hawkins, Indiana?',o:['Dark','Stranger Things','The OA','Mindhunter'],a:1,cat:'Popkultur'},
+  {q:'Welcher Film gewann 2020 den Oscar für Bester Film?',o:['1917','Joker','Parasite','Marriage Story'],a:2,cat:'Popkultur'},
+  {q:'Wie heißt Beyoncés Mann?',o:['Kanye West','Drake','Jay-Z','Chris Brown'],a:2,cat:'Popkultur'},
+  {q:'Welche Band ist bekannt für "Smells Like Teen Spirit"?',o:['Pearl Jam','Soundgarden','Nirvana','Alice in Chains'],a:2,cat:'Popkultur'},
+  {q:'In welchem Jahr erschien "The Dark Knight"?',o:['2006','2007','2008','2009'],a:2,cat:'Popkultur'},
+  {q:'Welche Schauspielerin spielt Hermione in Harry Potter?',o:['Keira Knightley','Emma Watson','Natalie Portman','Scarlett Johansson'],a:1,cat:'Popkultur'},
+  {q:'Wie heißt Spidermans bürgerlicher Name?',o:['Bruce Banner','Peter Parker','Clark Kent','Tony Stark'],a:1,cat:'Popkultur'},
+  {q:'Welcher Disney-Film handelt von einem Löwenjungen?',o:['Bambi','Dschungelbuch','König der Löwen','Dumbo'],a:2,cat:'Popkultur'},
+  {q:'In welchem Jahr erschien "Avatar" (Original)?',o:['2007','2008','2009','2010'],a:2,cat:'Popkultur'},
+  {q:'Welche Plattform wurde 2010 gegründet und ist für Fotos bekannt?',o:['Twitter','Snapchat','TikTok','Instagram'],a:3,cat:'Popkultur'},
+  {q:'Wer spielte Iron Man in den Marvel-Filmen?',o:['Chris Evans','Chris Hemsworth','Robert Downey Jr.','Mark Ruffalo'],a:2,cat:'Popkultur'},
+  {q:'Welche Serie dreht sich um eine Mafia in New Jersey?',o:['The Wire','Breaking Bad','Die Sopranos','Boardwalk Empire'],a:2,cat:'Popkultur'},
+  {q:'Welcher Sänger ist bekannt für "Purple Rain"?',o:['James Brown','Prince','Stevie Wonder','Marvin Gaye'],a:1,cat:'Popkultur'},
+  {q:'In welchem Film sagt jemand "Ich bin dein Vater"?',o:['Star Trek','Star Wars','Dune','The Matrix'],a:1,cat:'Popkultur'},
+  {q:'Wie heißt das Unternehmen von Elon Musk das Elektroautos baut?',o:['SpaceX','Rivian','Tesla','Lucid'],a:2,cat:'Popkultur'},
+  {q:'Wer sitzt am Ende von "Game of Thrones" auf dem Eisernen Thron?',o:['Daenerys','Jon Snow','Sansa','Bran Stark'],a:3,cat:'Popkultur'},
+  {q:'Welche Sängerin ist bekannt als "Queen of Pop"?',o:['Britney Spears','Lady Gaga','Madonna','Beyoncé'],a:2,cat:'Popkultur'},
+  {q:'In welchem Jahr erschien das erste iPhone?',o:['2005','2006','2007','2008'],a:2,cat:'Popkultur'},
+  // Sport
+  {q:'Welche Nation hat die meisten Fußball-WM-Titel?',o:['Deutschland','Argentinien','Brasilien','Italien'],a:2,cat:'Sport'},
+  {q:'Wer gewann die Fußball-WM 2022?',o:['Frankreich','Brasilien','Argentinien','England'],a:2,cat:'Sport'},
+  {q:'Wie viele Spieler steht beim Basketball pro Team auf dem Feld?',o:['4','5','6','7'],a:1,cat:'Sport'},
+  {q:'Wie lang ist ein offizielles Schwimmbad (Olympia)?',o:['25m','50m','75m','100m'],a:1,cat:'Sport'},
+  {q:'Was ist die Strecke eines Marathons?',o:['21,1 km','36,4 km','42,195 km','50 km'],a:2,cat:'Sport'},
+  {q:'Wer ist der schnellste Sprinter aller Zeiten über 100m?',o:['Tyson Gay','Yohan Blake','Carl Lewis','Usain Bolt'],a:3,cat:'Sport'},
+  {q:'Wie viele Spieler hat ein Volleyballteam auf dem Feld?',o:['4','5','6','7'],a:2,cat:'Sport'},
+  {q:'Welcher Verein hat die Champions League am häufigsten gewonnen?',o:['Bayern München','FC Barcelona','AC Mailand','Real Madrid'],a:3,cat:'Sport'},
+  {q:'Welcher Sport wird auf einem Eisfeld mit Besen gespielt?',o:['Eishockey','Curling','Eiskunstlauf','Eisstockschießen'],a:1,cat:'Sport'},
+  {q:'Wie viele Goldmedaillen gewann Michael Phelps bei Olympia insgesamt?',o:['18','20','23','25'],a:2,cat:'Sport'},
+  {q:'Wo fanden die Olympischen Sommerspiele 2024 statt?',o:['London','Los Angeles','Tokyo','Paris'],a:3,cat:'Sport'},
+  {q:'In welcher US-Liga spielen die Los Angeles Lakers?',o:['NFL','MLB','NBA','NHL'],a:2,cat:'Sport'},
+  {q:'Wie viele Löcher hat ein reguläres Golfspiel?',o:['9','12','18','24'],a:2,cat:'Sport'},
+  {q:'Wer hat 2023 die Formel 1 Weltmeisterschaft gewonnen?',o:['Lewis Hamilton','Fernando Alonso','Max Verstappen','Charles Leclerc'],a:2,cat:'Sport'},
+  {q:'In welcher Stadt ist Borussia Dortmund beheimatet?',o:['Köln','Dortmund','Bochum','Essen'],a:1,cat:'Sport'},
+  {q:'Wie nennt man beim Golf ein Ergebnis von einem Schlag unter Par?',o:['Eagle','Albatross','Birdie','Bogey'],a:2,cat:'Sport'},
+  // Geschichte
+  {q:'In welchem Jahr fiel die Berliner Mauer?',o:['1987','1989','1991','1993'],a:1,cat:'Geschichte'},
+  {q:'Wer war der erste Mensch im Weltraum?',o:['Neil Armstrong','Buzz Aldrin','Juri Gagarin','Alan Shepard'],a:2,cat:'Geschichte'},
+  {q:'In welchem Jahr begann der Erste Weltkrieg?',o:['1912','1914','1916','1918'],a:1,cat:'Geschichte'},
+  {q:'Wer war der erste Präsident der Vereinigten Staaten?',o:['Thomas Jefferson','Abraham Lincoln','Benjamin Franklin','George Washington'],a:3,cat:'Geschichte'},
+  {q:'In welchem Jahr endete der Zweite Weltkrieg?',o:['1943','1944','1945','1946'],a:2,cat:'Geschichte'},
+  {q:'Wann wurde Deutschland wiedervereinigt?',o:['1988','1989','1990','1991'],a:2,cat:'Geschichte'},
+  {q:'Wer malte die Sixtinische Kapelle?',o:['Leonardo da Vinci','Raffael','Michelangelo','Botticelli'],a:2,cat:'Geschichte'},
+  {q:'In welchem Jahr landete der Mensch erstmals auf dem Mond?',o:['1965','1967','1969','1971'],a:2,cat:'Geschichte'},
+  {q:'Wer entdeckte Amerika 1492?',o:['Amerigo Vespucci','Ferdinand Magellan','Christoph Kolumbus','Vasco da Gama'],a:2,cat:'Geschichte'},
+  {q:'Wie hieß der erste Mensch auf dem Mond?',o:['Buzz Aldrin','Neil Armstrong','Juri Gagarin','Alan Shepard'],a:1,cat:'Geschichte'},
+  {q:'Wann wurde die Französische Revolution ausgerufen?',o:['1776','1789','1799','1803'],a:1,cat:'Geschichte'},
+  {q:'Wer schrieb "Das Kapital"?',o:['Friedrich Engels','Lenin','Karl Marx','Trotzki'],a:2,cat:'Geschichte'},
+  {q:'In welchem Jahr wurde die Sowjetunion aufgelöst?',o:['1989','1990','1991','1992'],a:2,cat:'Geschichte'},
+  {q:'Wer war der erste deutsche Bundeskanzler?',o:['Willy Brandt','Helmut Kohl','Konrad Adenauer','Ludwig Erhard'],a:2,cat:'Geschichte'},
+  {q:'Welche Krankheit wurde durch die WHO 1980 für ausgerottet erklärt?',o:['Pest','Cholera','Pocken','Malaria'],a:2,cat:'Geschichte'},
+  {q:'Welches Reich war das größte in der Geschichte der Menschheit?',o:['Römisches Reich','Britisches Empire','Mongolisches Reich','Osmanisches Reich'],a:2,cat:'Geschichte'},
+  {q:'Welcher König wurde 1793 in Frankreich guillotiniert?',o:['Louis XIV','Louis XV','Ludwig XVI','Napoleon'],a:2,cat:'Geschichte'},
+  {q:'Wer erfand das erste motorisierte Automobil?',o:['Gottlieb Daimler','Henry Ford','Rudolf Diesel','Carl Benz'],a:3,cat:'Geschichte'},
+]);
+
+GAMES.trinkquiz=(function(){
+  let S={};
+  function render(){
+    const sc=$('screen-trinkquiz');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">❓ Trink-Quiz</div><div class="sm" style="margin-top:8px">100+ Fragen. Falsch = trinken. Richtig = 1 Schluck verteilen!</div></div>
+      <div class="sec">Kategorie</div>
+      <div class="ar2" style="grid-template-columns:1fr 1fr">
+        ${['Alle','Allgemeinwissen','Popkultur','Sport','Geschichte'].map(c=>`<button class="pbtn${S.cat===c?' sel':''}" onclick="GAMES.trinkquiz.setCat('${c}')">${c}</button>`).join('')}
+      </div>
+      <button class="btn btn-p" onclick="GAMES.trinkquiz.start()" style="margin-top:8px">Spiel starten ▶</button>`;
+    } else if(S.phase==='question'){
+      const q=S.qs[S.qIdx];const p=App.players[S.pIdx%App.players.length];
+      body=`<div class="cpb"><div class="cpl">Frage ${S.qIdx+1}/${S.qs.length}</div><div class="cpn">${p}</div></div>
+      <span class="qcat-tag">${q.cat}</span>
+      <div class="card mid" style="min-height:80px;display:flex;align-items:center;justify-content:center;font-size:15px;line-height:1.4">${q.q}</div>
+      <div class="quiz-opts">${q.o.map((opt,i)=>`<button class="qopt" id="qopt-${i}" onclick="GAMES.trinkquiz.answer(${i})">${opt}</button>`).join('')}</div>`;
+    } else if(S.phase==='result'){
+      const q=S.qs[S.qIdx];const p=App.players[S.pIdx%App.players.length];
+      body=`<div class="msgbox"><div style="font-size:48px">${S.correct?'✅':'❌'}</div>
+      <div class="big ${S.correct?'gc':'dc'}">${S.correct?'Richtig!':'Falsch!'}</div>
+      <div class="mid" style="margin:8px 0">${S.correct?`${p} darf 1 Schluck verteilen!`:`${p} trinkt 1 Schluck!`}</div>
+      <div class="sm">Richtige Antwort: <strong>${q.o[q.a]}</strong></div></div>
+      <div class="ar2"><button class="btn btn-s" onclick="GAMES.trinkquiz.init()">Ende</button><button class="btn btn-p" onclick="GAMES.trinkquiz.next()">${S.qIdx<S.qs.length-1?'Nächste ▶':'Fertig 🎉'}</button></div>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">❓</span><span class="hdr-title">Trink-Quiz</span></div><div class="cnt">${body}</div>`;
+  }
+  return{
+    init(){S={phase:'intro',cat:'Alle'};render()},
+    setCat(c){S.cat=c;render()},
+    start(){const all=S.cat==='Alle'?QUIZ_DB:QUIZ_DB.filter(q=>q.cat===S.cat);S.qs=shuffle(all).slice(0,20);S.qIdx=0;S.pIdx=0;S.phase='question';render()},
+    answer(i){
+      const q=S.qs[S.qIdx];S.correct=i===q.a;
+      document.querySelectorAll('.qopt').forEach((btn,j)=>{if(j===q.a)btn.classList.add('correct');else if(j===i&&!S.correct)btn.classList.add('wrong')});
+      setTimeout(()=>{S.phase='result';render();},600);
+    },
+    next(){S.qIdx++;S.pIdx++;if(S.qIdx>=S.qs.length){S.phase='intro';render();return}S.phase='question';render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  GEOGRAFIE-RUNDE
+// ═══════════════════════════════════════════
+GAMES.geografie=(function(){
+  const GEO_QS=shuffle(QUIZ_DB.filter(q=>q.cat==='Geschichte'||q.cat==='Allgemeinwissen').concat([
+    {q:'Was ist die Hauptstadt von Japan?',o:['Osaka','Kyoto','Tokio','Hiroshima'],a:2,cat:'Geografie'},
+    {q:'In welchem Land liegt der Nil?',o:['Nigeria','Sudan','Ägypten','Äthiopien'],a:2,cat:'Geografie'},
+    {q:'Was ist die Hauptstadt von Argentinien?',o:['Córdoba','Buenos Aires','Rosario','Mendoza'],a:1,cat:'Geografie'},
+    {q:'Welches Land hat die längste Küstenlinie?',o:['Russland','Australien','Norwegen','Kanada'],a:3,cat:'Geografie'},
+    {q:'In welchem Kontinent liegt Ägypten?',o:['Asien','Naher Osten','Afrika','Nahost'],a:2,cat:'Geografie'},
+    {q:'Was ist die Hauptstadt von Indien?',o:['Mumbai','Kolkata','Chennai','Neu-Delhi'],a:3,cat:'Geografie'},
+    {q:'Wie heißt der längste Fluss der Welt?',o:['Amazonas','Nil','Mississippi','Jangtse'],a:1,cat:'Geografie'},
+    {q:'In welchem Land liegt Machu Picchu?',o:['Bolivien','Chile','Ecuador','Peru'],a:3,cat:'Geografie'},
+    {q:'Was ist die Hauptstadt von Südafrika (Regierungssitz)?',o:['Kapstadt','Durban','Pretoria','Johannesburg'],a:2,cat:'Geografie'},
+    {q:'Welches Meer liegt zwischen Europa und Afrika?',o:['Schwarzes Meer','Rotes Meer','Mittelmeer','Kaspisches Meer'],a:2,cat:'Geografie'},
+  ]));
+  let S={};
+  function render(){
+    const sc=$('screen-geografie');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🌍 Geografie-Runde</div><div class="sm" style="margin-top:8px">Geografie, Hauptstädte und mehr.<br>Falsch = trinken!</div></div>
+      <button class="btn btn-p" onclick="GAMES.geografie.start()">Starten ▶</button>`;
+    } else if(S.phase==='question'){
+      const q=S.qs[S.qIdx];const p=App.players[S.pIdx%App.players.length];
+      body=`<div class="cpb"><div class="cpl">Frage ${S.qIdx+1}/${S.qs.length}</div><div class="cpn">${p}</div></div>
+      <div class="card mid" style="min-height:80px;display:flex;align-items:center;justify-content:center;font-size:15px;line-height:1.4">🌍 ${q.q}</div>
+      <div class="quiz-opts">${q.o.map((opt,i)=>`<button class="qopt" id="gqopt-${i}" onclick="GAMES.geografie.answer(${i})">${opt}</button>`).join('')}</div>`;
+    } else if(S.phase==='result'){
+      const q=S.qs[S.qIdx];const p=App.players[S.pIdx%App.players.length];
+      body=`<div class="msgbox"><div style="font-size:48px">${S.correct?'✅':'❌'}</div><div class="big ${S.correct?'gc':'dc'}">${S.correct?'Richtig!':'Falsch!'}</div>
+      <div class="mid">${S.correct?`${p} verteilt 1 Schluck!`:`${p} trinkt!`}</div>
+      <div class="sm">Richtige Antwort: <strong>${q.o[q.a]}</strong></div></div>
+      <div class="ar2"><button class="btn btn-s" onclick="GAMES.geografie.init()">Ende</button><button class="btn btn-p" onclick="GAMES.geografie.next()">${S.qIdx<S.qs.length-1?'Nächste ▶':'Fertig 🎉'}</button></div>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🌍</span><span class="hdr-title">Geografie-Runde</span></div><div class="cnt">${body}</div>`;
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){S.qs=shuffle(GEO_QS).slice(0,15);S.qIdx=0;S.pIdx=0;S.phase='question';render()},
+    answer(i){const q=S.qs[S.qIdx];S.correct=i===q.a;document.querySelectorAll('.qopt').forEach((b,j)=>{if(j===q.a)b.classList.add('correct');else if(j===i&&!S.correct)b.classList.add('wrong')});setTimeout(()=>{S.phase='result';render();},600)},
+    next(){S.qIdx++;S.pIdx++;if(S.qIdx>=S.qs.length){S.phase='intro';render();return}S.phase='question';render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  PROMIS RATEN
+// ═══════════════════════════════════════════
+GAMES.promisraten=(function(){
+  const PROMIS=shuffle([
+    {name:'Albert Einstein',hints:['Physiker','Relativitätstheorie','Deutsch-amerikanisch','Wilde Haare','Nobelpreis 1921']},
+    {name:'Michael Jackson',hints:['King of Pop','Moonwalk','Thriller','American','Weiße Handschuhe']},
+    {name:'Angela Merkel',hints:['Deutsche Politikerin','Bundeskanzlerin','16 Jahre Kanzlerin','CDU','Physikerin']},
+    {name:'Cristiano Ronaldo',hints:['Fußballer','Portugiese','CR7','Real Madrid & Juventus','5× Ballon d\'Or']},
+    {name:'Taylor Swift',hints:['Sängerin','Country/Pop','Grammy-Rekordhalter','Amerikanerin','Eras Tour']},
+    {name:'Elon Musk',hints:['Unternehmer','Tesla','SpaceX','Twitter/X','Südafrikaner']},
+    {name:'Beyoncé',hints:['Sängerin','Destiny\'s Child','Amerikanerin','Blue Ivy','Renaissance Album']},
+    {name:'Leonardo DiCaprio',hints:['Schauspieler','Titanic','Amerikanerin? Nein – Amerik. Schauspieler','Oscar 2016','Umweltaktivist']},
+    {name:'J.K. Rowling',hints:['Britische Autorin','Harry Potter','Hogwarts','Milliardärin','Schrieb auf Servietten']},
+    {name:'Lionel Messi',hints:['Fußballer','Argentinien','FC Barcelona','WM 2022 gewonnen','Kleines Kind']},
+    {name:'Rihanna',hints:['Sängerin','Barbados','Fenty Beauty','Umbrella','Super Bowl Halftime']},
+    {name:'Obama',hints:['US-Präsident','Demokrat','2008 gewählt','Nobelfriedenspreisträger','Hawaiianer']},
+    {name:'Adele',hints:['Britische Sängerin','Hello','21 Album','Grammy-Gewinnerin','Comeback 2021']},
+    {name:'Roger Federer',hints:['Tennisspieler','Schweizer','Wimbledon-Rekord','20 Grand Slams','Eleganter Spielstil']},
+    {name:'Lady Gaga',hints:['Sängerin','Born This Way','Bizarre Outfits','New Yorkerin','Schauspielerin (A Star is Born)']},
+  ]);
+  let S={};
+  function render(){
+    const sc=$('screen-promisraten');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">⭐ Promis raten</div><div class="sm" style="margin-top:8px">Hinweise erscheinen Schritt für Schritt.<br>Wer den Promi zuerst erkennt, darf Schlucke verteilen!<br>Niemand weiß es = alle trinken.</div></div>
+      <button class="btn btn-p" onclick="GAMES.promisraten.start()">Starten ▶</button>`;
+    } else if(S.phase==='hints'){
+      const p=S.promis[S.idx];const shown=p.hints.slice(0,S.hint+1);
+      body=`<div class="msgbox"><div class="sec">Wer bin ich? (Hinweis ${S.hint+1}/${p.hints.length})</div>
+      ${shown.map((h,i)=>`<div class="mid" style="font-size:${i===S.hint?18:14}px;color:${i===S.hint?'var(--accent)':'var(--muted)'};margin:4px 0">${i===S.hint?'👉':''} ${h}</div>`).join('')}</div>
+      <div class="ar2">
+        ${S.hint<p.hints.length-1?`<button class="btn btn-s" onclick="GAMES.promisraten.moreHint()">💡 Hinweis ${S.hint+2}</button>`:'<div></div>'}
+        <button class="btn btn-p" onclick="GAMES.promisraten.reveal()">Auflösen 👑</button>
+      </div>
+      <div class="sm" style="margin-top:4px">Wer weiß es? Alle Finger hoch!</div>`;
+    } else if(S.phase==='answer'){
+      const p=S.promis[S.idx];
+      body=`<div class="msgbox"><div style="font-size:48px">⭐</div><div class="big ac">${p.name}</div></div>
+      <div class="ar2">
+        <button class="btn btn-g" onclick="GAMES.promisraten.correct()">✓ Jemand wusste es – Schlucke verteilen!</button>
+        <button class="btn btn-d" onclick="GAMES.promisraten.noone()">✗ Niemand wusste es – alle trinken!</button>
+      </div>`;
+    } else if(S.phase==='done'){
+      body=`<div class="msgbox"><div class="big">🎉 Alle Promis geraten!</div></div><button class="btn btn-p" onclick="GAMES.promisraten.init()">Nochmal ▶</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">⭐</span><span class="hdr-title">Promis raten</span></div><div class="cnt">${body}</div>`;
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){S={phase:'hints',promis:shuffle([...PROMIS]),idx:0,hint:0};render()},
+    moreHint(){S.hint++;render()},
+    reveal(){S.phase='answer';render()},
+    correct(){toast('🎉 Schlucke verteilen!');this.next()},
+    noone(){toast('🍺 Alle trinken!');this.next()},
+    next(){S.idx++;if(S.idx>=S.promis.length){S.phase='done';render();return}S.hint=0;S.phase='hints';render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  STORY-KETTE
+// ═══════════════════════════════════════════
+GAMES.storykette=(function(){
+  const STARTERS=['Es war ein regnerischer Dienstagabend als plötzlich…','Der Astronaut öffnete die Luke und sah…','Ich hatte gewusst dass dieser Tag anders sein würde als…','Der Detektiv betrat das verlassene Hotel und fand…','In einer Welt ohne Smartphones begann alles damit dass…','Das Tier sprach zu mir und sagte…','Mitten in der Nacht klingelte das Telefon. Es war…','Die Zeitmaschine landete im falschen Jahrhundert und…','Als ich den Briefkasten öffnete fand ich darin…','Der Politiker betrat die Bühne und sagte nur:…','Unser Urlaub begann normal bis das Flugzeug…','Auf der Party tauchte plötzlich eine Person auf die…','Als wir den Keller betraten roch es nach…','Die Wissenschaftlerin entdeckte etwas das alle Gesetze…','Der Brief begann mit: "Wenn du das liest bin ich bereits…"','Mein Haustier rettete mir das Leben als…','In meinem Traum erschien mir jemand und sagte:…','Das Restaurant hatte eine Speisekarte mit nur einem Gericht:…','Der Zauberer blickte in den Spiegel und sah…','Am ersten Tag auf dem neuen Planeten stellte sich heraus:…'];
+  let S={};
+  function render(){
+    const sc=$('screen-storykette');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">📖 Story-Kette</div><div class="sm" style="margin-top:8px">Jeder Spieler fügt einen Satz hinzu.<br>Kein Satz? Oder brichst du die Logik? Trinken!</div></div>
+      <button class="btn btn-p" onclick="GAMES.storykette.start()">Geschichte starten ▶</button>`;
+    } else if(S.phase==='write'){
+      const p=App.players[S.pIdx%App.players.length];
+      body=`<div class="card" style="max-height:200px;overflow-y:auto">${S.story.map((s,i)=>`<div style="font-size:13px;line-height:1.5;margin-bottom:4px;color:${i===S.story.length-1?'var(--text)':'var(--muted)'}">${s}</div>`).join('')}</div>
+      <div class="cpb"><div class="cpl">Füge einen Satz hinzu</div><div class="cpn">${p}</div></div>
+      <input class="inp" id="story-inp" placeholder="Und dann…" onkeydown="if(event.key==='Enter')GAMES.storykette.addSentence()">
+      <div class="ar2">
+        <button class="btn btn-d" onclick="GAMES.storykette.fail()">✗ Trinkt!</button>
+        <button class="btn btn-p" onclick="GAMES.storykette.addSentence()">✓ Satz hinzufügen</button>
+      </div>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">📖</span><span class="hdr-title">Story-Kette</span></div><div class="cnt">${body}</div>`;
+    if(S.phase==='write')setTimeout(()=>{const el=$('story-inp');if(el)el.focus()},100);
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){S={phase:'write',pIdx:0,story:[rnd(STARTERS)]};render()},
+    addSentence(){const el=$('story-inp');if(!el||!el.value.trim()){toast('Bitte einen Satz eingeben!');return}S.story.push(el.value.trim());S.pIdx++;render()},
+    fail(){toast('🍺 '+App.players[S.pIdx%App.players.length]+' trinkt!');S.pIdx++;render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  ZEICHNEN & RATEN
+// ═══════════════════════════════════════════
+GAMES.zeichnenraten=(function(){
+  const WORDS=shuffle(['Apfel','Hund','Katze','Fahrrad','Haus','Baum','Blume','Auto','Schiff','Flugzeug','Brille','Gitarre','Fußball','Pizza','Kaffee','Computer','Handy','Regenschirm','Krone','Schloss','Vulkan','Regenbogen','Rakete','Roboter','Dinosaurier','Pinguin','Kaktus','Glühbirne','Uhr','Kompass','Leuchtturm','Drache','Einhorn','Seepferdchen','Trompete','Karotte','Iglu','Pyramide','Lokomotive','Ballerina','Magnet','Sternschnuppe','Kristall','Anker']);
+  let S={};let drawing=false;let lastX=0,lastY=0;
+  function render(){
+    const sc=$('screen-zeichnenraten');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🎨 Zeichnen & Raten</div><div class="sm" style="margin-top:8px">Aktueller Spieler zeichnet ein Wort.<br>Alle anderen raten.<br>Letzter der rät – trinkt!</div></div>
+      <button class="btn btn-p" onclick="GAMES.zeichnenraten.start()">Spiel starten ▶</button>`;
+    } else if(S.phase==='showWord'){
+      const p=App.players[S.pIdx%App.players.length];
+      body=`<div class="cpb"><div class="cpl">Zeichner</div><div class="cpn">${p}</div></div>
+      <div class="msgbox"><div class="sm">Nur ${p} darf schauen!</div><div style="font-size:36px;font-weight:900;color:var(--accent);margin:12px 0">${S.word}</div><div class="sm">Einprägen, dann Handy weitergeben!</div></div>
+      <button class="btn btn-p" onclick="GAMES.zeichnenraten.startDraw()">Zeichnen starten ▶</button>`;
+    } else if(S.phase==='draw'){
+      body=`<div class="sm" style="margin-bottom:4px">Alle raten was gezeichnet wird!</div>
+      <canvas id="draw-canvas" width="390" height="260"></canvas>
+      <div class="ar3" style="margin-top:6px">
+        <button class="btn btn-s" style="font-size:11px" onclick="GAMES.zeichnenraten.clearCanvas()">🗑 Löschen</button>
+        <button class="btn btn-d" style="font-size:11px" onclick="GAMES.zeichnenraten.reveal()">👁 Auflösen</button>
+        <button class="btn btn-g" style="font-size:11px" onclick="GAMES.zeichnenraten.correct()">✓ Erraten!</button>
+      </div>`;
+    } else if(S.phase==='result'){
+      const p=App.players[S.pIdx%App.players.length];
+      body=`<div class="msgbox"><div style="font-size:48px">🎨</div><div class="big ac">${S.word}</div></div>
+      <div class="ar2"><button class="btn btn-s" onclick="GAMES.zeichnenraten.init()">Ende</button><button class="btn btn-p" onclick="GAMES.zeichnenraten.next()">Nächster Spieler ▶</button></div>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🎨</span><span class="hdr-title">Zeichnen & Raten</span></div><div class="cnt">${body}</div>`;
+    if(S.phase==='draw')setupCanvas();
+  }
+  function setupCanvas(){
+    const c=$('draw-canvas');if(!c)return;
+    const ctx=c.getContext('2d');ctx.strokeStyle='#1a1a2e';ctx.lineWidth=3;ctx.lineCap='round';ctx.lineJoin='round';
+    function pos(e){const r=c.getBoundingClientRect();const t=e.touches?e.touches[0]:e;return[(t.clientX-r.left)*(c.width/r.width),(t.clientY-r.top)*(c.height/r.height)]}
+    function start(e){e.preventDefault();drawing=true;[lastX,lastY]=pos(e)}
+    function move(e){e.preventDefault();if(!drawing)return;const[x,y]=pos(e);ctx.beginPath();ctx.moveTo(lastX,lastY);ctx.lineTo(x,y);ctx.stroke();[lastX,lastY]=[x,y]}
+    function end(){drawing=false}
+    c.addEventListener('mousedown',start);c.addEventListener('mousemove',move);c.addEventListener('mouseup',end);
+    c.addEventListener('touchstart',start,{passive:false});c.addEventListener('touchmove',move,{passive:false});c.addEventListener('touchend',end);
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){S={phase:'showWord',pIdx:0,word:S.wordQueue?.()||rnd(WORDS),wordQueue:shuffle([...WORDS])};if(!S.wordQueue)S.wordQueue=shuffle([...WORDS]);S.word=S.wordQueue.pop();render()},
+    startDraw(){S.phase='draw';render()},
+    clearCanvas(){const c=$('draw-canvas');if(c)c.getContext('2d').clearRect(0,0,c.width,c.height)},
+    reveal(){toast('Das Wort war: '+S.word);S.phase='result';render()},
+    correct(){toast('🎉 Richtig erraten!');S.phase='result';render()},
+    next(){S.pIdx++;if(!S.wordQueue||!S.wordQueue.length)S.wordQueue=shuffle([...WORDS]);S.word=S.wordQueue.pop();S.phase='showWord';render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  SING ODER TRINK
+// ═══════════════════════════════════════════
+GAMES.singodertrink=(function(){
+  const CARDS=['Singe einen Sommerhit aus den 90ern','Singe die Nationalhymne','Singe etwas von Taylor Swift','Singe einen Weihnachtssong','Singe ein Lied aus einem Disney-Film','Singe einen bekannten Rap-Vers','Singe etwas von einem deutschen Künstler','Singe einen Lovesong','Singe ein Partylied','Singe die Titelmelodie einer bekannten Serie','Singe etwas von Queen','Singe einen Song der heute in den Charts ist','Singe einen 80er-Hit','Singe etwas von Rammstein (oder einem anderen Deutschen)','Singe einen Klassiker von Michael Jackson','Singe ein Volkslied','Singe irgendeinen Song mit einem Farbnamen darin','Singe ein Lied über Alkohol','Singe 10 Sekunden von deinem Lieblingssong','Singe einen Eurovision-Song'];
+  let S={};
+  function render(){
+    const sc=$('screen-singodertrink');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🎤 Sing oder Trink</div><div class="sm" style="margin-top:8px">Eine Aufgabe erscheint.<br>Sing oder trink!</div></div>
+      <button class="btn btn-p" onclick="GAMES.singodertrink.start()">Spiel starten ▶</button>`;
+    } else if(S.phase==='show'){
+      const p=App.players[S.pIdx%App.players.length];
+      body=`<div class="cpb"><div class="cpl">Jetzt singt</div><div class="cpn">${p}</div></div>
+      <div class="td-card"><div class="td-type">🎤 Aufgabe</div><div class="td-text">${S.cards[S.cIdx]}</div></div>
+      <div class="sm">Mindestens 5 Sekunden singen. Gruppe entscheidet!</div>
+      <div class="ar2">
+        <button class="btn btn-d" onclick="GAMES.singodertrink.fail()">🍺 Trinkt!</button>
+        <button class="btn btn-g" onclick="GAMES.singodertrink.pass()">✓ Bestanden!</button>
+      </div>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🎤</span><span class="hdr-title">Sing oder Trink</span></div><div class="cnt">${body}</div>`;
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){S={phase:'show',pIdx:0,cIdx:0,cards:shuffle([...CARDS])};render()},
+    fail(){toast('🍺 '+App.players[S.pIdx%App.players.length]+' trinkt!');this.next()},
+    pass(){toast('✓ Bestanden!');this.next()},
+    next(){S.pIdx++;S.cIdx=(S.cIdx+1)%S.cards.length;S.phase='show';render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  DARE WHEEL
+// ═══════════════════════════════════════════
+GAMES.darewheel=(function(){
+  const DARES_W=['10 Liegestütze','Trink 2 Schlucke','Tanz 30 Sek.','Ruf jemanden an!','Zeig letztes Foto','Imitiere jemanden','Sing 10 Sek.','Sag A-Z rückwärts','Sitzt auf dem Boden 5 Min.','Mach Kopfstand','Erzähl einen Witz','Gib jemandem ein Kompliment','Trink auf ex','Tausche Platz','Ruf deinen Ex an','5 Hampelmänner','Selfie + versenden','Schweige 3 Min.','Alle trinken!','Frei – Trinken verteilen'];
+  const COLORS=['#6C63FF','#FF6584','#FFD700','#00C896','#FF7043','#29B6F6','#AB47BC','#66BB6A','#F06292','#4DB6AC'];
+  let S={};
+  function drawDW(canvas,rot){
+    const ctx=canvas.getContext('2d');const segs=DARES_W.length;const cx=canvas.width/2,cy=canvas.height/2,r=cx-4;
+    const seg=(Math.PI*2)/segs;ctx.clearRect(0,0,canvas.width,canvas.height);
+    DARES_W.forEach((d,i)=>{
+      const a0=rot+i*seg,a1=a0+seg;ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,r,a0,a1);ctx.closePath();
+      ctx.fillStyle=COLORS[i%COLORS.length];ctx.fill();ctx.strokeStyle='#0d0d1a';ctx.lineWidth=1.5;ctx.stroke();
+      ctx.save();ctx.translate(cx,cy);ctx.rotate(a0+seg/2);ctx.textAlign='right';ctx.fillStyle='#fff';
+      ctx.font='bold 10px sans-serif';ctx.fillText(d.length>12?d.slice(0,12)+'…':d,r-8,4);ctx.restore();
+    });
+    ctx.beginPath();ctx.arc(cx,cy,16,0,Math.PI*2);ctx.fillStyle='#0d0d1a';ctx.fill();ctx.strokeStyle='#6C63FF';ctx.lineWidth=3;ctx.stroke();
+  }
+  function render(){
+    const sc=$('screen-darewheel');
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🎡</span><span class="hdr-title">Dare Wheel</span></div>
+    <div class="cnt">
+      <div class="sm">▼</div>
+      <canvas id="dw-canvas" width="310" height="310"></canvas>
+      <div id="dw-result" class="td-card" style="min-height:60px">${S.result?`<div class="td-type">PFLICHT</div><div class="td-text">${S.result}</div>`:'<div class="sm">Rad drehen für eine Pflicht!</div>'}</div>
+      <button class="btn btn-p" onclick="GAMES.darewheel.spin()" ${S.spinning?'disabled':''}>🎡 Drehen!</button>
+    </div>`;
+    const c=$('dw-canvas');if(c)drawDW(c,S.rot||0);
+    c.addEventListener('click',()=>{if(!S.spinning)GAMES.darewheel.spin()});
+  }
+  return{
+    init(){S={rot:0,speed:0,spinning:false,result:null};render()},
+    spin(){
+      if(S.spinning)return;S.spinning=true;S.result=null;S.speed=0.26+Math.random()*0.18;
+      const animate=()=>{
+        S.rot+=S.speed;S.speed*=0.987;const c=$('dw-canvas');if(c)drawDW(c,S.rot);
+        if(S.speed>0.004){requestAnimationFrame(animate);}
+        else{
+          S.spinning=false;const segs=DARES_W.length;const seg=(Math.PI*2)/segs;
+          const ptr=-Math.PI/2;const norm=((ptr-S.rot)%(Math.PI*2)+(Math.PI*2))%(Math.PI*2);
+          S.result=DARES_W[Math.floor(norm/seg)%segs];render();
+        }
+      };requestAnimationFrame(animate);
+    }
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  WACHSTUMSGEBOT
+// ═══════════════════════════════════════════
+GAMES.wachstumsgebot=(function(){
+  let S={};
+  function render(){
+    const sc=$('screen-wachstumsgebot');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🔗 Wachstumsgebot</div><div class="sm" style="margin-top:8px">Jeder Spieler fügt eine Aktion zur Kette hinzu.<br>Wer eine Aktion vergisst, trinkt!</div></div>
+      <button class="btn btn-p" onclick="GAMES.wachstumsgebot.start()">Spiel starten ▶</button>`;
+    } else if(S.phase==='play'){
+      const p=App.players[S.pIdx%App.players.length];
+      body=`<div class="cpb"><div class="cpl">Jetzt dran</div><div class="cpn">${p}</div></div>
+      <div class="card" style="margin-bottom:8px"><div class="sec">Aktuelle Kette (${S.chain.length} Aktionen)</div>
+      ${S.chain.map((a,i)=>`<div style="font-size:13px;padding:4px 0;color:var(--muted)">${i+1}. ${a}</div>`).join('')}
+      </div>
+      <div class="sm">Wiederhole die Kette und füge eine neue Aktion hinzu:</div>
+      <input class="inp" id="gebot-inp" placeholder="Neue Aktion hinzufügen…">
+      <div class="ar2">
+        <button class="btn btn-d" onclick="GAMES.wachstumsgebot.fail()">✗ Vergessen – Trinkt!</button>
+        <button class="btn btn-p" onclick="GAMES.wachstumsgebot.add()">✓ Hinzufügen</button>
+      </div>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🔗</span><span class="hdr-title">Wachstumsgebot</span></div><div class="cnt">${body}</div>`;
+    if(S.phase==='play')setTimeout(()=>{const el=$('gebot-inp');if(el)el.focus()},100);
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){S={phase:'play',pIdx:0,chain:[]};render()},
+    add(){const el=$('gebot-inp');if(!el||!el.value.trim()){toast('Bitte eine Aktion eingeben!');return}S.chain.push(el.value.trim());S.pIdx++;render()},
+    fail(){toast('🍺 '+App.players[S.pIdx%App.players.length]+' trinkt!');S.pIdx++;render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  MEMORY TRINKVERSION
+// ═══════════════════════════════════════════
+GAMES.memoryspiel=(function(){
+  const EMOJIS='🍺🥃🎲🃏🎰🏆⚡💯🎭🎯🚌📈🎤🎨🌊🍾'.split('');
+  let S={};
+  function buildGrid(){const pairs=[...EMOJIS,...EMOJIS].slice(0,16);return shuffle(pairs).map((e,i)=>({id:i,emoji:e,flipped:false,matched:false}))}
+  function render(){
+    const sc=$('screen-memoryspiel');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🧠 Memory</div><div class="sm" style="margin-top:8px">16 Karten, 8 Paare.<br>Kein Treffer? Trinken!<br>Wer am Ende die wenigsten Paare hat, trinkt extra.</div></div>
+      <button class="btn btn-p" onclick="GAMES.memoryspiel.start()">Spiel starten ▶</button>`;
+    } else if(S.phase==='game'){
+      const p=App.players[S.pIdx%App.players.length];
+      const scores=App.players.map(pl=>`${pl}: ${S.scores[pl]||0}`).join(' · ');
+      body=`<div class="cpb"><div class="cpl">Dran</div><div class="cpn">${p}</div></div>
+      <div class="sm" style="font-size:11px">${scores}</div>
+      <div class="mgrid" style="grid-template-columns:repeat(4,1fr)">
+        ${S.cards.map((c,i)=>`<div class="mcard${c.flipped||c.matched?' flipped':''}${c.matched?' matched':''}" onclick="GAMES.memoryspiel.flip(${i})">${c.flipped||c.matched?c.emoji:'?'}</div>`).join('')}
+      </div>`;
+    } else if(S.phase==='done'){
+      const sorted=App.players.map(p=>({p,s:S.scores[p]||0})).sort((a,b)=>a.s-b.s);
+      body=`<div class="big">🧠 Memory beendet!</div>
+      <div class="slist">${sorted.reverse().map((e,i)=>`<div class="sitem${i===sorted.length-1?' loser':''}"><div class="sname">${e.p}</div><div class="spts">${e.s} Paare</div></div>`).join('')}</div>
+      <div class="msgbox"><div style="font-size:36px">🍺</div><div class="mid">${sorted[sorted.length-1].p} hat die wenigsten Paare – trinkt!</div></div>
+      <button class="btn btn-p" onclick="GAMES.memoryspiel.init()">Neues Spiel ▶</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🧠</span><span class="hdr-title">Memory</span></div><div class="cnt">${body}</div>`;
+  }
+  return{
+    init(){const sc={};App.players.forEach(p=>sc[p]=0);S={phase:'intro',scores:sc};render()},
+    start(){const sc={};App.players.forEach(p=>sc[p]=0);S={phase:'game',cards:buildGrid(),pIdx:0,selected:[],scores:sc};render()},
+    flip(i){
+      const c=S.cards[i];if(c.matched||c.flipped||S.selected.length>=2)return;
+      c.flipped=true;S.selected.push(i);
+      if(S.selected.length===2){
+        const[a,b]=S.selected;
+        if(S.cards[a].emoji===S.cards[b].emoji){
+          S.cards[a].matched=S.cards[b].matched=true;
+          const p=App.players[S.pIdx%App.players.length];S.scores[p]=(S.scores[p]||0)+1;
+          S.selected=[];toast('✅ Treffer!');
+          if(S.cards.every(c=>c.matched)){S.phase='done';}
+        } else {
+          render();setTimeout(()=>{S.cards[a].flipped=S.cards[b].flipped=false;S.selected=[];S.pIdx++;toast('🍺 Kein Treffer – trinken!');render();},800);return;
+        }
+      }
+      render();
+    }
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  SIMON SAYS TRINKVERSION
+// ═══════════════════════════════════════════
+GAMES.simonsays=(function(){
+  const COLORS_S=['#6C63FF','#00C896','#FF6584','#FFD700'];const NAMES=['Lila','Grün','Pink','Gelb'];
+  let S={};let _seq=[];let _t=null;
+  function render(){
+    const sc=$('screen-simonsays');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🟩 Simon Says</div><div class="sm" style="margin-top:8px">Reihenfolge merken und wiederholen!<br>Jede Runde ein Schritt mehr.<br>Falsch = trinken!</div></div>
+      <button class="btn btn-p" onclick="GAMES.simonsays.start()">Spiel starten ▶</button>`;
+    } else if(S.phase==='watch'||S.phase==='input'){
+      body=`<div class="cpb"><div class="cpl">Runde ${S.round} – ${S.phase==='watch'?'Schauen…':'Deine Reihe!'}</div><div class="cpn">${App.players[S.pIdx%App.players.length]}</div></div>
+      <div class="simon-grid">${COLORS_S.map((c,i)=>`<button class="simon-btn${S.lit===i?' lit':''}" style="background:${c}" id="simon-${i}" onclick="GAMES.simonsays.press(${i})"></button>`).join('')}</div>
+      <div class="sm">${S.phase==='input'?`${S.inputIdx+1}/${S.seq.length} Eingaben`:''}</div>`;
+    } else if(S.phase==='wrong'){
+      body=`<div class="msgbox"><div style="font-size:48px">❌</div><div class="big dc">Falsch!</div><div class="mid" style="margin:10px 0">${App.players[S.pIdx%App.players.length]} trinkt! Runde ${S.round}</div></div>
+      <div class="ar2"><button class="btn btn-s" onclick="GAMES.simonsays.init()">Ende</button><button class="btn btn-p" onclick="GAMES.simonsays.start()">Neustart ▶</button></div>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="()=>{clearTimeout(_t);go('home')}">←</button><span class="hdr-emoji">🟩</span><span class="hdr-title">Simon Says</span></div><div class="cnt">${body}</div>`;
+    document.querySelector('#screen-simonsays .back-btn').onclick=()=>{clearTimeout(_t);go('home')};
+  }
+  function light(i,dur=400){
+    return new Promise(res=>{const el=$(`simon-${i}`);if(el){el.style.opacity='1';el.style.transform='scale(1.08)';setTimeout(()=>{el.style.opacity='0.5';el.style.transform='scale(1)';setTimeout(res,100)},dur);}else res()});
+  }
+  async function playSeq(){
+    S.phase='watch';render();
+    for(const i of S.seq){await light(i);await new Promise(r=>setTimeout(r,150));}
+    S.phase='input';S.inputIdx=0;render();
+  }
+  return{
+    init(){clearTimeout(_t);S={phase:'intro'};render()},
+    start(){S={phase:'watch',round:1,seq:[Math.floor(Math.random()*4)],inputIdx:0,pIdx:0};playSeq()},
+    press(i){
+      if(S.phase!=='input')return;
+      light(i,200);
+      if(i!==S.seq[S.inputIdx]){S.phase='wrong';render();return}
+      S.inputIdx++;
+      if(S.inputIdx>=S.seq.length){
+        toast('✅ Richtig! Weiter!');S.round++;S.pIdx++;
+        S.seq.push(Math.floor(Math.random()*4));
+        _t=setTimeout(()=>playSeq(),800);
+      }
+    }
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  MINESWEEPER TRINKVERSION
+// ═══════════════════════════════════════════
+GAMES.minesweeper=(function(){
+  const W=5,H=5,MINES=6;
+  function buildGrid(){
+    const cells=Array.from({length:W*H},(_,i)=>({id:i,mine:false,revealed:false,adj:0}));
+    let placed=0;while(placed<MINES){const r=Math.floor(Math.random()*W*H);if(!cells[r].mine){cells[r].mine=true;placed++;}}
+    cells.forEach((c,i)=>{if(c.mine)return;let count=0;[-1,0,1].forEach(dy=>[-1,0,1].forEach(dx=>{if(dx===0&&dy===0)return;const nx=(i%W)+dx,ny=Math.floor(i/W)+dy;if(nx>=0&&nx<W&&ny>=0&&ny<H&&cells[ny*W+nx].mine)count++;}));c.adj=count;});
+    return cells;
+  }
+  let S={};
+  function render(){
+    const sc=$('screen-minesweeper');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">💥 Minesweeper</div><div class="sm" style="margin-top:8px">5×5 Gitter, ${MINES} versteckte Minen!<br>Reihum eine Kachel aufdecken.<br>Mine = trinken. Alle anderen = Drinks verteilen!</div></div>
+      <button class="btn btn-p" onclick="GAMES.minesweeper.start()">Spiel starten ▶</button>`;
+    } else if(S.phase==='game'){
+      const p=App.players[S.pIdx%App.players.length];const left=S.cells.filter(c=>!c.mine&&!c.revealed).length;
+      body=`<div class="cpb"><div class="cpl">Dran</div><div class="cpn">${p}</div></div>
+      <div class="sm">${left} sichere Kacheln übrig · ${S.minesLeft} Minen versteckt</div>
+      <div class="msgrid" style="grid-template-columns:repeat(${W},1fr)">
+        ${S.cells.map((c,i)=>`<div class="mstile${c.revealed?(c.mine?' mine-hit':' revealed'):''}" onclick="GAMES.minesweeper.reveal(${i})">
+          ${c.revealed?(c.mine?'💥':c.adj>0?c.adj:''):''}</div>`).join('')}
+      </div>`;
+    } else if(S.phase==='mine'){
+      const p=App.players[(S.pIdx-1+App.players.length)%App.players.length];
+      body=`<div class="msgbox"><div style="font-size:60px">💥</div><div class="big dc">MINE!</div><div class="mid" style="margin:10px 0">${p} trinkt! ${S.minesLeft} Minen noch übrig.</div></div>
+      <div class="msgrid" style="grid-template-columns:repeat(${W},1fr);margin-bottom:8px">${S.cells.map(c=>`<div class="mstile${c.revealed?(c.mine?' mine-hit':' revealed'):''}">${c.revealed?(c.mine?'💥':c.adj>0?c.adj:''):''}</div>`).join('')}</div>
+      <button class="btn btn-p" onclick="GAMES.minesweeper.next()">Weiter ▶</button>`;
+    } else if(S.phase==='won'){
+      body=`<div class="msgbox"><div style="font-size:60px">🏆</div><div class="big gc">Gewonnen!</div><div class="mid">Alle Kacheln aufgedeckt!<br>Verteile Schlucke!</div></div>
+      <button class="btn btn-p" onclick="GAMES.minesweeper.init()">Neues Spiel ▶</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">💥</span><span class="hdr-title">Minesweeper</span></div><div class="cnt">${body}</div>`;
+  }
+  return{
+    init(){S={phase:'intro'};render()},
+    start(){S={phase:'game',cells:buildGrid(),pIdx:0,minesLeft:MINES};render()},
+    reveal(i){
+      const c=S.cells[i];if(c.revealed)return;
+      c.revealed=true;S.pIdx++;
+      if(c.mine){S.minesLeft--;S.phase='mine';}
+      else{const allClear=S.cells.filter(cc=>!cc.mine).every(cc=>cc.revealed);if(allClear)S.phase='won';else S.phase='game';}
+      render();
+    },
+    next(){S.phase='game';render()}
+  };
+})();
+
+// ═══════════════════════════════════════════
+//  BIERPONG SCOREBOARD
+// ═══════════════════════════════════════════
+GAMES.bierpong=(function(){
+  let S={};
+  function cups(n){return Array.from({length:10},(_,i)=>`<span class="bp-cup${i>=n?' gone':''}" onclick="GAMES.bierpong.hit('${i<n?'a':'b'}',${''+Math.min(i,9)})">🥤</span>`).join('')}
+  function render(){
+    const sc=$('screen-bierpong');let body='';
+    if(S.phase==='intro'){
+      body=`<div class="msgbox"><div class="big">🏓 Bierpong</div><div class="sm" style="margin-top:8px">2 Teams – je 10 Becher.<br>Tippe einen Becher wenn er getroffen wurde.<br>Wer zuerst alle Becher des Gegners versenkt, gewinnt!</div></div>
+      <div class="ar2"><input class="inp" id="bp-a" placeholder="Team A" value="${S.nameA||'Team A'}"><input class="inp" id="bp-b" placeholder="Team B" value="${S.nameB||'Team B'}"></div>
+      <button class="btn btn-p" onclick="GAMES.bierpong.start()" style="margin-top:8px">Spiel starten ▶</button>`;
+    } else if(S.phase==='game'){
+      body=`<div class="ar2">
+        <div style="text-align:center"><div style="font-weight:800;font-size:16px;margin-bottom:4px">${S.nameA} (${S.cupsA}/10)</div><div class="bp-cups">${Array.from({length:10},(_,i)=>`<span class="bp-cup${i>=S.cupsA?' gone':''}" onclick="GAMES.bierpong.hit('a')"  style="font-size:24px;cursor:pointer">🥤</span>`).join('')}</div></div>
+        <div style="text-align:center"><div style="font-weight:800;font-size:16px;margin-bottom:4px">${S.nameB} (${S.cupsB}/10)</div><div class="bp-cups">${Array.from({length:10},(_,i)=>`<span class="bp-cup${i>=S.cupsB?' gone':''}" onclick="GAMES.bierpong.hit('b')" style="font-size:24px;cursor:pointer">🥤</span>`).join('')}</div></div>
+      </div>
+      <div class="ar2" style="margin-top:8px">
+        <button class="btn btn-d" style="font-size:13px" onclick="GAMES.bierpong.hit('b')">🎯 ${S.nameA} trifft!</button>
+        <button class="btn btn-d" style="font-size:13px" onclick="GAMES.bierpong.hit('a')">🎯 ${S.nameB} trifft!</button>
+      </div>
+      <div class="sm">Wer einen Becher trinkt, tippt auf seinen eigenen Becher!</div>`;
+    } else if(S.phase==='done'){
+      body=`<div class="msgbox"><div style="font-size:48px">🏆</div><div class="big ac">${S.winner} gewinnt!</div><div class="mid" style="margin:10px 0">${S.loser} trinkt alle verbleibenden Becher!</div></div>
+      <button class="btn btn-p" onclick="GAMES.bierpong.init()">Neues Spiel ▶</button>`;
+    }
+    sc.innerHTML=`<div class="hdr"><button class="back-btn" onclick="go('home')">←</button><span class="hdr-emoji">🏓</span><span class="hdr-title">Bierpong</span></div><div class="cnt">${body}</div>`;
+  }
+  return{
+    init(){S={phase:'intro',nameA:'Team A',nameB:'Team B'};render()},
+    start(){const a=$('bp-a'),b=$('bp-b');S.nameA=a?a.value||'Team A':'Team A';S.nameB=b?b.value||'Team B':'Team B';S.cupsA=10;S.cupsB=10;S.phase='game';render()},
+    hit(team){
+      if(team==='a'){S.cupsA=Math.max(0,S.cupsA-1);if(S.cupsA===0){S.winner=S.nameB;S.loser=S.nameA;S.phase='done';}}
+      else{S.cupsB=Math.max(0,S.cupsB-1);if(S.cupsB===0){S.winner=S.nameA;S.loser=S.nameB;S.phase='done';}}
+      render();
+    }
+  };
+})();
+
+// ═══════════════════════════════════════════
 //  DISCLAIMER
 // ═══════════════════════════════════════════
 function acceptDisclaimer(){
@@ -2097,4 +3947,514 @@ function boot(){
 boot();
 </script>
 </body>
+
+<script type="text/markdown" id="anleitung">
+<!--
+================================================================================
+  ANLEITUNG.md – Trinkspiele App
+  Vollständige Dokumentation für Nutzer und Entwickler
+================================================================================
+-->
+
+# Trinkspiele App – ANLEITUNG
+
+---
+
+## 1. Projektübersicht
+
+**Was ist das?**
+Eine mobile-first Web-App mit 43 Trink-Spielen für Gruppen. Alles läuft offline im Browser – keine Installation, kein Server, keine externen Abhängigkeiten.
+
+**Technologie-Stack**
+- HTML5 / CSS3 / Vanilla JavaScript (ES6+)
+- Keine Frameworks, keine Bibliotheken
+- LocalStorage für persistente Einstellungen
+
+**Dateistruktur**
+```
+index.html          ← gesamte App (eine einzige Datei)
+```
+
+---
+
+## 2. Installation & Start
+
+### Lokal öffnen
+1. `index.html` herunterladen
+2. Doppelklick auf die Datei → öffnet im Standard-Browser
+3. Fertig – funktioniert offline
+
+### Auf einem Gerät hosten (LAN)
+```bash
+# Python 3
+python3 -m http.server 8080
+
+# Node.js (npx)
+npx serve .
+```
+Dann auf jedem Gerät im WLAN: `http://[deine-IP]:8080`
+
+### Empfohlene Browser
+Chrome, Safari, Firefox (aktuell). Optimiert für Smartphone (430px Breite).
+
+---
+
+## 3. Spielerliste einrichten
+
+1. Unten auf **👥 Spieler** tippen
+2. Namen der Spieler eingeben (2–8 Spieler)
+3. Mit **+ Spieler hinzufügen** weitere Spieler ergänzen
+4. Mit **✕** Spieler entfernen
+5. **🔞 NSFW-Modus**: Schalter aktivieren für erwachsene Fragen und Inhalte
+6. Auf **✓ Fertig** tippen
+
+Die Spielerliste wird automatisch in LocalStorage gespeichert und beim nächsten Öffnen wiederhergestellt.
+
+---
+
+## 4. Navigationsübersicht
+
+### Bottom Navigation
+| Icon | Funktion |
+|------|----------|
+| 🏠 Spiele | Spielübersicht (Startseite) |
+| 👥 Spieler | Spielerverwaltung & Einstellungen |
+
+### Kategorie-Tabs (Startseite)
+Horizontal scrollbare Tabs filtern die Spielliste:
+
+| Tab | Enthaltene Spiele |
+|-----|-------------------|
+| Alle | Alle 43 Spiele |
+| 🎲 Würfel | Meyer, Schocken, Kniffel, Farkle, 10.000, Pig, Mäxchen, Liar's Dice |
+| 🃏 Karten | Kings, Busfahrer, Higher/Lower, Flaschendrehen |
+| 🤔 Raten | Ich hab nie, Most Likely, Would You Rather, Wer bin ich?, 2W1L, Promis raten |
+| ⚡ Reaktion | Countdown, Heiße Kartoffel, Tap Race, Schnellster Finger |
+| 👥 Sozial | Waterfall, Geständnisrunde, Truth Bomb, Hot Takes, Wahr./Pflicht, Story-Kette, Sing/Trink, Wachstumsgebot |
+| 🔢 Zahlen | Buzz, Fizz Buzz, Alphabet-Spiel, Kategorien |
+| ❓ Quiz | Trink-Quiz, Geografie-Runde |
+| 🎨 Kreativ | Zeichnen & Raten, Dare Wheel |
+| 🎮 Mini | Memory, Simon Says, Minesweeper, Bierpong, Spin the Wheel |
+
+### ℹ️ Info-Button
+Erscheint oben rechts beim Spielen → öffnet Spielanleitung als Bottom Sheet.
+
+---
+
+## 5. Spielanleitungen
+
+### 🎲 WÜRFELSPIELE
+
+#### Meyer
+**Ziel:** Würfle höher als der Vorgänger – oder bluff.
+**Ablauf:** Verdeckt würfeln → Wert ansagen (ehrlich oder gelogen) → Nächster: Glauben oder Anzweifeln. Angezweifelt + gelogen → Ansager trinkt. Angezweifelt + wahr → Anzweifler trinkt.
+**Besonderheit:** Mäxchen (21) = höchster Wert. Kann auch blind (ohne würfeln) weitergegeben werden.
+**Touch:** Würfeln-Button → Wert antippen → Handy weitergeben.
+
+#### Schocken
+**Ziel:** Nicht das schlechteste Ergebnis haben.
+**Ablauf:** Jeder würfelt 3 Würfel verdeckt → gleichzeitig aufdecken → Schlechtestes Ergebnis trinkt.
+**Wertung:** Schock-Aus (1-2-3) = schlechtestes. Schock (zwei 1en) = bestes.
+
+#### Kniffel (Trinkversion)
+**Ziel:** Wie Yahtzee. Wer am Ende die wenigsten Punkte hat, trinkt.
+**Ablauf:** 5 Würfel, 3 Würfe pro Zug. Würfel antippen zum Festhalten. Kategorie wählen.
+**Trinkregeln:** 0 Punkte → 1 Schluck. Kniffel → 5 Schlucke verteilen.
+
+#### Farkle
+**Ziel:** Punkte sammeln. Letzter mit den wenigsten trinkt.
+**Ablauf:** 6 Würfel würfeln → Punkte-Würfel festhalten → kassieren oder weiter riskieren. Kein Punkte-Würfel = Farkle (alle Rundenpunkte weg). Mind. 300 Punkte zum Kassieren.
+
+#### 10.000
+**Ziel:** Als erster 10.000 Punkte. Wer am Ende am wenigsten hat, trinkt.
+**Ablauf:** Wie Farkle aber: mind. 1000 zum Öffnen. Straight (1-6) = 2000 Punkte. 3 Paare = 1500.
+
+#### Pig
+**Ziel:** Erste zu 100 Punkte. Letzter trinkt.
+**Ablauf:** 1 Würfel. Würfeln und Punkte sammeln oder banken. Eine 1 = Runden-Topf verloren.
+
+#### Mäxchen
+**Ziel:** Wie Meyer, vereinfacht (kein blind Weitergeben).
+**Trinkregel:** Gelogen und erwischt = 2 Schlucke. Mäxchen wahrheitsgemäß = alle anderen trinken.
+
+#### Liar's Dice
+**Ziel:** Biete auf die Gesamtzahl einer Augenzahl aller Spieler – oder bluff.
+**Ablauf:** Jeder würfelt 5 Würfel verdeckt → Biete reihum ("Mind. X Würfel zeigen Zahl Y") → Gebot muss höher → "Lüge!" rufen → aufdecken.
+**Trinkregel:** Gebot stimmte → Rufer trinkt. Gebot falsch → Bieter trinkt.
+
+---
+
+### 🃏 KARTENSPIELE
+
+#### Kings / Ring of Fire
+**Ablauf:** Reihum Karte ziehen. Jede Karte hat eine Regel (Ass = Wasserfall, König = König-Kelch, etc.).
+**Besonderheit:** Wer den 4. König zieht, muss den Kelch leeren!
+
+#### Busfahrer
+**Ablauf:** 4 Fragen über die nächste Karte beantworten: (1) Rot/Schwarz? (2) Höher/Tiefer? (3) Innen/Außen? (4) Welche Farbe?
+**Trinkregel:** Jede falsche Antwort = 1 Schluck. Alle 4 richtig = 2 Schlucke verteilen!
+
+#### Higher or Lower
+**Ablauf:** Karte aufgedeckt → Höher oder Tiefer für die nächste Karte tippen.
+**Trinkregel:** Falsch = so viele Schlucke wie der aktuelle Streak.
+
+#### Flaschendrehen (digital)
+**Ablauf:** Rad drehen → Pflicht-Karte erscheint → ausführen oder trinken.
+
+---
+
+### 🤔 RATESPIELE
+
+#### Ich hab noch nie…
+**Ablauf:** Aussage erscheint ("Ich hab noch nie…"). Alle die es getan haben, senken einen Finger (−-Taste).
+**Trinkregel:** Wer alle 5 Finger unten hat, trinkt!
+
+#### Most Likely To
+**Ablauf:** Frage erscheint ("Am ehesten…"). Alle tippen auf eine Person.
+**Trinkregel:** Meistgenannte Person trinkt so viele Schlucke wie Stimmen auf sie.
+
+#### Would You Rather
+**Ablauf:** Zwei Optionen. Jeder wählt A oder B. Die Minderheit trinkt.
+
+#### Wer bin ich?
+**Ablauf:** Jeder bekommt heimlich einen Promi zugewiesen. Stelle Ja/Nein-Fragen. 10 Fragen pro Runde.
+**Trinkregel:** Nicht erraten = trinken. Erraten = Drinks verteilen.
+
+#### 2 Wahrheiten, 1 Lüge
+**Ablauf:** Spieler gibt 3 Aussagen ein (2 wahr, 1 gelogen). Alle stimmen ab welche die Lüge ist.
+**Trinkregel:** Falsch geraten = trinken. Alle falsch = Spieler verteilt 2 Schlucke.
+
+#### Promis raten
+**Ablauf:** Hinweise über einen Promi erscheinen Schritt für Schritt. Wer ihn zuerst erkennt, verteilt Schlucke.
+**Trinkregel:** Niemand weiß es = alle trinken.
+
+---
+
+### ⚡ REAKTIONSSPIELE
+
+#### Countdown
+**Ablauf:** Versteckter Timer (5–15 Sek.) startet. Wenn Signal erscheint: so schnell wie möglich tippen. Jeder Spieler wird einzeln getestet.
+**Trinkregel:** Langsamste Reaktionszeit trinkt.
+
+#### Heiße Kartoffel
+**Ablauf:** Timer startet (5–20 Sek. zufällig). Handy weitergeben. Wer es hält wenn der Timer endet, trinkt!
+
+#### Tap Race
+**Ablauf:** Jeder Spieler tippt 5 Sekunden so oft wie möglich auf den Bildschirm (sequentiell).
+**Trinkregel:** Wenigste Taps = trinken.
+
+#### Schnellster Finger
+**Ablauf:** 3 Reaktions-Tests pro Spieler. Wenn "JETZT!" erscheint: sofort tippen.
+**Trinkregel:** Langsamste Durchschnittszeit = trinken.
+
+---
+
+### 👥 SOZIALE SPIELE
+
+#### Waterfall
+**Ablauf:** Alle trinken gleichzeitig. Spieler 1 hört auf wann er will. Jeder folgende darf erst aufhören wenn der Vorgänger aufgehört hat.
+
+#### Geständnisrunde
+**Ablauf:** Jeder gibt anonym ein Geständnis ein. Alle raten von wem es stammt.
+**Trinkregel:** Falsch geraten = trinken.
+
+#### Truth Bomb
+**Ablauf:** Fragen über die Gruppe erscheinen ("Wer würde…?"). Alle stimmen ab.
+**Trinkregel:** Meistgenannte Person trinkt.
+
+#### Hot Takes
+**Ablauf:** Provokante Aussagen. Zustimmen oder Ablehnen.
+**Trinkregel:** Minderheit trinkt. Gleichstand = alle kommen davon.
+
+#### Wahrheit oder Pflicht
+**Ablauf:** Spieler wählt Wahrheit oder Pflicht. Prompt erscheint. 1× überspringen erlaubt.
+**Trinkregel:** Verweigern = doppelt trinken. 50+ Wahrheiten und 50+ Pflichten eingebaut.
+
+#### Story-Kette
+**Ablauf:** Story-Starter erscheint. Jeder fügt einen Satz hinzu (Texteingabe).
+**Trinkregel:** Kein Satz oder Logik gebrochen = trinken.
+
+#### Sing oder Trink
+**Ablauf:** Gesangsaufgabe erscheint. Mind. 5 Sek. singen. Gruppe entscheidet.
+**Trinkregel:** Nicht bestanden = trinken.
+
+#### Wachstumsgebot
+**Ablauf:** Spieler 1 nennt eine Aktion. Spieler 2 wiederholt alles und fügt eine hinzu. Usw.
+**Trinkregel:** Aktion vergessen = trinken. Kette wird angezeigt – aber aus dem Gedächtnis aufsagen!
+
+---
+
+### 🔢 ZAHLENSPIELE
+
+#### Buzz
+**Ablauf:** Reihum von 1 zählen. Vielfache von 7 und Zahlen mit 7 = "BUZZ!".
+**Buzz-Zahlen:** 7, 14, 17, 21, 27, 28, 35, 42, 47, 49, 56, 63, 67, 70–79, 84, ...
+**Trinkregel:** Falsch = trinken + Neustart bei 1.
+
+#### Fizz Buzz
+**Regeln:** 3 = Fizz · 5 = Buzz · 15 = FizzBuzz · sonst Zahl.
+**Trinkregel:** Falsch = trinken + Neustart.
+
+#### Alphabet-Spiel
+**Ablauf:** Kategorie + Buchstabe erscheinen. Reihum Wörter nennen die mit dem Buchstaben beginnen. 8 Sekunden pro Spieler.
+**Trinkregel:** Zeit abgelaufen oder Wiederholung = trinken.
+
+#### Kategorien
+**Ablauf:** Kategorie erscheint. 8 Sekunden pro Spieler ein Beispiel nennen.
+**Trinkregel:** Zeit abgelaufen = trinken.
+
+---
+
+### ❓ QUIZ & WISSEN
+
+#### Trink-Quiz
+**Ablauf:** Multiple-Choice-Fragen (4 Optionen). Spieler tippen nacheinander. 100+ Fragen in 4 Kategorien.
+**Trinkregel:** Falsch = trinken. Richtig = 1 Schluck verteilen.
+**Kategorien:** Allgemeinwissen, Popkultur, Sport, Geschichte.
+
+#### Geografie-Runde
+**Ablauf:** Wie Trink-Quiz, fokussiert auf Geografie und Hauptstädte.
+
+---
+
+### 🎨 KREATIVSPIELE
+
+#### Zeichnen & Raten
+**Ablauf:** Aktueller Spieler bekommt ein Wort (nur für ihn). Zeichnet auf dem Canvas. Andere raten.
+**Touch:** Finger auf Canvas → malen. Löschen-Button zum Zurücksetzen.
+**Trinkregel:** Letzter der rät (oder niemand rät) = trinken.
+**Einschränkung:** Nur lokal auf einem Gerät nutzbar – kein Netzwerk-Multiplayer.
+
+#### Dare Wheel
+**Ablauf:** Rad drehen → zufällige Pflicht erscheint. Ausführen oder doppelt trinken.
+
+---
+
+### 🎮 MINIGAMES
+
+#### Memory (Trinkversion)
+**Ablauf:** 16 verdeckte Karten (8 Emoji-Paare). Zwei aufdecken pro Zug. Treffer = Paar gewonnen.
+**Trinkregel:** Kein Treffer = trinken + Karten zurückdrehen. Wenigste Paare am Ende = extra trinken.
+
+#### Simon Says (Trinkversion)
+**Ablauf:** 4 farbige Felder leuchten in Reihenfolge auf → wiederholen. Jede Runde ein Schritt mehr.
+**Trinkregel:** Falsche Reihenfolge = trinken + Neustart bei Runde 1.
+
+#### Minesweeper (Trinkversion)
+**Ablauf:** 5×5 Gitter, 6 versteckte Minen. Reihum eine Kachel aufdecken.
+**Trinkregel:** Mine getroffen = trinken. Alle anderen Kacheln aufdecken = Drinks verteilen!
+
+#### Bierpong Scoreboard
+**Ablauf:** Digitales Scoreboard für physisches Bierpong. 2 Teams, je 10 Becher. Getroffene Becher antippen.
+**Hinweis:** Reines Scoreboard – der Ball bleibt physisch!
+
+#### Spin the Wheel
+**Ablauf:** Rad dreht sich und zeigt zufällig auf einen Spieler.
+**Trinkregel:** Gezeigter Spieler trinkt.
+
+---
+
+## 6. Technische Dokumentation
+
+### Architektur-Übersicht
+
+```
+index.html
+├── <style>          CSS-Variablen, alle Komponenten-Styles
+├── <body>           HTML-Screens (eine div pro Spiel)
+└── <script>
+    ├── Utilities    roll(), shuffle(), toast(), dieSvg()...
+    ├── App          globaler State { players, current, nsfw, catFilter }
+    ├── GAME_META    Array aller Spiele mit ID, Icon, Name, Kategorie
+    ├── CATS_DEF     Kategorie-Definitionen für die Tabs
+    ├── NAV_ITEMS    Bottom-Navigation
+    ├── RULES_DATA   Anleitungen (HTML-Strings) pro Spiel
+    ├── GAMES        Objekt – jedes Spiel als IIFE
+    └── boot()       Initialisierung
+```
+
+### State Management
+
+Jedes Spiel nutzt ein lokales `let S = {}` (IIFE-Scope). Das Muster:
+
+```javascript
+GAMES.meinspiel = (function(){
+  let S = {};                    // lokaler State
+
+  function render(){             // vollständiges Re-render
+    const sc = $('screen-meinspiel');
+    sc.innerHTML = `...`;
+  }
+
+  return {
+    init(){ S = { phase:'intro', ... }; render(); },
+    // weitere Methoden
+  };
+})();
+```
+
+### Routing
+
+```javascript
+function go(id){
+  // alle Screens verstecken
+  // screen-{id} aktivieren
+  // App.current = id
+  // buildNav() aktualisiert Bottom-Nav-Highlighting
+  // GAMES[id]?.init() startet das Spiel
+}
+```
+
+### LocalStorage-Schlüssel
+
+| Schlüssel | Inhalt |
+|-----------|--------|
+| `ts_players` | JSON-Array der Spielernamen |
+| `ts_nsfw` | `"1"` oder `"0"` |
+| `ts_ok` | `"1"` wenn Disclaimer akzeptiert |
+
+### Neues Spiel hinzufügen – Schritt für Schritt
+
+**1. Screen-Div hinzufügen** (nach den bestehenden Screens):
+```html
+<div id="screen-meinspiel" class="screen"></div>
+```
+
+**2. GAME_META-Eintrag** (im `GAME_META`-Array):
+```javascript
+{id:'meinspiel', ic:'🎮', n:'Mein Spiel', d:'Kurzbeschreibung', cat:'minigames'},
+```
+
+**3. RULES_DATA-Eintrag** (im `RULES_DATA`-Objekt):
+```javascript
+meinspiel: {
+  title: '🎮 Mein Spiel – Anleitung',
+  html: `<h3>Ziel</h3><p>...</p>`
+},
+```
+
+**4. Spiel-Implementierung** (vor `boot()`):
+```javascript
+GAMES.meinspiel = (function(){
+  let S = {};
+  function render(){
+    $('screen-meinspiel').innerHTML = `
+      <div class="hdr">
+        <button class="back-btn" onclick="go('home')">←</button>
+        <span class="hdr-emoji">🎮</span>
+        <span class="hdr-title">Mein Spiel</span>
+      </div>
+      <div class="cnt">...</div>
+    `;
+  }
+  return {
+    init(){ S = {}; render(); }
+  };
+})();
+```
+
+### CSS-Design-Variablen
+
+```css
+--bg:        #0d0d1a  /* Hintergrund */
+--surface:   #1a1a2e  /* Karten/Panels */
+--surface2:  #252542  /* Inputs/Buttons */
+--accent:    #6C63FF  /* Primärfarbe (Lila) */
+--accent2:   #FF6584  /* Sekundärfarbe (Pink) */
+--text:      #e8e8f0  /* Haupttext */
+--muted:     #8888aa  /* Gedämpfter Text */
+--border:    #2e2e52  /* Rahmen */
+--danger:    #FF4444  /* Rot/Fehler */
+--success:   #00C896  /* Grün/Erfolg */
+--gold:      #FFD700  /* Gold */
+```
+
+### Nützliche Utility-Funktionen
+
+```javascript
+$(id)           // document.getElementById(id)
+roll(n=6)       // Zufallszahl 1..n
+rollN(count)    // Array von count Würfelwürfen
+rnd(array)      // zufälliges Element aus Array
+shuffle(array)  // Fisher-Yates Shuffle, gibt neues Array zurück
+toast(msg, dur) // Toast-Nachricht (Standard: 3,2 Sek.)
+dieSvg(val, held, small)  // Würfel-HTML generieren
+animDice(selector)        // Würfel-Animation anstoßen
+```
+
+---
+
+## 7. Bekannte Einschränkungen
+
+| Einschränkung | Details |
+|---------------|---------|
+| **Ein Gerät** | Alle Spiele sind für ein geteiltes Gerät konzipiert. Kein Netzwerk-Multiplayer. |
+| **Zeichnen & Raten** | Canvas-Zeichnung nur lokal. Alle Spieler müssen zum Raten am selben Gerät sein. |
+| **Reaktionsspiele** | Countdown, Schnellster Finger und Tap Race testen Spieler sequentiell (nicht gleichzeitig). |
+| **Heiße Kartoffel** | Gerät muss sichtbar sein damit alle den Timer beobachten können. Kein Vibrations-Feedback. |
+| **Kein Netzwerk** | Keine Online-Highscores, kein Sync zwischen Geräten. |
+| **Kein Audio** | Kein Sound/Musik (Browser-Autoplay-Beschränkungen). |
+| **Kein Zurück im Browser** | Browser-Back-Button navigiert raus aus der App. Den ← Button in der App nutzen. |
+| **LocalStorage** | Spielernamen und Einstellungen bleiben nur auf demselben Browser/Gerät gespeichert. |
+| **Liar's Dice** | Vertrauensbasiert – jeder Spieler sieht seine Würfel kurz, bevor er das Handy weitergibt. |
+
+---
+
+## 8. Erweiterungshinweise
+
+### Eigene Quiz-Fragen hinzufügen
+Im `QUIZ_DB`-Array (vor `GAMES.trinkquiz`):
+```javascript
+{
+  q: 'Frage?',
+  o: ['Option A', 'Option B', 'Option C', 'Option D'],
+  a: 2,           // Index der richtigen Antwort (0-basiert)
+  cat: 'Allgemeinwissen'  // oder Popkultur / Sport / Geschichte
+}
+```
+
+### Eigene Wahrheit/Pflicht-Prompts
+Im `TRUTHS`- bzw. `DARES`-Array in `GAMES.wahrheitpflicht`:
+```javascript
+const TRUTHS = [ 'Neue Wahrheit?', ... ];
+const DARES  = [ 'Neue Pflicht!', ... ];
+```
+
+### Eigene "Ich hab noch nie"-Aussagen
+Im `SAFE`- oder `NSFW`-Array in `GAMES.nochnie`:
+```javascript
+const SAFE = [ 'neue Aussage', ... ];
+const NSFW = [ 'erwachsene Aussage', ... ]; // nur bei NSFW-Modus aktiv
+```
+
+### Eigene Promis für "Wer bin ich?"
+Im `CELEBS`-Array in `GAMES.werbinici`:
+```javascript
+const CELEBS = shuffle(['Neuer Promi', 'Bekannte Figur', ...]);
+```
+
+### Neues Rad-Segment für Dare Wheel
+Im `DARES_W`-Array in `GAMES.darewheel`:
+```javascript
+const DARES_W = ['Neue Pflicht', ...];
+```
+
+### Neue Spielkategorie
+Im `CATS_DEF`-Array:
+```javascript
+const CATS_DEF = [
+  ...
+  {id:'neuekat', label:'🆕 Neue Kategorie'},
+];
+```
+Dann Spiele mit `cat:'neuekat'` im `GAME_META` registrieren.
+
+### Design anpassen
+CSS-Variablen in `:root {}` am Anfang der `<style>`-Sektion ändern. Alle Farben, Abstände und Radien sind dort zentralisiert.
+
+---
+
+*Trinkspiele App – Vanilla JS, Single File, No Dependencies*
+*© Maxim Andris*
+</script>
 </html>
